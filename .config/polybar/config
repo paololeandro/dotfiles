@@ -1,0 +1,55 @@
+[colors]
+background = #2E3440
+background-alt = #81a1c1
+foreground = #D8DEE9
+foreground-alt = #81a1c1
+red = #BF616A
+orange = #D08770
+yellow = #EBCB8B
+green = #A3B38C
+purple = #B38EAD
+blue = #88C0D0
+secondary = #e60053
+alert = #bd2c40
+
+[bar/main]
+monitor = ${env:MONITOR:HDMI1}
+width = 100%
+height = 27
+radius = 0.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Iosevka Nerd Font:style=Regular:pixelsize=10;1
+font-1 = Font Awesome 5 Free:style=Regular:pixelsize=12;1
+font-2 = Font Awesome 5 Brands:style=Regular:pixelsize=12;1
+font-3 = Font Awesome 5 Free:style=Solid:pixelsize=12;1
+
+modules-left = bspwm discord firefox spotify youtube
+modules-center = xwindow
+modules-right = uptime pulseaudio memory cpu wlan battery temperature date powermenu
+
+tray-position = right
+tray-padding = 2
+
+wm-restack = bspwm
+;override-redirect = true
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+include-file = "~/.config/polybar/modules/modules.ini"
