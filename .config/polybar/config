@@ -1,16 +1,4 @@
-[colors]
-background = #2E3440
-background-alt = #81a1c1
-foreground = #D8DEE9
-foreground-alt = #81a1c1
-red = #BF616A
-orange = #D08770
-yellow = #EBCB8B
-green = #A3B38C
-purple = #B38EAD
-blue = #88C0D0
-secondary = #e60053
-alert = #bd2c40
+include-file = $HOME/.config/polybar/include-modules.ini
 
 [bar/main]
 monitor = ${env:MONITOR:HDMI1}
@@ -34,10 +22,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Iosevka Nerd Font:style=Regular:pixelsize=10;1
-font-1 = Font Awesome 5 Free:style=Regular:pixelsize=12;1
-font-2 = Font Awesome 5 Brands:style=Regular:pixelsize=12;1
-font-3 = Font Awesome 5 Free:style=Solid:pixelsize=12;1
+include-file = $HOME/.config/polybar/fonts.ini
 
 modules-left = bspwm discord firefox spotify youtube
 modules-center = xwindow
@@ -52,4 +37,9 @@ wm-restack = bspwm
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-include-file = "~/.config/polybar/modules/modules.ini"
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
