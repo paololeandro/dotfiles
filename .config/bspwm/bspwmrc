@@ -30,7 +30,7 @@ feh --bg-scale ${HOME}/Pictures/001.png
 setxkbmap -model abnt2 -layout br -variant abnt2
 
 #Set Cursor in X
-xsetroot -xcf /usr/share/icons/Volantes/cursors/left_ptr 24 &
+xsetroot -cursor_name left_ptr
 
 #HDMI1
 xrandr --output HDMI1 --primary
