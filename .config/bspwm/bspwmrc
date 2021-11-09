@@ -36,6 +36,12 @@ xsetroot -cursor_name left_ptr
 xrandr --output HDMI1 --primary
 xrandr --output eDP1 --off
 
+#Exec network-manager-applet
+nm-applet &
+
+#Exec flameshot applet
+flameshot &
+
 #eDP1
 #xrandr --output eDP1 --primary
 #xrandr --output HDMI1 --off

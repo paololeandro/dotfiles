@@ -17,19 +17,18 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 2
-padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 1
 
+modules-left = bspwm filesystem
+modules-center = xwindow
+modules-right = uptime pulseaudio memory cpu temperature battery date separator
+
 include-file = $HOME/.config/polybar/fonts.ini
 
-modules-left = bspwm discord firefox spotify youtube
-modules-center = xwindow
-modules-right = uptime pulseaudio memory cpu wlan battery temperature date powermenu
-
 tray-position = right
-tray-padding = 2
+tray-padding = 4
 
 wm-restack = bspwm
 ;override-redirect = true
