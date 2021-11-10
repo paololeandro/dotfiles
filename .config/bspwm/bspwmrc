@@ -2,7 +2,9 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor HDMI1 -d 1 2 3 4 5
+bspc monitor eDP1 -d 1 2 3 4 5
+
+bspc monitor HDMI1 -d 6 7 8 9 0
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -20,8 +22,21 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+# run the xrandr command if an external monitor is connected to the
+# laptop.  This must be executed before the polybar command, so that
+# polybar can set the two separate bars properly.
+if [ -x $HOME/.scripts/bspwm-dual-monitor ];then
+    bspwm-dual-monitor
+fi
+
+# NOTE the path to the polybar executable.  This is the default location
+# when compiling from source.
+if [ -x /usr/share/doc/polybar ]; then
+    bash $HOME/.config/polybar/launch.sh
+fi
+
 #Load Polybar
-${HOME}/.config/polybar/launch.sh
+#${HOME}/.config/polybar/launch.sh
 
 #Set Wallpaper
 feh --bg-scale ${HOME}/Pictures/001.png
@@ -32,16 +47,8 @@ setxkbmap -model abnt2 -layout br -variant abnt2
 #Set Cursor in X
 xsetroot -cursor_name left_ptr
 
-#HDMI1
-xrandr --output HDMI1 --primary
-xrandr --output eDP1 --off
-
 #Exec network-manager-applet
 nm-applet &
 
 #Exec flameshot applet
 flameshot &
-
-#eDP1
-#xrandr --output eDP1 --primary
-#xrandr --output HDMI1 --off
