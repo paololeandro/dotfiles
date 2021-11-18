@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# user aplication
+alt + {b,f}
+	{firefox,thunar}
+
 # terminal emulator
 super + Return
 	kitty

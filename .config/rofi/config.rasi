@@ -8,4 +8,4 @@ configuration {
   show-icons: true;
 }
 
-@theme "/home/paolo/.config/rofi/themes/dracula.rasi"
+@theme "/home/paolo/.config/rofi/themes/squared-material-red.rasi"
