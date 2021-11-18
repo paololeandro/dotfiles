@@ -35,20 +35,14 @@ if [ -x /usr/share/doc/polybar ]; then
     bash $HOME/.config/polybar/launch.sh
 fi
 
-#Load Polybar
-#${HOME}/.config/polybar/launch.sh
-
 #Set Wallpaper
 feh --bg-scale ${HOME}/Pictures/001.jpg
 
 #Set br-abnt2 Layout
 setxkbmap -model abnt2 -layout br -variant abnt2
 
-#Set Cursor in X
+#Set Custom Cursor in X
 xsetroot -cursor_name left_ptr
-
-#Exec network-manager-applet
-nm-applet &
 
 #Exec flameshot applet
 flameshot &
