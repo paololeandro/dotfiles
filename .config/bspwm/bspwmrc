@@ -2,19 +2,30 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor eDP1 -d 1 2 3 4 5
+MONITOR_NAME="eDP1"
+EXTERNAL_MONITOR_NAME="HDMI1"
 
-bspc monitor HDMI1 -d 6 7 8 9 0
+STATUS_EXTERNAL_MONITOR=$(xrandr --query | grep $EXTERNAL_MONITOR_NAME)
+if [[ ! $STATUS_EXTERNAL_MONITOR == *disconnected* ]]; then
+    xrandr --output $MONITOR_NAME --primary --mode 1920x1080  --output $EXTERNAL_MONITOR_NAME --mode 1920x1080 --rotate normal --right-of $MONITOR_NAME
+else
+    xrandr --output $EXTERNAL_MONITOR_NAME --off
+fi
 
-bspc config border_width         2
-bspc config window_gap          12
+if [[ ! $STATUS_EXTERNAL_MONITOR == *disconnected* ]]; then
+	bspc monitor $MONITOR_NAME -d 1 2 3 4 5
+	bspc monitor $EXTERNAL_MONITOR_NAME -d 6 7 8 9 10
+else
+	bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+fi
 
-bspc config focused_border_color '#F0544C'
-bspc config normal_border_color '#76797F'
-
+bspc config border_width          0
+bspc config window_gap           12
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+bspc config focused_border_color     '#F0544C'
+bspc config normal_border_color      '#76797F'
 
 bspc rule -a Gimp desktop='^5' state=floating follow=on
 bspc rule -a Firefox desktop='^2'
@@ -22,17 +33,10 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-# run the xrandr command if an external monitor is connected to the
-# laptop.  This must be executed before the polybar command, so that
-# polybar can set the two separate bars properly.
-if [ -x $HOME/.scripts/bspwm-dual-monitor ];then
-    bspwm-dual-monitor
-fi
-
-# NOTE the path to the polybar executable.  This is the default location
-# when compiling from source.
-if [ -x /usr/share/doc/polybar ]; then
-    bash $HOME/.config/polybar/launch.sh
+if [[ ! $STATUS_EXTERNAL_MONITOR == *disconnected* ]]; then
+	$HOME/.config/polybar/launch2.sh
+else
+	$HOME/.config/polybar/launch.sh
 fi
 
 #Set Wallpaper
