@@ -11,13 +11,11 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-top-size = 7
-border-bottom-size = 7
+border-top-size = 5
+border-bottom-size = 0
 
 border-top-color = ${colors.background}
 border-bottom-color = ${colors.background}
-
-line-size = 3
 
 padding-left = 1
 padding-right = 1
@@ -27,12 +25,12 @@ module-margin-right = 0
 
 modules-left = bspwm
 modules-center = 
-modules-right = backlight margin pulseaudio margin memory margin cpu margin temperature margin battery margin date margin wlan margin powermenu
+modules-right = backlight margin pulseaudio margin memory margin cpu margin temperature margin battery margin date
 
 include-file = $HOME/.config/polybar/fonts.ini
 
 tray-position = right
-tray-padding = 4
+tray-padding = 10
 
 wm-restack = bspwm
 
@@ -47,13 +45,11 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-top-size = 7
-border-bottom-size = 7
+border-top-size = 5
+border-bottom-size = 0
 
 border-top-color = ${colors.background}
 border-bottom-color = ${colors.background}
-
-line-size = 3
 
 padding-left = 1
 padding-right = 1
@@ -63,12 +59,12 @@ module-margin-right = 0
 
 modules-left = bspwm
 modules-center =
-modules-right = pulseaudio margin memory margin cpu margin temperature margin battery margin date margin wlan margin powermenu
+modules-right = pulseaudio margin memory margin cpu margin temperature margin battery margin date
 
 include-file = $HOME/.config/polybar/fonts.ini
 
 tray-position = none
-tray-padding = 4
+tray-padding = 10
 
 wm-restack = bspwm
 
