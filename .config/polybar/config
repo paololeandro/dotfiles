@@ -12,7 +12,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 border-top-size = 5
-border-bottom-size = 0
+border-bottom-size = 5
 
 border-top-color = ${colors.background}
 border-bottom-color = ${colors.background}
@@ -25,7 +25,7 @@ module-margin-right = 0
 
 modules-left = bspwm
 modules-center = 
-modules-right = backlight margin pulseaudio margin memory margin cpu margin temperature margin battery margin date
+modules-right = backlight margin pulseaudio margin memory margin cpu margin temperature margin battery margin date margin wlan
 
 include-file = $HOME/.config/polybar/fonts.ini
 
@@ -46,7 +46,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 border-top-size = 5
-border-bottom-size = 0
+border-bottom-size = 5
 
 border-top-color = ${colors.background}
 border-bottom-color = ${colors.background}
@@ -59,7 +59,7 @@ module-margin-right = 0
 
 modules-left = bspwm
 modules-center =
-modules-right = pulseaudio margin memory margin cpu margin temperature margin battery margin date
+modules-right = pulseaudio margin memory margin cpu margin temperature margin battery margin date margin wlan
 
 include-file = $HOME/.config/polybar/fonts.ini
 
