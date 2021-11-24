@@ -25,7 +25,7 @@ module-margin-right = 0
 
 modules-left = bspwm
 modules-center = 
-modules-right = backlight margin pulseaudio margin memory margin cpu margin temperature margin battery margin date margin wlan
+modules-right = backlight margin pulseaudio margin memory margin cpu margin temperature margin battery margin wlan margin date
 
 include-file = $HOME/.config/polybar/fonts.ini
 
@@ -59,7 +59,7 @@ module-margin-right = 0
 
 modules-left = bspwm
 modules-center =
-modules-right = pulseaudio margin memory margin cpu margin temperature margin battery margin date margin wlan
+modules-right = pulseaudio margin memory margin cpu margin temperature margin battery margin wlan margin date
 
 include-file = $HOME/.config/polybar/fonts.ini
 
