@@ -1,0 +1,54 @@
+/**
+ * This theme is intended for a 8x2 items list menu with a headerbar.
+ */
+* {
+  background-color: #1A1A1A;
+  text-color: #d8dee8;
+}
+#window {
+  padding: 2;
+}
+inputbar,
+prompt,
+textbox-prompt-colon,
+entry {
+  background-color: #1A1A1A;
+}
+#inputbar {
+  children: [ prompt, textbox-prompt-colon, entry ];
+  margin: 2;
+}
+#prompt {
+  padding: 2;
+  background-color: #1A1A1A;
+  text-color: #d8dee8;
+}
+#textbox-prompt-colon {
+  expand: false;
+  str: "";
+  padding: 2;
+}
+#entry {
+  text-color: #d8dee8;
+  padding: 1;
+}
+listview {
+  columns: 2;
+}
+#element {
+  padding: 2;
+  margin:  2;
+  border:  1;
+}
+element.normal.normal,
+element.alternate.normal {
+  background-color: #1A1A1A;
+  border-color: #1A1A1A;
+}
+element.selected.normal {
+  background-color: #bf616a;
+  text-color: #d8dee8;
+  border-color: #bf616a;
+}
+
+
