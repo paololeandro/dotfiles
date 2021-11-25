@@ -2,17 +2,24 @@
 include-file = $HOME/.config/polybar/modules.ini
 include-file = $HOME/.config/polybar/colors.ini
 
+[settings]
+pseudo-transparency = true
+
 [bar/main]
 monitor = eDP1
-width = 100%
-height = 26
+width = 99%
+height = 32
 fixed-center = true
+
+line-size = 3
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-top-size = 5
-border-bottom-size = 5
+offset-x = 0.5%
+offset-y = 0.5%
+
+radius = 10.0
 
 border-top-color = ${colors.background}
 border-bottom-color = ${colors.background}
@@ -29,7 +36,7 @@ modules-right = backlight margin pulseaudio margin memory margin cpu margin temp
 
 include-file = $HOME/.config/polybar/fonts.ini
 
-tray-position = right
+tray-position = none
 tray-padding = 10
 
 wm-restack = bspwm
@@ -38,15 +45,19 @@ cursor-click = pointer
 
 [bar/secondary]
 monitor = HDMI1
-width = 100%
-height = 26
+width = 99%
+height = 32
 fixed-center = true
+
+line-size = 3
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-top-size = 5
-border-bottom-size = 5
+offset-x = 0.5%
+offset-y = 0.5%
+
+radius = 10.0
 
 border-top-color = ${colors.background}
 border-bottom-color = ${colors.background}
