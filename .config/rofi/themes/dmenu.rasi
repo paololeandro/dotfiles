@@ -39,7 +39,7 @@ element.alternate.normal {
 element.selected.normal {
   background-color: #bf616a;
   text-color: #d8dee8;
-  border-color: #bf616a;
+  border-color: #d8dee8;
 }
 
 

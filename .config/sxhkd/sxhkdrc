@@ -8,15 +8,11 @@ alt + {b,f}
 
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 # program launcher
 super + d
 	rofi -show drun
-
-# xfce4 display settings
-super + p
-	xfce4-display-settings --minimal
 
 # make sxhkd reload its configuration files:
 super + Escape

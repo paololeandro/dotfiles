@@ -23,11 +23,9 @@
 }
 
 window {
-    location: northwest;
+    location: Center;
     width:      20%;
-    x-offset:   51px; 
-    y-offset:   10px;
-
+    height: 	100%;
     background-color:   @bg0;
 }
 
@@ -53,7 +51,7 @@ textbox {
 
 listview {
     padding:    4px 0;
-    lines:      8;
+    lines:      10;
     columns:    1;
 
     fixed-height:   false;
