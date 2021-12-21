@@ -1,0 +1,41 @@
+{
+  "main_window_geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAPrAAAAJAAAB3QAAAQtAAAD7AAAACUAAAdzAAAELAAAAAAAAAAAB4AAAAPsAAAAJQAAB3MAAAQs"
+  },
+  "main_window_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAH9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAvsAAAAQAHQAbwBjAC0AZABvAGMAawAAAAAA/////wAAAIwA////+wAAABYAcwBlAGEAcgBjAGgALQBkAG8AYwBrAAAAAAD/////AAAAnQD///8AAAABAAAAAAAAAAD8AgAAAAT7AAAAFgBsAG8AbwBrAHUAcAAtAGQAbwBjAGsAAAAAAP////8AAACIAP////sAAAAcAGIAbwBvAGsAbQBhAHIAawBzAC0AZABvAGMAawAAAAAA/////wAAAPgA////+wAAABwAaQBuAHMAcABlAGMAdABvAHIALQBkAG8AYwBrAAAAAAD/////AAAAFQD////7AAAAHgBoAGkAZwBoAGwAaQBnAGgAdABzAC0AZABvAGMAawAAAAAA/////wAAANcA////AAADiAAABAgAAAAEAAAABAAAAAgAAAAI/AAAAAEAAAAAAAAAAQAAAB4AYQBjAHQAaQBvAG4AcwBfAHQAbwBvAGwAYgBhAHICAAAAAP////8AAAAAAAAAAA=="
+  },
+  "old_prefs_migrated": true,
+  "session_data": {
+    "controls_help_shown_count": 2,
+    "standalone_font_settings": {},
+    "standalone_misc_settings": {
+      "remember_last_read": true,
+      "remember_window_geometry": false,
+      "save_annotations_in_ebook": true,
+      "singleinstance": false
+    },
+    "standalone_recently_opened": [
+      {
+        "authors": [
+          "Andy"
+        ],
+        "key": "/home/paolo/Calibre Library/Andy/1984 _( PDFDrive.com _).mobi (7)/1984 _( PDFDrive.com _).mobi - Andy.mobi",
+        "pathtoebook": "/home/paolo/Calibre Library/Andy/1984 _( PDFDrive.com _).mobi (7)/1984 _( PDFDrive.com _).mobi - Andy.mobi",
+        "timestamp": "2021-12-21T00:25:29.065Z",
+        "title": "1984 \\( PDFDrive.com \\).mobi"
+      },
+      {
+        "authors": [
+          "Frank Herbert"
+        ],
+        "key": "/home/paolo/Downloads/1601228589_dune.mobi",
+        "pathtoebook": "/home/paolo/Downloads/1601228589_dune.mobi",
+        "timestamp": "2021-12-21T00:11:02.661Z",
+        "title": "Dune"
+      }
+    ]
+  }
+}

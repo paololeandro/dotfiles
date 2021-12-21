@@ -1,0 +1,21 @@
+Validating found git in: git
+Using git 2.34.1 from git
+> git rev-parse --git-dir
+Open repository: /home/paolo/dotfiles
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :.config/bspwm/bspwmrc
+> git ls-files --stage -- /home/paolo/dotfiles/.config/bspwm/bspwmrc
+> git cat-file -s aaa1a70efe2d1570ea28345f2bba55abe573f3ec
+> git show --textconv :.config/bspwm/bspwmrc
+> git ls-files --stage -- /home/paolo/dotfiles/.config/bspwm/bspwmrc
+> git cat-file -s aaa1a70efe2d1570ea28345f2bba55abe573f3ec
+> git show --textconv :.config/bspwm/bspwmrc
+> git ls-files --stage -- /home/paolo/dotfiles/.config/bspwm/bspwmrc
+> git cat-file -s aaa1a70efe2d1570ea28345f2bba55abe573f3ec
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/paolo/dotfiles/.config/bspwm/bspwmrc

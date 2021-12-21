@@ -1,0 +1,35 @@
+[2021-12-15 16:36:22.587] [exthost] [info] Extension host with pid 64456 started
+[2021-12-15 16:36:22.607] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+[2021-12-15 16:36:22.615] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2021-12-15 16:36:22.619] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.github
+[2021-12-15 16:36:22.636] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2021-12-15 16:36:22.649] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2021-12-15 16:36:22.698] [exthost] [info] Eager extensions activated
+[2021-12-15 16:36:22.698] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+[2021-12-15 16:36:22.722] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2021-12-15 16:36:22.730] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2021-12-15 16:36:22.732] [exthost] [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+[2021-12-15 16:36:49.029] [exthost] [info] ExtensionService#_doActivateExtension monokai.theme-monokai-pro-vscode, startup: false, activationEvent: '*'
+[2021-12-15 16:36:52.712] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+[2021-12-15 16:36:52.723] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+[2021-12-15 16:36:52.760] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+[2021-12-15 16:37:57.612] [exthost] [info] extension host terminating: renderer closed the socket
+[2021-12-15 16:37:57.621] [exthost] [info] Extension host with pid 64456 exiting with code 0
+[2021-12-15 16:37:59.005] [exthost] [info] Extension host with pid 66863 started
+[2021-12-15 16:37:59.005] [exthost] [info] Skipping acquiring lock for /home/paolo/.config/Code/User/workspaceStorage/73e66c6994ff81399c91d0b6b0bdb3ef.
+[2021-12-15 16:37:59.066] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+[2021-12-15 16:37:59.076] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2021-12-15 16:37:59.078] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.github
+[2021-12-15 16:37:59.118] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2021-12-15 16:37:59.128] [exthost] [info] Eager extensions activated
+[2021-12-15 16:37:59.130] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2021-12-15 16:37:59.135] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2021-12-15 16:37:59.137] [exthost] [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+[2021-12-15 16:37:59.163] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+[2021-12-15 16:38:04.076] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+[2021-12-15 16:38:04.106] [exthost] [info] ExtensionService#_doActivateExtension monokai.theme-monokai-pro-vscode, startup: false, activationEvent: '*'
+[2021-12-15 16:38:18.399] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+[2021-12-15 16:38:18.403] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+[2021-12-15 16:38:18.420] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+[2021-12-15 16:38:58.552] [exthost] [info] extension host terminating: renderer closed the socket
+[2021-12-15 16:38:58.575] [exthost] [info] Extension host with pid 66863 exiting with code 0

@@ -1,0 +1,3 @@
+[Added Associations]
+application/x-shellscript=org.xfce.mousepad.desktop;vim.desktop;Alacritty.desktop;
+image/jpeg=org.xfce.ristretto.desktop;

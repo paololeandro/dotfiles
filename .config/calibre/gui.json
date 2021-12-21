@@ -1,0 +1,225 @@
+{
+  "book_details_splitter_horizontal_state": [
+    true,
+    200
+  ],
+  "book_list_pin_splitter_state": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAEAAAACAAABAAAAAEYA/////wEAAAABAA=="
+  },
+  "card_a_view books view state": {
+    "column_alignment": {
+      "size": "center",
+      "timestamp": "center"
+    },
+    "column_positions": {
+      "authors": 2,
+      "collections": 5,
+      "inlibrary": 0,
+      "size": 4,
+      "timestamp": 3,
+      "title": 1
+    },
+    "column_sizes": {
+      "authors": 98,
+      "collections": 110,
+      "inlibrary": 97,
+      "size": 61,
+      "timestamp": 77,
+      "title": 64
+    },
+    "hidden_columns": [],
+    "languages_injected": true,
+    "last_modified_injected": true,
+    "sort_history": [
+      [
+        "timestamp",
+        false
+      ]
+    ]
+  },
+  "card_b_view books view state": {
+    "column_alignment": {
+      "size": "center",
+      "timestamp": "center"
+    },
+    "column_positions": {
+      "authors": 2,
+      "collections": 5,
+      "inlibrary": 0,
+      "size": 4,
+      "timestamp": 3,
+      "title": 1
+    },
+    "column_sizes": {
+      "authors": 98,
+      "collections": 110,
+      "inlibrary": 97,
+      "size": 61,
+      "timestamp": 77,
+      "title": 64
+    },
+    "hidden_columns": [],
+    "languages_injected": true,
+    "last_modified_injected": true,
+    "sort_history": [
+      [
+        "timestamp",
+        false
+      ]
+    ]
+  },
+  "cover_browser_splitter_vertical_state": [
+    false,
+    300
+  ],
+  "custom_colors_for_color_dialog": [
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ],
+    [
+      255,
+      255,
+      255,
+      255
+    ]
+  ],
+  "grid view visible": false,
+  "jobs view column layout3": {
+    "__class__": "bytearray",
+    "__value__": "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfQAAAAFAQEBAAAAAAAAAAAAAAAAAGT/////AAAAhAAAAAAAAAAFAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAAZAAAAAEAAAAAAAAD6AAAAAAA"
+  },
+  "jobs_dialog_geometry": {
+    "__class__": "bytearray",
+    "__value__": "AdnQywADAAAAAAKCAAABDAAABPwAAAMrAAACgwAAAQ0AAAT7AAADKgAAAAAAAAAAB4AAAAKDAAABDQAABPsAAAMq"
+  },
+  "library_usage_stats": {
+    "/home/paolo/Calibre Library": 4
+  },
+  "memory_view books view state": {
+    "column_alignment": {
+      "size": "center",
+      "timestamp": "center"
+    },
+    "column_positions": {
+      "authors": 2,
+      "collections": 5,
+      "inlibrary": 0,
+      "size": 4,
+      "timestamp": 3,
+      "title": 1
+    },
+    "column_sizes": {
+      "authors": 195,
+      "collections": 110,
+      "inlibrary": 97,
+      "size": 66,
+      "timestamp": 100,
+      "title": 289
+    },
+    "hidden_columns": [],
+    "languages_injected": true,
+    "last_modified_injected": true,
+    "sort_history": [
+      [
+        "timestamp",
+        false
+      ]
+    ]
+  },
+  "quick_start_guide_added": true,
+  "quickview visible": false,
+  "search bar visible": true,
+  "tag browser search box visible": false,
+  "tag_browser_splitter_horizontal_state": [
+    true,
+    200
+  ]
+}

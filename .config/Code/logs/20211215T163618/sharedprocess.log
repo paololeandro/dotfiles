@@ -1,0 +1,13 @@
+[2021-12-15 16:36:46.816] [sharedprocess] [info] Installing extension: monokai.theme-monokai-pro-vscode
+[2021-12-15 16:36:48.661] [sharedprocess] [info] Downloaded extension: monokai.theme-monokai-pro-vscode /home/paolo/.config/Code/CachedExtensionVSIXs/monokai.theme-monokai-pro-vscode-1.1.19
+[2021-12-15 16:36:48.714] [sharedprocess] [info] Extracted extension to /home/paolo/.vscode/extensions/.ceeaf5d7-9990-4747-81e0-56fa89a9cfd7: monokai.theme-monokai-pro-vscode
+[2021-12-15 16:36:48.717] [sharedprocess] [info] Renamed to /home/paolo/.vscode/extensions/monokai.theme-monokai-pro-vscode-1.1.19
+[2021-12-15 16:36:48.718] [sharedprocess] [info] Extracting completed. monokai.theme-monokai-pro-vscode
+[2021-12-15 16:36:48.721] [sharedprocess] [info] Extension installed successfully: monokai.theme-monokai-pro-vscode
+[2021-12-15 16:37:58.619] [sharedprocess] [info] Starting worker process with pid 66884 (type: watcherServiceParcelSharedProcess, window: 1).
+[2021-12-15 16:38:42.481] [sharedprocess] [info] Uninstalling extension: jbw91.theme-material-dark-soda
+[2021-12-15 16:38:42.806] [sharedprocess] [info] Detected extension removed from another source jbw91.theme-material-dark-soda
+[2021-12-15 16:38:43.059] [sharedprocess] [info] Successfully uninstalled extension: jbw91.theme-material-dark-soda
+[2021-12-15 16:38:50.013] [sharedprocess] [info] Uninstalling extension: adamcaviness.theme-monokai-dark-soda
+[2021-12-15 16:38:50.238] [sharedprocess] [info] Detected extension removed from another source adamcaviness.theme-monokai-dark-soda
+[2021-12-15 16:38:50.516] [sharedprocess] [info] Successfully uninstalled extension: adamcaviness.theme-monokai-dark-soda

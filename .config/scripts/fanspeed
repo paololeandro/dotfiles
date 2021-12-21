@@ -1,0 +1,10 @@
+#!/bin/bash
+
+speed=$(sensors | grep cpu_fan | awk '{print $2; exit}')
+
+if [ "$speed" != "" ]; then
+    speed_round=$(echo "$speed" | LANG=C xargs printf "%.1f\n")
+    echo " $speed_round RPM"
+else
+   echo "#"
+fi

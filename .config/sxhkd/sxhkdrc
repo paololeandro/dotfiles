@@ -6,6 +6,10 @@
 alt + {b,f}
 	{firefox,thunar}
 
+# flameshot gui
+@Print
+	flameshot gui
+
 # terminal emulator
 super + Return
 	alacritty
@@ -13,6 +17,17 @@ super + Return
 # program launcher
 super + d
 	rofi -show drun
+
+# program launcher
+super + p
+	$HOME/.config/scripts/searchfiles
+
+# volume +
+F3
+	$HOME/.config/scripts/volume+
+# volume -
+F2
+	$HOME/.config/scripts/volume-
 
 # make sxhkd reload its configuration files:
 super + Escape

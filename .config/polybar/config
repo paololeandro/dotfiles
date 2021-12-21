@@ -16,9 +16,6 @@ line-size = 3
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-top-color = ${colors.background}
-border-bottom-color = ${colors.background}
-
 padding-left = 1
 padding-right = 1
 
@@ -26,19 +23,19 @@ module-margin-left = 2
 
 modules-left = bspwm
 modules-center = 
-modules-right = backlight pulseaudio memory cpu temperature battery wlan date
+modules-right = backlight pulseaudio memory cpu temperature fanspeed battery wlan date powermenu
 
 include-file = $HOME/.config/polybar/fonts.ini
 
-tray-position = none
-tray-padding = 10
+tray-position = right
+tray-padding = 2
 
 wm-restack = bspwm
 
 cursor-click = pointer
 
 [bar/secondary]
-monitor = HDMI-1
+monitor = HDMI-1-1
 width = 100%
 height = 32
 fixed-center = true
@@ -48,9 +45,6 @@ line-size = 3
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-border-top-color = ${colors.background}
-border-bottom-color = ${colors.background}
-
 padding-left = 1
 padding-right = 1
 
@@ -58,7 +52,7 @@ module-margin-left = 2
 
 modules-left = bspwm
 modules-center =
-modules-right = pulseaudio memory cpu temperature battery wlan date
+modules-right = pulseaudio memory cpu temperature fanspeed battery wlan date powermenu
 
 include-file = $HOME/.config/polybar/fonts.ini
 
