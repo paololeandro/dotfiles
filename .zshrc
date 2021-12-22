@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
   alias hdmi="$HOME/.config/scripts/hdmionly"
   alias edp="$HOME/.config/scripts/edponly"
   alias both="$HOME/.config/scripts/both"
+  alias backup-dotfiles="$HOME/.config/scripts/backup-dotfiles"
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
