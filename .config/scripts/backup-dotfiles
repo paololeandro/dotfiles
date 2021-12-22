@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "Applyng dotfiles backup"
+cp -r ~/.config/alacritty ~/dotfiles/.config/
+cp -r ~/.config/bspwm ~/dotfiles/.config/
+cp -r ~/.config/dunst ~/dotfiles/.config/
+cp -r ~/.config/gtk-3.0 ~/dotfiles/.config/
+cp -r ~/.config/alacritty ~/dotfiles/.config/
+cp -r ~/.config/picom ~/dotfiles/.config/
+cp -r ~/.config/polybar ~/dotfiles/.config/
+cp -r ~/.config/rofi ~/dotfiles/.config/
+cp -r ~/.config/scripts ~/dotfiles/.config/
+cp -r ~/.config/sxhkd ~/dotfiles/.config/
+echo "Success!"
+
+
