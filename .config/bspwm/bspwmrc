@@ -53,7 +53,11 @@ xfce4-power-manager &
 
 flameshot &
 
+blueman-applet &
+
 optimus-manager-qt &
+
+qlipper &
 
 /usr/lib/xfce-polkit/xfce-polkit &
 
