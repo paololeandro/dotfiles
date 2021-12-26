@@ -53,6 +53,8 @@ xfce4-power-manager &
 
 flameshot &
 
+nm-applet &
+
 blueman-applet &
 
 optimus-manager-qt &
