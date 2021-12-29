@@ -33,11 +33,11 @@ bspc config borderless_monocle    true
 bspc config gapless_monocle       true
 bspc config focus_follows_pointer true
 
-bspc rule -a Gimp desktop='^5' state=floating follow=on
-bspc rule -a Firefox desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+bspc rule -a Lxappearance state=floating
+bspc rule -a Pavucontrol state=floating
+bspc rule -a Arandr state=floating
+bspc rule -a Xfce4-power-manager-settings state=floating
+bspc rule -a Gnome-disks state=floating
 
 if [[ ! $STATUS_EXTERNAL_MONITOR == *disconnected* ]]; then
 	$HOME/.config/polybar/launch2.sh
@@ -52,6 +52,16 @@ nitrogen --restore &
 xfce4-power-manager &
 
 flameshot &
+
+nm-applet &
+
+blueman-applet &
+
+pa-applet &
+
+optimus-manager-qt &
+
+qlipper &
 
 /usr/lib/xfce-polkit/xfce-polkit &
 
