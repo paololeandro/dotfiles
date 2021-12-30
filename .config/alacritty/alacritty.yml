@@ -44,30 +44,71 @@ mouse:
 draw_bold_text_with_bright_colors: true
 
 colors:
+
   primary:
     background: '#1A1A1A'
-    foreground: '#ffffff'
+    foreground: '#f8f8f2'
+    bright_foreground: '#ffffff'
+
+  cursor:
+    text: CellBackground
+    cursor: CellForeground
+  
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+  
+  search:
+
+    matches:
+      foreground: '#44475a'
+      background: '#50fa7b'
+
+    focused_match:
+      foreground: '#44475a'
+      background: '#ffb86c'
+
+    bar:
+      background: '#282a36'
+      foreground: '#f8f8f2'
+
+  hints:
+
+    start:
+      foreground: '#282a36'
+      background: '#f1fa8c'
+
+    end:
+      foreground: '#f1fa8c'
+      background: '#282a36'
+
+  line_indicator:
+    foreground: None
+    background: None
 
   selection:
-    text: '#ffffff'
+    text: CellForeground
+    background: '#44475a'
 
   normal:
-    red:     '0xcc6666'
-    green:   '0xb5bd68'
-    yellow:  '0xf0c674'
-    blue:    '0x81a2be'
-    magenta: '0xb294bb'
-    cyan:    '0x8abeb7'
-    white:   '0xffffff'
+    black: '#21222c'
+    red: '#ff5555'
+    green: '#50fa7b'
+    yellow: '#f1fa8c'
+    blue: '#bd93f9'
+    magenta: '#ff79c6'
+    cyan: '#8be9fd'
+    white: '#f8f8f2'
 
-  bright: 
-    red:     '0xcc6666'
-    green:   '0xb5bd68'
-    yellow:  '0xf0c674'
-    blue:    '0x81a2be'
-    magenta: '0xb294bb'
-    cyan:    '0x8abeb7'
-    white:   '0xffffff'
+  bright:
+    black: '#6272a4'
+    red: '#ff6e6e'
+    green: '#69ff94'
+    yellow: '#ffffa5'
+    blue: '#d6acff'
+    magenta: '#ff92df'
+    cyan: '#a4ffff'
+    white: '#ffffff'
 
 dynamic_title: true
 

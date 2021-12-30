@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ $(bluetoothctl show | grep "Powered: yes" | wc -c) -eq 0 ]
 then
-  bluetoothctl power on
+  bluetoothctl power on && notify-send "Bluetooth ON"
 else
-  bluetoothctl power off
+  bluetoothctl power off && notify-send "Bluetooth OFF"
 fi

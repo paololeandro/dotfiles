@@ -53,16 +53,6 @@ xfce4-power-manager &
 
 flameshot &
 
-nm-applet &
-
-blueman-applet &
-
-pa-applet &
-
-optimus-manager-qt &
-
-qlipper &
-
 /usr/lib/xfce-polkit/xfce-polkit &
 
 setxkbmap -model abnt2 -layout br -variant abnt2
