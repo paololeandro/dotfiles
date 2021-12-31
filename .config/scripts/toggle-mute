@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pamixer -t
+
+notify-send -t 925 "Toggle Volume Pressed"
