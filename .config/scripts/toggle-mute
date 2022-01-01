@@ -1,5 +1,5 @@
 #!/bin/bash
 
-pamixer -t
+pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-notify-send -t 925 "Toggle Volume Pressed"
+notify-send -t 925 "Toggle Mute Pressed"

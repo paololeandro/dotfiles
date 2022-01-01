@@ -10,8 +10,7 @@ cp -r ~/.config/rofi ~/dotfiles/.config
 cp -r ~/.config/scripts ~/dotfiles/.config
 cp -r ~/.config/sxhkd ~/dotfiles/.config
 cp -r ~/.config/ranger ~/dotfiles/.config
+cp ~/.nanorc ~/dotfiles
 cp ~/.xinitrc ~/dotfiles/
 cp ~/.zshrc ~/dotfiles/
 echo "Success!"
-
-

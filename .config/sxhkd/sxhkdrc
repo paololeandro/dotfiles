@@ -132,13 +132,13 @@ super + {Left,Down,Up,Right}
 
 # Media keys
 XF86AudioRaiseVolume
-	pactl set-sink-volume @DEFAULT_SINK@ +5%
+	$HOME/.config/scripts/volume+
 
 XF86AudioLowerVolume
-	pactl set-sink-volume @DEFAULT_SINK@ -5%
+	$HOME/.config/scripts/volume-
 
 XF86AudioMute
-	pactl set-sink-mute @DEFAULT_SINK@ toggle
+	$HOME/.config/scripts/toggle-mute	
 
 XF86AudioPlay 
         playerctl play-pause
