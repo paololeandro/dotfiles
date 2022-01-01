@@ -1,0 +1,8 @@
+set linenumbers
+set statuscolor yellow
+set functioncolor white
+set keycolor red
+set titlecolor red
+set numbercolor red
+
+include /usr/share/nano-syntax-highlighting/*.nanorc
