@@ -18,6 +18,8 @@ window {
     transparency:                   "real";
     background-color:               @background;
     text-color:                     @foreground;
+    border:			    1px 1px 1px 1px;
+    border-color:		    #888E96;
     border-radius:                  0px;
     height:                         32%;
     width:                          37%;
