@@ -57,11 +57,7 @@ nitrogen --restore &
 
 xfce4-power-manager &
 
-optimus-manager-qt &
-
-flameshot &
-
-qlipper &
+nm-applet &
 
 blueman-applet &
 
