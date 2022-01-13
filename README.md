@@ -1,1 +1,1 @@
-My Arch dotfiles
+arch dotfiles
