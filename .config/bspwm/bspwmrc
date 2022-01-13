@@ -61,8 +61,6 @@ nm-applet &
 
 blueman-applet &
 
-/usr/lib/xfce-polkit/xfce-polkit &
-
 setxkbmap -model abnt2 -layout br -variant abnt2
 
 xsetroot -cursor_name left_ptr
