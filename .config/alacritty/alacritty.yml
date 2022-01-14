@@ -46,18 +46,18 @@ draw_bold_text_with_bright_colors: true
 colors:
 
   primary:
-    background: '#1A1A1A'
+    background: '#151515'
     foreground: '#f8f8f2'
     bright_foreground: '#ffffff'
 
   cursor:
     text: CellBackground
     cursor: CellForeground
-  
+
   vi_mode_cursor:
     text: CellBackground
     cursor: CellForeground
-  
+
   search:
 
     matches:
