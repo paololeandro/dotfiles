@@ -1,8 +1,8 @@
 /* -- Matcha Dark Aliz -- */
 
 * {
-    background:    #1A1A1A;
-    background-alt:    #1A1A1A;
+    background:    #151515;
+    background-alt:    #151515;
     foreground:    #FFFFFF;
     border:    #FB5454;
     selected:    #FB5454;

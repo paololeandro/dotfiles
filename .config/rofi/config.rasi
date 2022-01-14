@@ -7,5 +7,3 @@ configuration {
   modi: "window,run,drun";
   show-icons: false;
 }
-
-@theme "/home/paolo/.config/rofi/themes/dmenu.rasi"
