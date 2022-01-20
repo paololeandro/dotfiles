@@ -8,7 +8,7 @@ super + e
 
 # user aplication
 alt + {b,f}
-	{firefox,thunar}
+	{firefox,alacritty -e ranger}
 
 # terminal emulator
 super + Return
