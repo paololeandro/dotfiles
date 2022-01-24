@@ -1,1 +1,1 @@
-arch dotfiles
+BSPWM and Polybar dotfiles
