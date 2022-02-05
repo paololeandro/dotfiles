@@ -1,0 +1,33 @@
+decoration {
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+decoration:backdrop {
+    box-shadow: none;
+}
+
+.titlebar,
+.titlebar .background,
+.window-frame,
+.window-frame:backdrop {
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+/*
+.window-frame, .window-frame:backdrop {
+	box-shadow: none;
+	border-style: none;
+	margin: 0;
+	border-radius: 0px;
+}
+.window-frame.csd.popup {
+       box-shadow: none;
+}
+.header-bar {
+	background-image: none;
+	background-color: #061921;
+	box-shadow: none;
+}
+*/
