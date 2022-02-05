@@ -31,11 +31,11 @@ font:
     family: Iosevka Nerd Font Mono
     style: Bold Italic
 
-  size: 11.0
+  size: 15.0
 
 mouse:
 
-  hide_when_typing: true 
+  hide_when_typing: true
 
   offset:
     x: 0
@@ -46,7 +46,7 @@ draw_bold_text_with_bright_colors: true
 colors:
 
   primary:
-    background: '#151515'
+    background: '#191818'
     foreground: '#f8f8f2'
     bright_foreground: '#ffffff'
 

@@ -1,16 +1,14 @@
 #!/bin/bash
 echo "Applyng dotfiles backup"
-cp -r ~/.config/alacritty ~/dotfiles/.config
-cp -r ~/.config/bspwm ~/dotfiles/.config
-cp -r ~/.config/dunst ~/dotfiles/.config
-cp -r ~/.config/gtk-3.0 ~/dotfiles/.config
-cp -r ~/.config/picom ~/dotfiles/.config
-cp -r ~/.config/polybar ~/dotfiles/.config
-cp -r ~/.config/rofi ~/dotfiles/.config
-cp -r ~/.config/scripts ~/dotfiles/.config
-cp -r ~/.config/sxhkd ~/dotfiles/.config
-cp -r ~/.config/ranger ~/dotfiles/.config
-cp ~/.nanorc ~/dotfiles
-cp ~/.xinitrc ~/dotfiles/
-cp ~/.zshrc ~/dotfiles/
+cp -r ~/.config/alacritty ~/.git/dotfiles/.config
+cp -r ~/.config/sway ~/.git/dotfiles/.config
+cp -r ~/.config/swaylock ~/.git/dotfiles/.config
+cp -r ~/.config/waybar ~/.git/dotfiles/.config
+cp -r ~/.config/mako ~/.git/dotfiles/.config
+cp -r ~/.config/ranger ~/.git/dotfiles/.config
+cp -r ~/.config/scripts ~/.git/dotfiles/.config
+cp -r ~/.config/gtk-3.0 ~/.git/dotfiles/.config
+cp -r ~/.config/gtk-4.0 ~/.git/dotfiles/.config
+cp ~/.nanorc ~/.git/dotfiles
+cp ~/.zshrc ~/.git/dotfiles/
 echo "Success!"
