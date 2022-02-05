@@ -1,0 +1,91 @@
+* {
+	border: none;
+	border-radius: 4;
+	font-family: 'Iosevka Nerd Font', 'Material Design Icons';
+	font-size: 18px;
+	min-height: 0;
+}
+
+#waybar {
+	border-radius: 0;
+	background-color: #191818;
+	transition-duration: .5s;
+}
+
+#workspaces button {
+	padding: 0 12px;
+	color: #d2d2d2;
+}
+
+#workspaces button:hover {
+	background-color: #191818;
+	color: #bf5151;
+	border-bottom:4px solid #bf5151;
+}
+
+#workspaces button.focused {
+	color: #d2d2d2;
+	border-bottom:4px solid #d2d2d2;
+}
+
+#workspaces button.urgent {
+	background-color: #bf5151;
+	border-bottom:4px solid #191818;
+	color: #191818;
+}
+
+#mode, #window {
+	color: #d2d2d2;
+}
+
+#tray, #pulseaudio, #cpu, #network, #memory, #backlight, #battery, #clock, #temperature {
+	padding: 0 12px;
+	color: #191818;
+}
+
+#pulseaudio {
+	margin: 5px 5px;
+	background-color: #BD93F9;
+}
+
+
+#network {
+	margin: 5px 5px;
+	background-color: #FFB86C;
+}
+
+
+#temperature {
+	margin: 5px 5px;
+	background-color: #FF6E6E;
+}
+
+
+#battery {
+	margin: 5px 5px;
+	background-color: #69FF94;
+}
+
+
+#memory {
+	margin: 5px 5px;
+	background-color: #FFFFA5;
+}
+
+
+#backlight {
+	margin: 5px 5px;
+	background-color: #FF79C6 ;
+}
+
+
+#cpu {
+	margin: 5px 5px;
+	background-color: #A4FFFF;
+}
+
+
+#clock {
+	margin: 5px 5px;
+	background-color: #FFFFFF;
+}
