@@ -1,24 +1,24 @@
-image=/home/paolo/Pictures/Wallpapers/2022.png
+image=$HOME/Pictures/moutain
 font=Iosevka Nerd Font
 indicator-radius=100
 indicator-thickness=20
 #indicator-idle-visible
 #no-unlock-indicator
 
-inside-color=4c566aee
-inside-clear-color=b48eadee
+inside-color=191818ee
+inside-clear-color=8fbcbbee
 inside-ver-color=8fbcbbee
 inside-wrong-color=bf616aee
 line-uses-inside
 
-key-hl-color=88c0d0ee
-layout-border-color=434c5eee
+key-hl-color=ddddddee
+layout-border-color=262626ee
 
-ring-color=8fbcbbee
-ring-clear-color=ebcb8bee
+ring-color=262626ee
+ring-clear-color=8fbcbbee
 ring-ver-color=8fbcbbee
 ring-wrong-color=bf616aee
-separator-color=5e81acee
+separator-color=262626ee
 
 text-color=d8dee9ee
 text-clear-color=2e3440ee
