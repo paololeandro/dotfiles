@@ -7,16 +7,15 @@ fi
 
 export ZSH="/home/paolo/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
 alias ls="exa --icons --long --header"
+alias vim="nvim"
 alias ufetch="$HOME/ufetch-arch"
-alias hdmi="$HOME/.config/scripts/hdmionly"
-alias edp="$HOME/.config/scripts/edponly"
-alias both="$HOME/.config/scripts/both"
 alias backup-dotfiles="$HOME/.config/scripts/backup-dotfiles"
 alias bluetooth-on="bluetoothctl power on && notify-send 'Bluetooth ON'"
 alias bluetooth-off="bluetoothctl power off && notify-send 'Bluetooth OFF'"
