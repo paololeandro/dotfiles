@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export ZSH="/home/paolo/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -19,7 +12,6 @@ alias ufetch="$HOME/ufetch-arch"
 alias backup-dotfiles="$HOME/.config/scripts/backup-dotfiles"
 alias bluetooth-on="bluetoothctl power on && notify-send 'Bluetooth ON'"
 alias bluetooth-off="bluetoothctl power off && notify-send 'Bluetooth OFF'"
-
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

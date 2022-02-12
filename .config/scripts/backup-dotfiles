@@ -7,9 +7,10 @@ cp -r ~/.config/waybar ~/.git/dotfiles/.config
 cp -r ~/.config/wofi ~/.git/dotfiles/.config
 cp -r ~/.config/mako ~/.git/dotfiles/.config
 cp -r ~/.config/ranger ~/.git/dotfiles/.config
+cp ~/.config/nvim/init.vim ~/.git/dotfiles/.config/nvim/
+cp -r ~/.config/nvim/vim-plug ~/.git/dotfiles/.config/nvim/
 cp -r ~/.config/scripts ~/.git/dotfiles/.config
 cp -r ~/.config/gtk-3.0 ~/.git/dotfiles/.config
 cp -r ~/.config/gtk-4.0 ~/.git/dotfiles/.config
-cp ~/.nanorc ~/.git/dotfiles
 cp ~/.zshrc ~/.git/dotfiles/
 echo "Success!"
