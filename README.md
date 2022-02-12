@@ -1,1 +1,1 @@
-BSPWM and Polybar dotfiles
+Arch + Sway dotfiles
