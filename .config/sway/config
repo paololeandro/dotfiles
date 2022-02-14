@@ -18,7 +18,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-	output * bg /home/paolo/Pictures/moutain fill
+	output * bg /home/paolo/Pictures/adwaita.png fill
 
 	output DP-3 resolution 1366x768
 
@@ -153,8 +153,8 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 
 # Idle
   	 exec swayidle -w \
-         timeout 300 'swaylock -f' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 3000 'swaylock -f' \
+         timeout 6000 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -164,31 +164,17 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mako
 xwayland enable
-   
-# Gnome settings
-set $gnome-schema org.gnome.desktop.interface
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
-    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema font-name 'Roboto Regular 12'
-    gsettings set $gnome-schema monospace-font-name 'Iosevka Nerd Font 12'
-    gsettings set $gnome-schema document-font-name 'Roboto Regular 12'
-    gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Roboto Regular 12'
-    gsettings set org.gnome.desktop.wm.preferences button-layout ''
-    gsettings set org.gnome.desktop.default-applications.terminal exec $term
-    gsettings set org.gnome.desktop.default-applications.terminal exec-arg ''
-}
 
 # Gaps
 gaps outer 5
 gaps inner 10
 
 # Titlebars
-font pango:Iosevka Nerd Font Regular 12
+font pango:Iosevka Nerd Font Regular 14
 default_border pixel 2
-set $bg #191818
+set $bg #272727
 set $bod_f #474343
-set $bod_u #191818
+set $bod_u #272727
 set $text #d2d2d2
 client.focused   $bod_f $bg $text $bod_f $bod_f
 client.unfocused $bod_u $bg $text $bod_u $bod_u

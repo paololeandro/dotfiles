@@ -46,8 +46,8 @@ draw_bold_text_with_bright_colors: true
 colors:
 
   primary:
-    background: '#191818'
-    foreground: '#f8f8f2'
+    background: '#282828'
+    foreground: '#ebdbb2'
     bright_foreground: '#ffffff'
 
   cursor:
@@ -88,27 +88,27 @@ colors:
 
   selection:
     text: CellForeground
-    background: '#44475a'
+    background: '#fbf1c7'
 
   normal:
-    black: '#21222c'
-    red: '#ff5555'
-    green: '#50fa7b'
-    yellow: '#f1fa8c'
-    blue: '#bd93f9'
-    magenta: '#ff79c6'
-    cyan: '#8be9fd'
-    white: '#f8f8f2'
+    black: '#282828'
+    red: '#cc241d'
+    green: '#98971a'
+    yellow: '#d79921'
+    blue: '#458588'
+    magenta: '#b15186'
+    cyan: '#689d6a'
+    white: '#ebdbb2'
 
   bright:
-    black: '#6272a4'
-    red: '#ff6e6e'
-    green: '#69ff94'
-    yellow: '#ffffa5'
-    blue: '#d6acff'
-    magenta: '#ff92df'
-    cyan: '#a4ffff'
-    white: '#ffffff'
+    black: '#928374'
+    red: '#fb4934'
+    green: '#b8bb26'
+    yellow: '#fabd2f'
+    blue: '#83a598'
+    magenta: '#d3869b'
+    cyan: '#8ec07c'
+    white: '#fbf1c7'
 
 dynamic_title: true
 
