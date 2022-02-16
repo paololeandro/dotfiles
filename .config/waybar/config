@@ -58,7 +58,7 @@
 	"format-wifi": "󰖩",
         "format-ethernet": "{ipaddr}/{cidr}  ",
        // "tooltip-format": "{ifname} via {gwaddr}  ",
-        "tooltip-format": " Connect to {essid}",
+        "tooltip-format": " Connected to {essid}",
         "format-linked": "{ifname} (No IP)  ",
         "format-disconnected": "󰖪",
 	"on-click": "alacritty -e nmtui"
