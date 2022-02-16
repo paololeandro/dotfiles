@@ -18,7 +18,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-	output * bg /home/paolo/Pictures/adwaita.png fill
+	output * bg /home/paolo/Pictures/material.png fill
 
 	output DP-3 resolution 1366x768
 
@@ -59,7 +59,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 
 # Move the focused window with arrow keys
     	bindsym $mod+Shift+Left move left
-   	bindsym $mod+Shift+Down move down
+   	  bindsym $mod+Shift+Down move down
     	bindsym $mod+Shift+Up move up
     	bindsym $mod+Shift+Right move right
 
@@ -78,7 +78,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
     	bindsym $mod+8 workspace number 8
     	bindsym $mod+9 workspace number 9
     	bindsym $mod+0 workspace number 10
-    
+
 # Move focused container to workspace
     	bindsym $mod+Shift+1 move container to workspace number 1
     	bindsym $mod+Shift+2 move container to workspace number 2
@@ -90,7 +90,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
     	bindsym $mod+Shift+8 move container to workspace number 8
     	bindsym $mod+Shift+9 move container to workspace number 9
     	bindsym $mod+Shift+0 move container to workspace number 10
-  
+
 # Switch Layouts
     	bindsym $mod+s layout stacking
     	bindsym $mod+w layout tabbed
@@ -137,24 +137,31 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 	bindsym --locked XF86AudioRaiseVolume exec /home/paolo/.config/scripts/volume+
         bindsym --locked XF86AudioLowerVolume exec /home/paolo/.config/scripts/volume-
         bindsym --locked XF86AudioMute exec /home/paolo/.config/scripts/toggle-mute
- 
+
         bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
         bindsym XF86MonBrightnessUp exec brightnessctl set +5%
- 
+
         bindsym --locked XF86AudioPlay exec playerctl play-pause
         bindsym --locked XF86AudioNext exec playerctl next
         bindsym --locked XF86AudioPrev exec playerctl previous
- 
+
         bindsym --locked $mod+l exec swaylock
         bindsym --locked print exec grimshot save area
 
 	bindsym alt+f exec nautilus
 	bindsym alt+b exec librewolf
 
+# Disable laptop's display when closed
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
+
+# Wayland default floats
+for_window [app_id="(pavucontrol)"] floating enable
+
 # Idle
   	 exec swayidle -w \
-         timeout 3000 'swaylock -f' \
-         timeout 6000 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 1800 'swaylock -f' \
+         timeout 1800 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -164,7 +171,6 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec mako
 xwayland enable
-
 # Gaps
 gaps outer 5
 gaps inner 10
