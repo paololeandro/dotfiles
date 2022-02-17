@@ -8,12 +8,12 @@
 
 #waybar {
 	border-radius: 0;
-	background-color: #151515;
+	background-color: #272727;
 	transition-duration: .5s;
 }
 
 #workspaces button {
-	padding: 0 4px;
+	padding: 0px 10px;
 	margin: 5px 5px;
   background-color: #E8E3E3;
 	color: #272727;

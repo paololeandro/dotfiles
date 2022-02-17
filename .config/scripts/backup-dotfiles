@@ -8,7 +8,7 @@ cp -r ~/.config/wofi ~/.git/dotfiles/.config
 cp -r ~/.config/mako ~/.git/dotfiles/.config
 cp -r ~/.config/ranger ~/.git/dotfiles/.config
 cp -r ~/.config/zathura/ ~/.git/dotfiles/.config
-cp ~/.config/nvim/init.vim ~/.git/dotfiles/.config/nvim/
+cp ~/.config/lvim/config.lua ~/.git/dotfiles/.config/lvim
 cp -r ~/.config/scripts ~/.git/dotfiles/.config
 cp -r ~/.config/gtk-3.0 ~/.git/dotfiles/.config
 cp -r ~/.config/gtk-4.0 ~/.git/dotfiles/.config
