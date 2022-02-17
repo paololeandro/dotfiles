@@ -2,12 +2,12 @@
 
 font=Iosevka Nerd Font 12
 
-background-color=#151515
+background-color=#272727
 text-color=#d2d2d2
 
 margin=20
 
-border-color=#151515
+border-color=#272727
 border-radius=6
 
 default-timeout=5000
