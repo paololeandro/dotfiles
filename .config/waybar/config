@@ -4,7 +4,7 @@
 "position":"top",
 "modules-left": ["sway/workspaces", "sway/mode"],
 "modules-center": [],
-"modules-right": ["cpu", "memory", "temperature", "pulseaudio", "backlight", "clock", "network", "battery", "custom/power", "tray"],
+"modules-right": ["cpu", "memory", "disk", "temperature", "pulseaudio", "backlight", "clock", "network", "battery", "custom/power", "tray"],
 
 "sway/workspaces": {
 "all-outputs": true,
@@ -97,6 +97,12 @@
 
 "custom/power": {
 		"format": "󰐥",
+},
+
+"disk": {
+    "interval": 30,
+    "format": "󰉋 {percentage_used}%",
+    "path": "/"
 },
 
 }
