@@ -1,6 +1,14 @@
+# Variables
+
 set $term alacritty
 
 set $menu wofi --show drun -I -G
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
 
 # Inputs
 
@@ -18,7 +26,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-	output * bg /home/paolo/Pictures/moutain.jpg fill
+	output * bg /home/paolo/Pictures/dark.png fill
 
 	output DP-3 resolution 1366x768
 
@@ -51,21 +59,35 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 # Exit sway (logs you out of your Wayland session)
 	bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
+# Moving around
+
+# Move your focus around
+  bindsym $mod+$left focus left
+  bindsym $mod+$down focus down
+  bindsym $mod+$up focus up
+  bindsym $mod+$right focus right
+
 # Move your focus with arrow keys
 	bindsym $mod+Left focus left
 	bindsym $mod+Down focus down
 	bindsym $mod+Up focus up
-    	bindsym $mod+Right focus right
+  bindsym $mod+Right focus right
+
+# Move the focused window
+  bindsym $mod+Shift+$left move left
+  bindsym $mod+Shift+$down move down
+  bindsym $mod+Shift+$up move up
+  bindsym $mod+Shift+$right move right
 
 # Move the focused window with arrow keys
-    	bindsym $mod+Shift+Left move left
-   	  bindsym $mod+Shift+Down move down
-    	bindsym $mod+Shift+Up move up
-    	bindsym $mod+Shift+Right move right
+  bindsym $mod+Shift+Left move left
+  bindsym $mod+Shift+Down move down
+  bindsym $mod+Shift+Up move up
+  bindsym $mod+Shift+Right move right
 
 # Split Layout
  	bindsym $mod+b splith
-    	bindsym $mod+v splitv
+  bindsym $mod+v splitv
 
 # Switch to workspace
     	bindsym $mod+1 workspace number 1
@@ -145,11 +167,11 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
         bindsym --locked XF86AudioNext exec playerctl next
         bindsym --locked XF86AudioPrev exec playerctl previous
 
-        bindsym --locked $mod+l exec swaylock
-        bindsym --locked print exec grimshot save area
+        bindsym Alt+l exec swaylock
+        bindsym print exec grimshot save area
 
 	      bindsym alt+f exec nautilus
-	      bindsym alt+b exec firefox
+	      bindsym alt+b exec librewolf
 
 # Cursor theme
   seat seat0 xcursor_theme Volantes 19
@@ -163,11 +185,11 @@ for_window [app_id="(pavucontrol)"] floating enable
 
 # Idle
   	 exec swayidle -w \
-         timeout 1800 'swaylock -f' \
-         timeout 1800 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 900 'swaylock -f' \
+         timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f'
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
+# This will lock your screen after 900 seconds of inactivity, then turn off
+# your displays after another 900 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 # Autostart
