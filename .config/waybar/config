@@ -4,7 +4,7 @@
 "position":"top",
 "modules-left": ["sway/workspaces", "sway/mode"],
 "modules-center": [],
-"modules-right": ["cpu", "memory", "disk", "temperature", "pulseaudio", "backlight", "clock", "network", "battery", "custom/power", "tray"],
+"modules-right": ["cpu", "memory", "disk", "temperature", "pulseaudio", "backlight", "clock", "network", "battery", "idle_inhibitor", "custom/power", "tray"],
 
 "sway/workspaces": {
 "all-outputs": true,
@@ -104,5 +104,13 @@
     "format": "󰉋 {percentage_used}%",
     "path": "/"
 },
+
+"idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": " ",
+        "deactivated": " "
+    }
+}
 
 }

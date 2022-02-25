@@ -38,7 +38,7 @@
 	color: #E8E3E3;
 }
 
-#tray, #pulseaudio, #cpu, #network, #memory, #backlight, #disk, #battery, #clock, #temperature, #custom-power {
+#tray, #pulseaudio, #cpu, #network, #memory, #backlight, #disk, #battery, #clock, #temperature, #custom-power, #taskbar, #idle_inhibitor {
 	padding: 0 12px;
 	color: #242424;
 }
@@ -97,4 +97,14 @@
 #custom-power {
 	margin: 5px 5px;
 	background-color: #B66467;
+}
+
+#taskbar {
+  margin: 5px 5px;
+  background-color: #E8E3E3;
+}
+
+#idle_inhibitor {
+  margin: 5px 5px;
+  background-color: #A988B0;
 }
