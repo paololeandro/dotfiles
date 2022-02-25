@@ -1,4 +1,4 @@
-image=$HOME/Pictures/maid.png
+image=$HOME/Pictures/locked.png
 font=Iosevka Nerd Font
 indicator-radius=100
 indicator-thickness=20
