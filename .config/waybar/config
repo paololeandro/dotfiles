@@ -1,10 +1,23 @@
 {
-
+"fixed-center": false,
 "height": 40,
 "position":"top",
 "modules-left": ["sway/workspaces", "sway/mode"],
-"modules-center": [],
-"modules-right": ["cpu", "memory", "disk", "temperature", "pulseaudio", "backlight", "clock", "network", "battery", "idle_inhibitor", "custom/power", "tray"],
+"modules-right": [
+                  "cpu", 
+                  "memory", 
+                  "disk", 
+                  "temperature", 
+                  "pulseaudio", 
+                  "backlight", 
+                  "network", 
+                  "clock", 
+                  "battery", 
+                  //"bluetooth", 
+                  "idle_inhibitor", 
+                  //"custom/power", 
+                  "tray"
+                ],
 
 "sway/workspaces": {
 "all-outputs": true,
@@ -49,24 +62,24 @@
 		"critical": 15
 },
 	"format": "{icon}",
-	"format-charging": "{icon}",
+	"format-charging": "{icon} Charging",
 	"format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹"],
 	"tooltip-format": "Battery at {capacity}%"
 },
 
 "network": {
-	"format-wifi": "󰖩",
+	"format-wifi": "󰖩 Connected",
         "format-ethernet": "{ipaddr}/{cidr}  ",
        // "tooltip-format": "{ifname} via {gwaddr}  ",
         "tooltip-format": " Connected to {essid}",
         "format-linked": "{ifname} (No IP)  ",
-        "format-disconnected": "󰖪",
+        "format-disconnected": "󰖪 Disconnected",
 	"on-click": "alacritty -e nmtui"
 },
 
 "pulseaudio": {
-        "format": "{icon} {volume}%",
-       // "format": "{icon} {volume}%   {source_volume}%",
+        // "format": "{icon} {volume}%",
+        "format": "{icon} {volume}%   {source_volume}%",
         "format-muted": "󰖁 MUTED",
         "format-icons": {
             "default": ["󰕾"]
@@ -111,6 +124,18 @@
         "activated": " ",
         "deactivated": " "
     }
-}
+},
+
+"bluetooth": {
+  	"format": "{icon}",
+   // "format-alt": "bluetooth: {status}",
+  	"format-icons": {
+  		"enabled": "󰂯",
+  		"disabled": "󰂲"
+  	},
+  	"tooltip-format": "{}",
+    "on-click": "blueman-manager",
+    "on-click-right": "$HOME/.config/scripts/toggle-bluetooth"
+  }
 
 }

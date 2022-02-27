@@ -2,7 +2,7 @@
 
 set $term alacritty
 
-set $menu wofi --show drun -I -G
+set $menu bemenu-run -p "Search" -H "40px" --fn "Iosevka Nerd Font 16" --hf="#8DA3B9" --hb="#242424" --nb="#242424" --nf="#d2d2d2" --tb="#242424" --tf="#8DA3B9" --fb="#242424" --ff="#d2d2d2"
 
 # Home row direction keys, like vim
 set $left h
@@ -194,6 +194,8 @@ for_window [app_id="(pavucontrol)"] floating enable
 
 # Autostart
 exec mako
+exec nm-applet --indicator
+exec blueman-applet
 xwayland enable
 # Gaps
 gaps outer 5

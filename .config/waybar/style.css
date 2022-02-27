@@ -20,8 +20,8 @@
 }
 
 #workspaces button:hover {
-	background-color: #242424;
-	color: #fb4934;
+	background-color: #808080;
+	color: #242424;
 }
 
 #workspaces button.focused {
@@ -38,7 +38,7 @@
 	color: #E8E3E3;
 }
 
-#tray, #pulseaudio, #cpu, #network, #memory, #backlight, #disk, #battery, #clock, #temperature, #custom-power, #taskbar, #idle_inhibitor {
+#tray, #bluetooth, #pulseaudio, #cpu, #network, #memory, #backlight, #disk, #battery, #clock, #temperature, #custom-power, #taskbar, #idle_inhibitor {
 	padding: 0 12px;
 	color: #242424;
 }
@@ -99,7 +99,12 @@
 	background-color: #B66467;
 }
 
-#taskbar {
+#tray {
+  margin: 5px 5px;
+  background-color: #505050;
+}
+
+#bluetooth {
   margin: 5px 5px;
   background-color: #E8E3E3;
 }
