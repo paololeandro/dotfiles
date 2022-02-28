@@ -1,16 +1,16 @@
 #!/bin/bash
 echo "Applyng dotfiles backup"
-cp -r ~/.config/alacritty ~/.git/dotfiles/.config
-cp -r ~/.config/sway ~/.git/dotfiles/.config
-cp -r ~/.config/swaylock ~/.git/dotfiles/.config
-cp -r ~/.config/waybar ~/.git/dotfiles/.config
-cp -r ~/.config/wofi ~/.git/dotfiles/.config
-cp -r ~/.config/mako ~/.git/dotfiles/.config
-cp -r ~/.config/ranger ~/.git/dotfiles/.config
-cp -r ~/.config/zathura/ ~/.git/dotfiles/.config
-cp ~/.config/lvim/config.lua ~/.git/dotfiles/.config/lvim
-cp -r ~/.config/scripts ~/.git/dotfiles/.config
-cp -r ~/.config/gtk-3.0 ~/.git/dotfiles/.config
-cp -r ~/.config/gtk-4.0 ~/.git/dotfiles/.config
-cp ~/.zshrc ~/.git/dotfiles/
+cp -r ~/.config/alacritty ~/.git/dotfiles
+cp -r ~/.config/sway ~/.git/dotfiles
+cp -r ~/.config/swaylock ~/.git/dotfiles
+cp -r ~/.config/waybar ~/.git/dotfiles
+cp -r ~/.config/wofi ~/.git/dotfiles/
+cp -r ~/.config/mako ~/.git/dotfiles/
+cp -r ~/.config/ranger ~/.git/dotfiles/
+cp -r ~/.config/zathura/ ~/.git/dotfiles/
+cp ~/.config/lvim/config.lua ~/.git/dotfiles/lvim
+cp -r ~/.config/scripts ~/.git/dotfiles
+cp -r ~/.config/gtk-3.0 ~/.git/dotfiles
+cp -r ~/.config/gtk-4.0 ~/.git/dotfiles
+cp ~/.zshrc ~/.git/dotfiles
 echo "Success!"
