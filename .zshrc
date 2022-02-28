@@ -9,6 +9,7 @@ source $ZSH/oh-my-zsh.sh
 alias ls="exa --icons --long --header"
 alias vim="lvim"
 alias backup-dotfiles="$HOME/.config/scripts/backup-dotfiles"
+alias get-hex="$HOME/.config/scripts/get-hex"
 
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 export XDG_CURRENT_DESKTOP=sway
