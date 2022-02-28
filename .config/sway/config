@@ -168,9 +168,17 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
         bindsym --locked XF86AudioPrev exec playerctl previous
 
         bindsym Alt+l exec swaylock
-        bindsym print exec grimshot save area
+        
+        # Print Entire Screen
+        bindsym Print exec wayshot -f $HOME/Pictures/capture-$(date +%Y-%m-%d_%H-%m-%s).png
 
-	      bindsym alt+f exec nautilus
+	      # Print Region
+        bindsym alt+Print exec wayshot -s "$(slurp -f '%x %y %w %h')" -f $HOME/Pictures/capture-$(date +%Y-%m-%d_%H-%m-%s).png
+
+        # Copy to Clipboard
+        bindsym shift+Print exec wayshot --stdout | wl-copy
+
+        bindsym alt+f exec nautilus
 	      bindsym alt+b exec librewolf
 
 # Cursor theme
