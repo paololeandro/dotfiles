@@ -26,7 +26,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-	output * bg /home/paolo/Pictures/dark.png fill
+	output * bg /home/paolo/Pictures/moon.png fill
 
 	output DP-3 resolution 1366x768
 
@@ -204,9 +204,9 @@ gaps inner 10
 # Titlebars
 font pango:Iosevka Nerd Font Regular 14
 default_border pixel 2
-set $bg #272727
-set $bod_f #474343
-set $bod_u #272727
+set $bg #242424
+set $bod_f #8AA6A2
+set $bod_u #242424
 set $text #d2d2d2
 client.focused   $bod_f $bg $text $bod_f $bod_f
 client.unfocused $bod_u $bg $text $bod_u $bod_u
