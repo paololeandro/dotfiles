@@ -1,22 +1,46 @@
-export ZSH="$HOME/.oh-my-zsh"
+# Enable colors and change prompt:
+autoload -U colors && colors	# Load colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+setopt autocd		# Automatically cd into typed directory.
+stty stop undef		# Disable ctrl-s to freeze terminal.
+setopt interactive_comments
 
-ZSH_THEME="robbyrussell"
+# sudo not required for some system commands
+for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
+	alias $command="sudo $command"
+done; unset command
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	mkdir="mkdir -pv" \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best" \
+	ffmpeg="ffmpeg -hide_banner"
 
-source $ZSH/oh-my-zsh.sh
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+export MOZ_ENABLE_WAYLAND=1
 
 alias ls="exa --icons --long --header"
 alias vim="lvim"
 alias backup-dotfiles="$HOME/.config/scripts/backup-dotfiles"
-alias get-hex="$HOME/.config/scripts/get-hex"
-
-export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
-export XDG_CURRENT_DESKTOP=sway
-export MOZ_ENABLE_WAYLAND=1
-
-source /opt/asdf-vm/asdf.sh
+alias bluetooth-on="bluetoothctl power on && notify-send 'Bluetooth ON'"
+alias bluetooth-off="bluetoothctl power off && notify-send 'Bluetooth OFF'"
 
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
   exec sway
 fi
+
+source /opt/asdf-vm/asdf.sh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
