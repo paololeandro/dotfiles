@@ -71,22 +71,32 @@ sudo pacman -S --noconfirm --needed $DRI xorg-xwayland sway waybar swayidle sway
 # install audio stuffs if not installed
 sudo pacman -S --noconfirm mpv bluez bluez-utils blueman pavucontrol pipewire pipewire-alsa pipewire-pulse pipewire-jack pipewire-media-session alsa-firmware sof-firmware alsa-ucm-conf pamixer playerctl brightnessctl
 
-# screen sharing stuffs
-sudo pacman -S --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr
+# xdg stuffs
+sudo pacman -S --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr xdg-user-dirs
+xdg-user-dirs-update;
 
 # others apps and utilities
-sudo pacman -S --noconfirm alacritty neofetch nautilus unzip file-roller gnome-disk-utility ntfs-3g zathura zathura-pdf-mupdf transmission-gtk
+sudo pacman -S --noconfirm alacritty $BRW neofetch nautilus exa bat unzip file-roller gnome-disk-utility gnome-themes-extra ntfs-3g ranger zathura zathura-pdf-mupdf transmission-gtk
 
-# development stuffs
-sudo pacman -S --noconfirm yarn npm
+# zsh stuffs
+sudo pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting
+
+echo "Changing shell to ZSH"
+cp ./.zshrc ~/.zshrc;
+chsh -s /bin/zsh;
+sleep 1
+echo "DONE..."
 
 # install fonts
-mkdir -p ~/.local/share/fonts
-mkdir -p ~/.helper
-
-cp -r ./fonts/* ~/.local/share/fonts/
+echo "Installing fonts..."
+mkdir -p ~/.local/share/fonts/;
+cp -r ./fonts/* ~/.local/share/fonts/;
 fc-cache -f
 clear
+echo "Fonts installed..."
+
+echo "Creating AUR helper directory"
+mkdir -p ~/.helper
 
 echo "We need an AUR helper. 1) yay   2) paru"
 read -r -p "What is the AUR helper of your choice? (Default is yay): " num
@@ -105,9 +115,18 @@ fi
 
 # install stuffs with AUR helper
 $HELPER -S asdf-vm                 \ 
-           spotify                 \
            papirus-icon-theme-git  \
-           papirus-folders-git
+           papirus-folders-git     \
+           volantes-cursors
+
+echo "Changing gtk theme, icons and cursors..."
+sleep 1
+gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
+gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+papirus-folders -C yaru --theme Papirus-Dark
+gsettings set org.gnome.desktop.interface cursor-theme volantes_light_cursors
+echo "DONE..."
+sleep 1
 
 # custom config files
 if [ -f ~/.config/alacritty/alacritty.yml ]; then
@@ -167,7 +186,20 @@ if [ -f ~/.config/zathura/zathurarc ]; then
     cp ~/.config/zathura/paradise.yml ~/.config/zathura/paradise.yml.old;
     cp ./zathura/zathurarc ~/.config/zathura/;
     cp ./zathura/paradise.yml ~/.config/zathura/;
+    echo "DONE"
 else
     echo "Zathura configs not found, installing..."
     cp -r ./zathura/ ~/.config/;
+    echo "DONE"
 fi
+if [ -d ~/.config/scripts ]; then
+    echo "Adding scripts do ~/.config/scripts"   
+    cp ./scripts/* ~/.config/scripts/;
+else
+    echo "Installing scripts..."
+    mkdir ~/.config/scripts && cp -r ./scripts/* ~/.config/scripts/;
+
+echo "Will now atempt to install Lunar Vim and it's depedencies with no prompts"
+sleep 1
+bash -y <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+echo "SUCCESS..."
