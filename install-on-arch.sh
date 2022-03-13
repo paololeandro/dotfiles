@@ -69,7 +69,7 @@ esac
 sudo pacman -S --noconfirm --needed $DRI xorg-xwayland sway waybar swayidle swaylock bemenu-wayland mako libnotify 
 
 # install audio stuffs if not installed
-sudo pacman -S --noconfirm mpv bluez bluez-utils blueman pavucontrol pipewire pipewire-alsa pipewire-pulse pipewire-jack pipewire-media-session alsa-firmware sof-firmware alsa-ucm-conf pamixer playerctl brightnessctl
+sudo pacman -S --noconfirm mpv bluez bluez-utils blueman network-manager-applet pavucontrol pipewire pipewire-alsa pipewire-pulse pipewire-jack pipewire-media-session alsa-firmware sof-firmware alsa-ucm-conf pamixer playerctl brightnessctl mpd mpc ncmpcpp
 
 # xdg stuffs
 sudo pacman -S --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr xdg-user-dirs
@@ -77,6 +77,9 @@ xdg-user-dirs-update;
 
 # others apps and utilities
 sudo pacman -S --noconfirm alacritty $BRW neofetch nautilus exa bat unzip file-roller gnome-disk-utility gnome-themes-extra ntfs-3g ranger zathura zathura-pdf-mupdf transmission-gtk
+
+# development stuffs
+sudo pacman -S npm yarn rust
 
 # zsh stuffs
 sudo pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -114,10 +117,7 @@ if ! command -v $HELPER &> /dev/null
 fi
 
 # install stuffs with AUR helper
-$HELPER -S asdf-vm                 \ 
-           papirus-icon-theme-git  \
-           papirus-folders-git     \
-           volantes-cursors
+$HELPER -S asdf-vm papirus-icon-theme-git papirus-folders-git volantes-cursors protonvpn-cli
 
 echo "Changing gtk theme, icons and cursors..."
 sleep 1
@@ -198,8 +198,9 @@ if [ -d ~/.config/scripts ]; then
 else
     echo "Installing scripts..."
     mkdir ~/.config/scripts && cp -r ./scripts/* ~/.config/scripts/;
+fi
 
 echo "Will now atempt to install Lunar Vim and it's depedencies with no prompts"
 sleep 1
-bash -y <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) -y
 echo "SUCCESS..."
