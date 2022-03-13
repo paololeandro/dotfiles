@@ -182,7 +182,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 	      bindsym alt+b exec librewolf
 
 # Cursor theme
-  seat seat0 xcursor_theme Volantes 19
+seat seat0 xcursor_theme volantes_light_cursors 19
 
 # Disable laptop's display when closed
 bindswitch lid:on output eDP-1 disable
@@ -206,12 +206,12 @@ exec nm-applet --indicator
 exec blueman-applet
 xwayland enable
 # Gaps
-gaps outer 5
-gaps inner 10
+gaps outer 1
+gaps inner 1
 
 # Titlebars
 font pango:Iosevka Nerd Font Regular 14
-default_border pixel 2
+default_border pixel 0
 set $bg #242424
 set $bod_f #8AA6A2
 set $bod_u #242424
