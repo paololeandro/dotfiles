@@ -11,4 +11,39 @@ set recolor-keephue true
 map <C-Tab> toggle_statusbar
 set guioptions ""
 
-include paradise
+set notification-error-bg "#B66467"
+set notification-error-fg "#E8E3E3"
+set notification-warning-bg "#D9BC8C" 
+set notification-warning-fg "#353535"
+set notification-bg "#242424"
+set notification-fg "#E8E3E3"
+
+set completion-bg "#242424"
+set completion-fg "#474747"
+set completion-group-bg "#242424"
+set completion-group-fg "#474747"
+set completion-highlight-bg "#353535"
+set completion-highlight-fg "#E8E3E3"
+
+set index-bg "#242424"
+set index-fg "#E8E3E3"
+set index-active-bg "#191919"
+set index-active-fg "#E8E3E3"
+
+set inputbar-bg "#242424"
+set inputbar-fg "#E8E3E3"
+set statusbar-bg "#242424"
+set statusbar-fg "#E8E3E3"
+
+set highlight-color "#D9BC8C" 
+set highlight-active-color "#A988B0"
+
+set default-bg "#242424"
+set default-fg "#E8E3E3"
+
+set render-loading true
+set render-loading-fg "#242424"
+set render-loading-bg "#E8E3E3"
+
+set recolor-lightcolor "#242424"
+set recolor-darkcolor "#E8E3E3"
