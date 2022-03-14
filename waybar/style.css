@@ -38,7 +38,7 @@
 	color: #E8E3E3;
 }
 
-#tray, #bluetooth, #pulseaudio, #cpu, #network, #memory, #backlight, #disk, #battery, #clock, #temperature, #custom-power, #taskbar, #idle_inhibitor, #firefox {
+#tray, #mpd, #bluetooth, #pulseaudio, #cpu, #network, #memory, #backlight, #disk, #battery, #clock, #temperature, #custom-power, #taskbar, #idle_inhibitor, #firefox {
 	padding: 0 12px;
 	color: #242424;
 }
@@ -111,4 +111,9 @@
 #idle_inhibitor {
   margin: 5px 5px;
   background-color: #A988B0;
+}
+
+#mpd {
+  margin: 5px 5px;
+  background-color: #8DA3B9;
 }
