@@ -76,10 +76,13 @@ sudo pacman -S --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr xdg-user-di
 xdg-user-dirs-update;
 
 # others apps and utilities
-sudo pacman -S --noconfirm alacritty $BRW neofetch nautilus exa bat unzip file-roller gnome-disk-utility gnome-themes-extra ntfs-3g ranger zathura zathura-pdf-mupdf transmission-gtk
+sudo pacman -S --noconfirm alacritty $BRW neofetch nautilus baobab exa bat unzip file-roller gnome-disk-utility gnome-themes-extra ntfs-3g ranger zathura zathura-pdf-mupdf transmission-gtk
 
 # development stuffs
 sudo pacman -S npm yarn rust
+
+# auto mount android 4+ devices
+sudo pacman -S mtpfs gvfs-mtp gvfs-gphoto2
 
 # zsh stuffs
 sudo pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting
