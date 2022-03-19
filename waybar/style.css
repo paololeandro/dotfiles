@@ -14,13 +14,13 @@
 
 #workspaces button {
 	padding: 0px 10px;
-	margin: 5px 5px;
+	margin: 5px 3px;
   background-color: #E8E3E3;
 	color: #242424;
 }
 
 #workspaces button:hover {
-	background-color: #808080;
+	background-color: #8AA6A2;
 	color: #242424;
 }
 
@@ -40,80 +40,68 @@
 
 #tray, #mpd, #bluetooth, #pulseaudio, #cpu, #network, #memory, #backlight, #disk, #battery, #clock, #temperature, #custom-power, #taskbar, #idle_inhibitor, #firefox {
 	padding: 0 12px;
+	margin: 5px 3px;
 	color: #242424;
 }
 
 #pulseaudio {
-	margin: 5px 5px;
 	background-color: #A988B0;
 }
 
 
 #network {
-	margin: 5px 5px;
 	background-color: #D9BC8C;
 }
 
 
 #temperature {
-	margin: 5px 5px;
 	background-color: #B66467;
 }
 
 
 #battery {
-	margin: 5px 5px;
 	background-color: #8C977D;
 }
 
 #memory {
-	margin: 5px 5px;
 	background-color: #D9BC8C;
 }
 
 #disk {
-	margin: 5px 5px;
 	background-color: #8AA6A2;
 }
   
 #backlight {
-	margin: 5px 5px;
 	background-color: #8AA6A2;
 }
 
 
 #cpu {
-	margin: 5px 5px;
 	background-color: #8DA3B9;
 }
 
 
 #clock {
-	margin: 5px 5px;
 	background-color: #E8E3E3;
 }
 
 #custom-power {
-	margin: 5px 5px;
 	background-color: #B66467;
 }
 
 #tray {
-  margin: 5px 5px;
   background-color: #404040;
 }
 
 #bluetooth {
-  margin: 5px 5px;
   background-color: #E8E3E3;
 }
 
 #idle_inhibitor {
-  margin: 5px 5px;
   background-color: #A988B0;
 }
 
 #mpd {
-  margin: 5px 5px;
   background-color: #8DA3B9;
 }
+
