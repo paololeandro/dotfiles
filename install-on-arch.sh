@@ -76,7 +76,7 @@ sudo pacman -S --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr xdg-user-di
 xdg-user-dirs-update;
 
 # others apps and utilities
-sudo pacman -S --noconfirm alacritty $BRW neofetch nautilus baobab exa bat unzip file-roller gnome-disk-utility gnome-themes-extra ntfs-3g ranger zathura zathura-pdf-mupdf transmission-gtk
+sudo pacman -S --noconfirm foot $BRW neofetch nautilus baobab exa bat unzip file-roller gnome-disk-utility gnome-themes-extra ntfs-3g ranger zathura zathura-pdf-mupdf transmission-gtk
 
 # development stuffs
 sudo pacman -S npm yarn rust
