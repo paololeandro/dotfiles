@@ -28,7 +28,9 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+export MESA_LOADER_DRIVER_OVERRIDE=iris
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+export XDG_CURRENT_DESKTOP=sway
 export MOZ_ENABLE_WAYLAND=1
 
 alias ls="exa --icons --long --header"
