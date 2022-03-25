@@ -4,5 +4,5 @@ pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 VOL=$(pamixer --get-volume)
 
-notify-send -t 925 "Volume: $VOL"
+notify-send -t 925 "Volume: $VOL" -i "$HOME/.git/dotfiles/icons/volume-up.png"
 
