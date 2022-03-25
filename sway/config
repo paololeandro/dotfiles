@@ -2,7 +2,7 @@
 
 set $term foot
 
-set $menu bemenu-run -p "Search" -H "40px" --fn "Iosevka Nerd Font 16" --hf="#8DA3B9" --hb="#242424" --nb="#242424" --nf="#d2d2d2" --tb="#242424" --tf="#8DA3B9" --fb="#242424" --ff="#d2d2d2"
+set $menu bemenu-run -b -p "Search" -H "40px" --fn "Iosevka Nerd Font 16" --hf="#8DA3B9" --hb="#242424" --nb="#242424" --nf="#d2d2d2" --tb="#242424" --tf="#8DA3B9" --fb="#242424" --ff="#d2d2d3"
 
 # Home row direction keys, like vim
 set $left h
@@ -210,7 +210,10 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
     # Launch Applications
     bindsym alt+f exec nautilus
 	  bindsym alt+b exec librewolf
-    bindsym alt+m exec alacritty -e ncmpcpp
+    bindsym alt+m exec foot -e ncmpcpp
+
+    # Reload Waybar
+    bindsym $mod+p exec killall -SIGUSR1 waybar
 
 # Cursor theme
     seat seat0 xcursor_theme volantes_light_cursors 19
@@ -233,18 +236,18 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 
 # Autostart
     exec mako
-    exec nm-applet --indicator
-    exec blueman-applet
-    exec --no-startup-id mpd
+    #exec nm-applet --indicator
+    #exec blueman-applet
+    #exec --no-startup-id mpd
     xwayland enable
 
 # Gaps
-    gaps outer 1
-    gaps inner 1
+    gaps outer 4
+    gaps inner 4
 
 # Titlebars
     font pango:Iosevka Nerd Font Regular 14
-    default_border pixel 2
+    default_border pixel 0
     set $bg #242424
     set $bod_f #606060
     set $bod_u #303030
