@@ -1,0 +1,54 @@
+* {
+  border: none;
+	font-family: 'Iosevka Nerd Font', 'Material Design Icons';
+	font-size: 18px;
+	min-height: 0;
+}
+
+tooltip {
+  background: #242424;
+}
+
+#waybar {
+	background-color: #242424;
+}
+
+#workspaces button {
+	background-color: transparent;
+  padding: 0px 10px;
+	margin: 5px 3px;
+	color: #606060;
+}
+
+#workspaces button.focused {
+	color: #E8E3E3;
+}
+
+#workspaces button.urgent {
+	color: #B66467;
+}
+
+#mode, #window {
+	color: #E8E3E3;
+}
+
+#tray, #pulseaudio, #backlight, #network, #battery, #clock, #idle_inhibitor {
+	padding: 0 12px;
+	margin: 5px 3px;
+	color: #E8E3E3;
+}
+
+@keyframes blink {
+    to {
+        color: #606060;
+    }
+}
+
+#battery.critical:not(.charging) {
+    color: #E8E3E3;
+    animation-name: blink;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
