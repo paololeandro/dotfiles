@@ -1,4 +1,4 @@
-Arch + Sway dotfiles
+Sway dotfiles
 
 ## previews
 
