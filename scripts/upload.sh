@@ -13,7 +13,7 @@ then
             echo "URL: $url"
 
             printf "$url" | wl-copy $url
-            notify-send "File Uploaded" "URL: $url \ncopied to clipboard" -t 5000 -i "$HOME/.program/icon.png"
+            notify-send "File Uploaded" "URL: $url \ncopied to clipboard" -t 5000 -i "$HOME/.git/dotfiles/icons/screenshot-icon.png"
 
             entry="$(date '+%d-%m-%y-%H:%M:%S')    $url    $(echo $2 | awk -F'/' '{print $(NF)}')"
             echo $entry >> $HOME/.0x0_list

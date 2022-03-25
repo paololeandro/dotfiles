@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Applyng dotfiles backup"
 cp -r ~/.config/alacritty ~/.git/dotfiles
+cp -r ~/.config/foot ~/.git/dotfiles
 cp -r ~/.config/sway ~/.git/dotfiles
 cp -r ~/.config/swaylock ~/.git/dotfiles
 cp -r ~/.config/waybar ~/.git/dotfiles
