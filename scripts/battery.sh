@@ -14,7 +14,7 @@ while [[ 0 -eq 0 ]]; do
 	battery_status="$(cat /sys/class/power_supply/BAT0/status)"
 	battery_charge="$(cat /sys/class/power_supply/BAT0/capacity)"
 
-	if [[ $battery_status == 'Discharging' && $battery_charge -le 30 ]]; then
+	if [[ $battery_status == 'Discharging' && $battery_charge < 30 ]]; then
 		if   [[ $battery_charge -le 15 ]]; then
 	  	notify-send --icon="$HOME/.git/dotfiles/icons/low-battery.png" --urgency=critical "Battery critical!" "${battery_charge}%"
 			sleep 180

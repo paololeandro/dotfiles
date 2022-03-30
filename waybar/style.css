@@ -7,19 +7,19 @@
 }
 
 tooltip {
-  background: #242424;
+  background: #151515;
 }
 
 #waybar {
 	border-radius: 0;   
-	background-color: #242424;
+	background-color: #151515;
 	transition-duration: .5s;
 }
 
 #workspaces button {
 	padding: 0px 10px;
 	margin: 5px 3px;
-  background-color: #303030;
+  background-color: #202020;
 	color: #E8E3E3;
 }
 
@@ -33,7 +33,7 @@ tooltip {
 
 #workspaces button.focused {
 	color: #E8E3E3;
-	background-color: #505050;
+	background-color: #303030;
 }
 
 #workspaces button.urgent {
@@ -42,7 +42,7 @@ tooltip {
 }
 
 #mode {
-  background-color: #303030;
+  background-color: #202020;
   margin: 5px 3px;
   padding: 0px 10px;
 }
@@ -51,11 +51,11 @@ tooltip {
 	color: #E8E3E3;
 }
 
-#tray, #mpd, #bluetooth, #pulseaudio, #cpu, #network, #memory, #backlight, #disk, #battery, #clock, #temperature, #custom-power, #taskbar, #idle_inhibitor, #firefox {
+#language, #tray, #mpd, #bluetooth, #pulseaudio, #cpu, #network, #memory, #backlight, #disk, #battery, #clock, #temperature, #custom-power, #taskbar, #idle_inhibitor, #firefox {
 	padding: 0 12px;
 	margin: 5px 3px;
 	color: #E8E3E3;
-  background-color: #303030;
+  background-color: #202020;
 }
 
 #network {
@@ -96,4 +96,8 @@ tooltip {
 
 #mpd {
   color: #00AAF1;
+}
+
+#language {
+  color: #657780;
 }

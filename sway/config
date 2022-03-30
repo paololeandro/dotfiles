@@ -2,7 +2,7 @@
 
 set $term foot
 
-set $menu bemenu-run -p "Search" -H "40px" --fn "Iosevka Nerd Font 16" --hf="#8DA3B9" --hb="#242424" --nb="#242424" --nf="#d2d2d2" --tb="#242424" --tf="#8DA3B9" --fb="#242424" --ff="#d2d2d3"
+set $menu bemenu-run -p "Search" -H "40px" --fn "Iosevka Nerd Font 16" --hf="#6a9fb5" --hb="#151515" --nb="#151515" --nf="#d0d0d0" --tb="#151515" --tf="#6a9fb5" --fb="#151515" --ff="#d0d0d0"
 
 # Home row direction keys, like vim
 set $left h
@@ -15,7 +15,8 @@ set $right l
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 input * {
-	xkb_layout "br"
+	xkb_layout "br, us"
+  xkb_options grp:alt_shift_toggle
 }
 
 input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
@@ -26,7 +27,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-	output * bg /home/paolo/wallpapers/dark.png fill
+	output * bg /home/paolo/wallpapers/grass.png fill
 
 	output eDP-1 {
     mode 1920x1080@60Hz

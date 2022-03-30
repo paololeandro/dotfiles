@@ -1,0 +1,10 @@
+output "HDMI-A-1" {
+    mode 1920x1080@74.986Hz
+    pos 0 0
+    transform normal
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync off
+    dpms on
+}
+output "eDP-1" disable

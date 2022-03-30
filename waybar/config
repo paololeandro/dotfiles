@@ -12,8 +12,9 @@
                   "backlight", 
                   "battery", 
                   "network", 
-                  "clock", 
                   //"bluetooth", 
+                  "sway/language", 
+                  "clock", 
                   "idle_inhibitor", 
                   //"custom/power", 
                   "tray"
@@ -144,6 +145,10 @@
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
+},
+
+"sway/language": {
+    "format": "{flag} {long}",
 },
 
 }
