@@ -134,8 +134,7 @@
 },
 
 "mpd": {
-        "format": "{stateIcon} {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
-        //"format": "{stateIcon}  {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+        "format": "{stateIcon}  {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
         //"format": "{stateIcon} {consumeIcon}",
         "format-disconnected": "<span foreground='#DE2F2E'>🚫 Disconnected</span>",
         "interval": 2,
