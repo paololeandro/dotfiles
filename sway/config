@@ -31,16 +31,24 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 
 	output eDP-1 {
     mode 1920x1080@60Hz
+    pos 0 0
   }
 	
   output HDMI-A-1 {
     mode 1920x1080@75Hz
+    pos 1920 0
+    transform normal
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync off
+    dpms on
   }
 
   output DP-3 {
     mode 1366x768@60Hz
   }
 
+  workspace 9 output eDP-1
   workspace 10 output DP-3
 
   #output eDP-1 {
