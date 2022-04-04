@@ -257,9 +257,9 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 # Titlebars
     font pango:Iosevka Nerd Font Regular 14
     default_border pixel 2
-    set $bg #242424
-    set $bod_f #606060
-    set $bod_u #303030
+    set $bg #151515
+    set $bod_f #00A7EF
+    set $bod_u #151515
     set $text #d2d2d2
     client.focused   $bod_f $bg $text $bod_f $bod_f
     client.unfocused $bod_u $bg $text $bod_u $bod_u
