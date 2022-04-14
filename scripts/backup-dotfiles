@@ -6,6 +6,7 @@ cp -r ~/.config/sway ~/.git/dotfiles
 cp -r ~/.config/swaylock ~/.git/dotfiles
 cp -r ~/.config/waybar ~/.git/dotfiles
 cp -r ~/.config/mako ~/.git/dotfiles/
+cp -r ~/.config/wofi ~/.git/dotfiles/
 cp -r ~/.config/ranger ~/.git/dotfiles/
 cp -r ~/.config/zathura/ ~/.git/dotfiles/
 cp ~/.config/lvim/config.lua ~/.git/dotfiles/lvim
