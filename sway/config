@@ -4,6 +4,8 @@ set $term foot
 
 set $menu wofi --show drun --width 800 --allow-images
 
+set $grimshot ~/.config/scripts/grimshot.sh
+
 #set $menu bemenu-run -p "Search" -H "40px" --fn "Iosevka Nerd Font 16" --hf="#6a9fb5" --hb="#151515" --nb="#151515" --nf="#d0d0d0" --tb="#151515" --tf="#6a9fb5" --fb="#151515" --ff="#d0d0d0"
 
 # Home row direction keys, like vim
@@ -96,9 +98,9 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
   bindsym $mod+$right focus right
 
 # Move your focus with arrow keys
-	bindsym $mod+Left focus left
-	bindsym $mod+Down focus down
-	bindsym $mod+Up focus up
+  bindsym $mod+Left focus left
+  bindsym $mod+Down focus down
+  bindsym $mod+Up focus up
   bindsym $mod+Right focus right
 
 # Move the focused window
@@ -114,7 +116,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
   bindsym $mod+Shift+Right move right
 
 # Split Layout
- 	bindsym $mod+b splith
+  bindsym $mod+b splith
   bindsym $mod+v splitv
 
 # Switch to workspace
@@ -183,54 +185,34 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 
-# Others
-    bindsym --locked XF86AudioRaiseVolume exec /home/paolo/.config/scripts/volume+
-    bindsym --locked XF86AudioLowerVolume exec /home/paolo/.config/scripts/volume-
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     bindsym --locked XF86AudioMute exec /home/paolo/.config/scripts/toggle-mute
 
-    # Brightness Control
-    bindsym XF86MonBrightnessDown exec brightnessctl set 5%- | exec /home/paolo/.config/scripts/brightness-notification.sh
-    bindsym XF86MonBrightnessUp exec brightnessctl set +5% | exec /home/paolo/.config/scripts/brightness-notification.sh
+    bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym XF86MonBrightnessUp exec brightnessctl set +5%
         
-    # https://github.com/haikarainen/light
-    # bindsym XF86MonBrightnessUp exec light -A 5    # increase screen brightness
-    # bindsym XF86MonBrightnessDown exec light -U 5  # decrease screen brightness
-
-    # Multimedia Keys
     bindsym XF86AudioPlay  exec "mpc toggle"
     bindsym XF86AudioStop  exec "mpc stop"
     bindsym XF86AudioNext  exec "mpc next"
     bindsym XF86AudioPrev  exec "mpc prev"
     bindsym XF86AudioPause exec "mpc pause"
         
-    # bindsym --locked XF86AudioPlay exec playerctl play-pause
-    # bindsym --locked XF86AudioNext exec playerctl next
-    # bindsym --locked XF86AudioPrev exec playerctl previous
-
-    bindsym Alt+l exec swaylock
-        
-    # Print Entire Screen
-    # bindsym Print exec grim $(xdg-user-dir PICTURES)/$(date +'screenshot_%F-%T.png')
-    bindsym Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name')
+    bindsym Print exec $grimshot --notify save screen
+    bindsym Ctrl+Print exec $grimshot --notify copy screen
+    bindsym Shift+Print exec $grimshot --notify save area
+    bindsym Ctrl+Shift+Print exec $grimshot --notify copy area
     
-    # Print Region
-    bindsym alt+Print exec slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+    bindsym Alt+l exec swaylock    
 
-    # Capture the specified screen area to clipboard 
-    bindsym shift+Print exec grim -g "$(slurp -d)" - | wl-copy
-
-    # Launch Applications
     bindsym alt+f exec nautilus
-	  bindsym alt+b exec librewolf
+    bindsym alt+b exec librewolf
     bindsym alt+m exec foot -e ncmpcpp
 
     # Reload Waybar
     bindsym $mod+p exec killall -SIGUSR1 waybar
 
-# Cursor theme
-    seat seat0 xcursor_theme volantes_light_cursors 19
-
-# Disable laptop's display when closed
+    # Disable laptop's display when closed
     bindswitch lid:on output eDP-1 disable
     bindswitch lid:off output eDP-1 enable
 
@@ -242,16 +224,13 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
         timeout 900 'swaylock -f' \
         timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
         before-sleep 'swaylock -f'
+
 # This will lock your screen after 900 seconds of inactivity, then turn off
 # your displays after another 900 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 # Autostart
     exec mako
-    #exec nm-applet --indicator
-    #exec blueman-applet
-    #exec --no-startup-id mpd
-    # xwayland enable
 
 # Gaps
     gaps outer 4
