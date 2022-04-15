@@ -16,6 +16,7 @@
                   "clock", 
                   "sway/language", 
                   "idle_inhibitor", 
+		  "custom/powermenu",
                   "tray"
                 ],
 
@@ -46,7 +47,7 @@
 },
 
 "clock": {
-	"format": "⏱ {:%H:%M}",
+	"format": "🕒 {:%H:%M}",
 	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 	"format-alt": "🗓 {:%Y-%m-%d}",
 },
@@ -96,11 +97,9 @@
 },
 
  "temperature": {
-  // "thermal-zone": 2,
-  // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-  // "critical-threshold": 80,
-  // "format-critical": "{temperatureC}°C ",
-    "format": "🔥 {temperatureC}°C"
+    "format": "🔥 {temperatureC}°C",
+    //"on-click": "foot -e 'watch -n1 sensors'"
+    "on-click": "psensor"
 },
 
 "memory": {
@@ -152,6 +151,16 @@
 "sway/language": {
     "format": "{flag}",
     "tooltip-format": "{long}"
+},
+
+"custom/powermenu": {
+        "return-type": "json",
+        "format": "{icon}",
+        "format-icons": ["❌"],
+	"tooltip": false,
+        "interval": 3600,
+        "escape": true,
+        "on-click": "~/.config/scripts/wofi-power.sh"
 },
 
 }

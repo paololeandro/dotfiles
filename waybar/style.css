@@ -63,12 +63,13 @@ tooltip {
 #disk, 
 #battery, 
 #clock, 
+#custom-powermenu, 
 #temperature, 
 #idle_inhibitor {
 	padding: 0 12px;
 	margin: 5px 3px;
 	color: #E8E3E3;
-  background-color: #202020;
+  	background-color: #202020;
 }
 
 #network {
