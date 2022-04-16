@@ -12,7 +12,6 @@
                   "backlight", 
                   "battery", 
                   "network", 
-                  //"bluetooth", 
                   "clock", 
                   "sway/language", 
                   "idle_inhibitor", 
@@ -22,23 +21,23 @@
 
 "sway/workspaces": {
 "all-outputs": true,
-"format": "{icon}",
+"format": "{name}",
 "format-icons": {
-	"1": "󾠮",
-	"2": "󾠯",
-	"3": "󾠰",
-	"4": "󾠱",
-	"5": "󾠲",
-	"6": "󾠳",
-	"7": "󾠴",
-	"8": "󾠵",
-	"9": "󾠶",
-	"10": "󾠷",
+	"1": "󰬺",
+	"2": "󰬻",
+	"3": "󰬼",
+	"4": "󰬽",
+	"5": "󰬾",
+	"6": "󰬿",
+	"7": "󰭀",
+	"8": "󰭁",
+	"9": "󰭂",
+	"10": "󰬹",
 	},
 },
 
 "sway/mode": {
-	"format": "<span style=\"italic\">🚩 {}</span>"
+	"format": "<span style=\"italic\">󰉀 {}</span>"
 },
 
 "tray": {
@@ -47,14 +46,14 @@
 },
 
 "clock": {
-	"format": "🕒 {:%H:%M}",
+	"format": "<span font='16' rise='-1000'>󱑂</span> {:%H:%M}",
 	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	"format-alt": "🗓 {:%Y-%m-%d}",
+	"format-alt": "<span font='16'rise='-1000'>󰸗</span> {:%Y-%m-%d}",
 },
 
 "backlight": {
-  "format": "{icon} {percent}%",
-	"format-icons": ["🔆"],
+  "format": "<span font='15'>{icon}</span> {percent}%",
+	"format-icons": ["󰃠"],
   "on-scroll-down": "brightnessctl set 5%-",
   "on-scroll-up": "brightnessctl set +5%"
 },
@@ -65,26 +64,27 @@
 		"warning": 30,
 		"critical": 15
 },
-	"format": "{icon} {capacity}%",
-	"format-charging": "{icon} {capacity}% Charging",
-	"format-icons": ["🔋"],
+	"format": "<span font='15'>{icon}</span>{capacity}%",
+	"format-charging": "<span font='15'>󰂄 </span>{capacity}%",
+	"format-icons": ["󰁹 "],
 	"tooltip-format": "Battery at {capacity}%",
 },
 
 "network": {
-	"format-wifi": "📶 {signalStrength}%",
+	"format-wifi": "<span font='15'>󰖩 </span>{signalStrength}%",
   "format-ethernet": "{ipaddr}/{cidr}  ",
   "tooltip-format": " Connected to {essid}",
   "format-linked": "{ifname} (No IP)  ",
-  "format-disconnected": "📶 Disconnected",
+  "format-disconnected": "<span font='15'>󰖪 </span>Disconnected",
 	"on-click": "alacritty -e nmtui"
 },
 
 "pulseaudio": {
-  "format": "{icon} {volume}%",
-  "format-muted": "<span foreground='#DE2F2E'>🔇 MUTED</span>",
+  "format": "<span font='15' rise='-1000'>{icon}</span> {volume}%",
+  "format-muted": "<span font='15' foreground='#DE2F2E'>󰖁 MUTED</span>",
   "format-icons": {
-    "default": ["🔊"]
+    "headphones": ["󰋋"],
+    "default": ["󰕾"]
 			},
 	"scroll-step": 5,
 	"on-click": "pavucontrol"
@@ -92,12 +92,12 @@
 
 "cpu": {
   "interval": 10,
-  "format": "🧠 {usage}%",
+  "format": "<span font='15' rise='-1000'>󰍛 </span>{usage}%",
   "max-length": 10
 },
 
  "temperature": {
-    "format": "🔥 {temperatureC}°C",
+    "format": "<span font='15' rise='-1000'>󰔐 </span>{temperatureC}°C",
     //"on-click": "foot -e 'watch -n1 sensors'"
     "on-click": "psensor"
 },
@@ -105,21 +105,23 @@
 "memory": {
   "interval": 10,
   //"format": "💻 {used:0.1f} GB",
-  "format": "<span font='JoyPixels'>⚙</span> {}%",
+  "format": "<span font='Material Design Icons 15' rise='-1000'>󰒓</span> {}%",
   "max-length": 15
 },
 
 "disk": {
   "interval": 30,
-  "format": "📂 {percentage_used}%",
+  "format": "<span font='15'>󰉋 </span>{percentage_used}%",
   "path": "/"
 },
 
 "idle_inhibitor": {
   "format": "{icon}",
+  "format-alt": "{icon} idle {status}",
+  "format-alt-click": "click-right",
   "format-icons": {
-    "activated": "😀",
-    "deactivated": "😴"
+    "activated": "<span font='15'>󰈈</span>",
+    "deactivated": "<span font='15'>󰈉</span>"
     }
 },
 
@@ -136,27 +138,30 @@
 },
 
 "mpd": {
-        "format": "{stateIcon}  {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+        "format": "{stateIcon} {artist} - {title} [{elapsedTime:%M:%S}/{totalTime:%M:%S}]",
         //"format": "{stateIcon} {consumeIcon}",
-        "format-disconnected": "<span foreground='#DE2F2E'>🚫 No player is running</span>",
+        "format-disconnected": "<span foreground='#DE2F2E'>󰝛 No player is running</span>",
         "interval": 2,
         "state-icons": {
-            "paused": "⏯ Paused:",
-            "playing": "⏸ Playing:"
+            "paused": "<span font='17' rise='-1000'>󰐊</span>",
+            "playing": "<span font='17' rise='-1000'>󰏤</span>"
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
 },
 
 "sway/language": {
-    "format": "{flag}",
-    "tooltip-format": "{long}"
+    "format": "<span font='16' rise='-1000'>󰌌</span> <span text-transform='uppercase'>{short}</span>",
+    "format-alt": "<span font='16' rise='-1000'>󰌌</span> {long}",
+    "format-alt-click": "click-right",
+    "tooltip-format": "{long}",
+    "on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
 },
 
 "custom/powermenu": {
         "return-type": "json",
-        "format": "{icon}",
-        "format-icons": ["❌"],
+        "format": "<span font='16'>{icon}</span>",
+        "format-icons": ["󰐥"],
 	"tooltip": false,
         "interval": 3600,
         "escape": true,

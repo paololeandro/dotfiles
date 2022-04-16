@@ -32,7 +32,7 @@ tooltip {
 }
 
 #workspaces button.focused {
-	color: #E8E3E3;
+	color: #00A7EF;
 	background-color: #303030;
 }
 
@@ -72,6 +72,14 @@ tooltip {
   	background-color: #202020;
 }
 
+#idle_inhibitor {
+  color: #77B323;
+}
+
+#custom-powermenu {
+  color: #DE2F2E;
+}
+
 #network {
   color: #00A7EF;
 }
@@ -81,7 +89,7 @@ tooltip {
 }
 
 #pulseaudio {
-  color: #D7DEE2;
+  color: #00A7EF;
 }
 
 #temperature {
