@@ -48,7 +48,7 @@
 "clock": {
 	"format": "<span font='16' rise='-1000'>󱑂</span> {:%H:%M}",
 	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	"format-alt": "<span font='16'rise='-1000'>󰸗</span> {:%Y-%m-%d}",
+	"format-alt": "<span font='16'rise='-1000'>󰸗</span> {:%a %d %B %Y}",
 },
 
 "backlight": {
@@ -80,7 +80,7 @@
 },
 
 "pulseaudio": {
-  "format": "<span font='15' rise='-1000'>{icon}</span> {volume}%",
+  "format": "<span font='15' rise='-1000'>{icon} </span>{volume}%",
   "format-muted": "<span font='15' foreground='#DE2F2E'>󰖁 MUTED</span>",
   "format-icons": {
     "headphones": ["󰋋"],
