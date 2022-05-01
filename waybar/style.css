@@ -62,6 +62,7 @@ tooltip {
 #backlight, 
 #disk, 
 #battery, 
+#custom-uptime, 
 #clock, 
 #custom-powermenu, 
 #temperature, 
@@ -80,6 +81,9 @@ tooltip {
   color: #DE2F2E;
 }
 
+#custom-uptime {
+  color: #FFBF00;
+}
 #network {
   color: #00A7EF;
 }

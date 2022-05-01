@@ -12,6 +12,7 @@
                   "backlight", 
                   "battery", 
                   "network", 
+                  "custom/uptime", 
                   "clock", 
                   "sway/language", 
                   "idle_inhibitor", 
@@ -66,16 +67,17 @@
 },
 	"format": "<span font='15'>{icon}</span>{capacity}%",
 	"format-charging": "<span font='15'>󰂄 </span>{capacity}%",
-	"format-icons": ["󰁹 "],
+	"format-icons": ["󰂎 ","󰁺 ","󰁻 ","󰁼 ","󰁽 ","󰁾 ","󰁿 ","󰂀 ","󰂁 ","󰂂 ","󰁹 "],
 	"tooltip-format": "Battery at {capacity}%",
 },
 
 "network": {
-	"format-wifi": "<span font='15'>󰖩 </span>{signalStrength}%",
+	"format-wifi": "<span font='15'>{icon}  </span>Connected",
+  "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
   "format-ethernet": "{ipaddr}/{cidr}  ",
   "tooltip-format": " Connected to {essid}",
   "format-linked": "{ifname} (No IP)  ",
-  "format-disconnected": "<span font='15'>󰖪 </span>Disconnected",
+  "format-disconnected": "<span font='15'>󰤭 </span>Disconnected",
 	"on-click": "alacritty -e nmtui"
 },
 
@@ -111,7 +113,7 @@
 
 "disk": {
   "interval": 30,
-  "format": "<span font='15'>󰉋 </span>{percentage_used}%",
+  "format": "<span font='15'>󰉋  </span>{percentage_used}%",
   "path": "/"
 },
 
@@ -151,7 +153,8 @@
 },
 
 "sway/language": {
-    "format": "<span font='16' rise='-1000'>󰌌</span> <span text-transform='uppercase'>{short}</span>",
+    //"format": "<span font='16' rise='-1000'>󰌌</span> <span text-transform='uppercase'>{short}</span>",
+    "format": "{flag}",
     "format-alt": "<span font='16' rise='-1000'>󰌌</span> {long}",
     "format-alt-click": "click-right",
     "tooltip-format": "{long}",
@@ -166,6 +169,12 @@
         "interval": 3600,
         "escape": true,
         "on-click": "~/.config/scripts/wofi-power.sh"
+},
+
+"custom/uptime": {
+"format": "󰇄 {}",
+        "interval": 30,
+        "exec": "$HOME/.config/scripts/uptime",
 },
 
 }
