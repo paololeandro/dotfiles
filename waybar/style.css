@@ -65,6 +65,7 @@ tooltip {
 #custom-uptime, 
 #clock, 
 #custom-powermenu, 
+#custom-wofi, 
 #temperature, 
 #idle_inhibitor {
 	padding: 0 12px;
@@ -84,6 +85,11 @@ tooltip {
 #custom-uptime {
   color: #FFBF00;
 }
+
+#custom-wofi {
+  color: #00A7EF;
+}
+
 #network {
   color: #00A7EF;
 }

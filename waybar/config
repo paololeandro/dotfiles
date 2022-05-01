@@ -2,7 +2,7 @@
 "fixed-center": false,
 "height": 40,
 "position":"top",
-"modules-left": ["sway/workspaces", "mpd", "sway/mode"],
+"modules-left": ["custom/wofi", "sway/workspaces", "mpd", "sway/mode"],
 "modules-right": [
                   "cpu", 
                   "memory", 
@@ -89,7 +89,9 @@
     "default": ["󰕾"]
 			},
 	"scroll-step": 5,
-	"on-click": "pavucontrol"
+ 	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-middle": "pavucontrol"
 },
 
 "cpu": {
@@ -176,5 +178,12 @@
         "interval": 30,
         "exec": "$HOME/.config/scripts/uptime",
 },
+
+"custom/wofi": {
+		"format": "󰣇",
+		"on-click": "wofi --show drun --width 800 --allow-images",
+        "on-click-right": "killall wofi",
+		"tooltip": false
+	},
 
 }
