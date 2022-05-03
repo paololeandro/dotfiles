@@ -206,7 +206,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
     bindsym Alt+l exec swaylock    
 
     bindsym alt+f exec nautilus
-    bindsym alt+b exec librewolf
+    bindsym alt+b exec firefox
     bindsym alt+m exec foot -e ncmpcpp
 
     # Reload Waybar
@@ -233,6 +233,7 @@ input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
 
 # Autostart
     exec mako
+    exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Gaps
     gaps outer 4
