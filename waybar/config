@@ -82,8 +82,10 @@
 },
 
 "pulseaudio": {
-  "format": "<span font='15' rise='-1000'>{icon} </span>{volume}%",
-  "format-muted": "<span font='15' foreground='#DE2F2E'>󰖁 MUTED</span>",
+  "format": "<span font='15' rise='-1000'>{icon} </span>{volume}% {format_source}",
+  "format-source": "<span font='15' rise='-1000'>󰍬 </span>{volume}%",
+  "format-source-muted": "<span font='15' rise='-1000' foreground='#DE2F2E' >󰍭 </span><span foreground='#DE2F2E'>Muted</span>",
+  "format-muted": "<span font='15' rise='-1000' foreground='#DE2F2E'>󰖁 </span><span foreground='#DE2F2E'>Muted</span> {format_source}",
   "format-icons": {
     "headphones": ["󰋋"],
     "default": ["󰕾"]
