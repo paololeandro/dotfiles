@@ -34,15 +34,15 @@ export XDG_CURRENT_DESKTOP=sway
 export MOZ_ENABLE_WAYLAND=1
 
 # alias ls="exa --icons --long --header"
-alias vim="lvim"
+alias vim="nvim"
+alias cat="bat"
+alias ls="exa --icons --long --header"
 alias backup-dotfiles="$HOME/.config/scripts/backup-dotfiles"
-alias bluetooth-on="bluetoothctl power on && notify-send 'Bluetooth ON'"
-alias bluetooth-off="bluetoothctl power off && notify-send 'Bluetooth OFF'"
 
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
   exec sway
 fi
 
-# source /opt/asdf-vm/asdf.sh
+source /opt/asdf-vm/asdf.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
