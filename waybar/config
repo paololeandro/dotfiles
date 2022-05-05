@@ -2,7 +2,7 @@
 "fixed-center": false,
 "height": 40,
 "position":"top",
-"modules-left": ["custom/wofi", "sway/workspaces", "mpd", "sway/mode"],
+"modules-left": ["custom/wofi", "sway/workspaces", "sway/mode"],
 "modules-right": [
                   "cpu", 
                   "memory", 
@@ -77,7 +77,7 @@
   "format-ethernet": "{ipaddr}/{cidr}  ",
   "tooltip-format": " Connected to {essid}",
   "format-linked": "{ifname} (No IP)  ",
-  "format-disconnected": "<span font='15'>󰤭 </span>Disconnected",
+  "format-disconnected": "<span font='15'>󰤭  </span>Disconnected",
 	"on-click": "alacritty -e nmtui"
 },
 
