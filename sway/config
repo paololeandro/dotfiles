@@ -2,7 +2,7 @@
 
 set $term foot
 
-set $menu wofi --show drun --width 800 --allow-images
+set $menu wofi --show drun --prompt Search --width 800 --columns 2 --allow-images
 
 set $grimshot ~/.config/scripts/grimshot.sh
 
@@ -61,7 +61,7 @@ workspace 10 output DP-3
 set $mod Mod4
 
 # Start a terminal
-bindsym $mod+Return exec $terminal 
+bindsym $mod+Return exec $term 
 
 # Kill focused window
 bindsym $mod+q kill 
@@ -198,8 +198,9 @@ bindsym Ctrl+Shift+Print exec $grimshot --notify copy area
 
 bindsym Alt+l exec swaylock    
 
-bindsym alt+f exec nautilus
-bindsym alt+b exec firefox
+bindsym $mod+x exec $HOME/.config/scripts/wofi-power.sh
+bindsym alt+f exec foot -e ranger
+bindsym alt+b exec firefox-developer-edition
 bindsym alt+m exec foot -e ncmpcpp
 
 # Reload Waybar
@@ -210,8 +211,37 @@ bindswitch lid:on output eDP-1 disable
 bindswitch lid:off output eDP-1 enable
 
 # Wayland default floats
+for_window [window_role = "pop-up"] floating enable
+for_window [window_role = "bubble"] floating enable
+for_window [window_role = "dialog"] floating enable
+for_window [window_role = "page-info"] floating enable
+for_window [window_role = "task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="Open Files"] floating enable sticky
+for_window [window_role="File Operation Progress"] floating enable sticky
+for_window [window_role="Save As"] floating enable
+
+for_window [window_type = "menu"] floating enable
+for_window [window_type = "dialog"] floating enable
+
+for_window [class = "(?i)pinentry"] floating enable
+for_window [class="info|Mate-color-select|gcolor2|timesup|QtPass|GtkFileChooserDialog"] sticky enable
+for_window [class="^Steam$" title="^Friends List$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+
 for_window [app_id="(pavucontrol)"] floating enable
-for_window [app_id="(Steam)"] floating enable
+for_window [app_id="(gnome-disks)"] floating enable
+
+for_window [title = "Firefox - Sharing Indicator"] floating enabled
+
+for_window [title = "^Open File$"] floating enable
 
 # Idle
 exec swayidle -w \
@@ -234,10 +264,10 @@ gaps inner 4
 
 # Titlebars
 font pango:Iosevka Nerd Font Regular 14
-default_border pixel 2
-set $bg #151515
-set $bod_f #00A7EF
-set $bod_u #151515
+default_border pixel 0
+set $bg #3492ba
+set $bod_f #3492ba
+set $bod_u #303030
 set $text #d2d2d2
 client.focused   $bod_f $bg $text $bod_f $bod_f
 client.unfocused $bod_u $bg $text $bod_u $bod_u
