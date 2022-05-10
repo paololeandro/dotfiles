@@ -39,10 +39,6 @@ alias cat="bat"
 alias ls="exa --icons --long --header"
 alias backup-dotfiles="$HOME/.config/scripts/backup-dotfiles"
 
-if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-  exec sway
-fi
-
 source /opt/asdf-vm/asdf.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
