@@ -19,7 +19,7 @@ tooltip {
 #workspaces button {
 	padding: 0px 10px;
 	margin: 5px 3px;
-  background-color: #202020;
+  background-color: #191919;
 	color: #E8E3E3;
 }
 
@@ -33,7 +33,7 @@ tooltip {
 
 #workspaces button.focused {
 	color: #00A7EF;
-	background-color: #303030;
+	background-color: #202020;
 }
 
 #workspaces button.urgent {
@@ -71,7 +71,7 @@ tooltip {
 	padding: 0 12px;
 	margin: 5px 3px;
 	color: #E8E3E3;
-  	background-color: #202020;
+  	background-color: #191919;
 }
 
 #idle_inhibitor {
