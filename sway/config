@@ -264,7 +264,7 @@ gaps inner 4
 
 # Titlebars
 font pango:Iosevka Nerd Font Regular 14
-default_border pixel 0
+default_border pixel 2
 set $bg #3492ba
 set $bod_f #3492ba
 set $bod_u #303030
