@@ -1,0 +1,11 @@
+/* -- Matcha Dark Aliz -- */
+
+* {
+    background:    #151515;
+    background-alt:    #151515;
+    foreground:    #FFFFFF;
+    border:    #FB5454;
+    selected:    #FB5454;
+    urgent:    #EC407A;
+}
+
