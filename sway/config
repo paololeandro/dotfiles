@@ -80,7 +80,13 @@ floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+bindsym $mod+Shift+e exec swaynag -f "Iosevka" \
+-m "Exit sway? This will end your current Wayland session." \
+-B "Exit now" "swaymsg exit" \
+-B "Suspend" "systemctl suspend && pkill swaynag" \
+-B "Reboot" "systemctl reboot" \
+-B "Power off" "systemctl poweroff" \
 
 # Moving around
 
