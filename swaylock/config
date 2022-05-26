@@ -33,5 +33,5 @@ grace=5
 indicator
 clock
 screenshots
-#effect-pixelate=5
+effect-pixelate=5
 effect-blur=5x10
