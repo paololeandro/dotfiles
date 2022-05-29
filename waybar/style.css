@@ -1,9 +1,9 @@
 * {
-	border: none;
-	border-radius: 4;
-	font-family: 'Iosevka Nerd Font', 'Material Design Icons';
-	font-size: 18px;
-	min-height: 0;
+  border: none;
+  border-radius: 4;
+  font-family: 'Iosevka Nerd Font', 'Material Design Icons';
+  font-size: 18px;
+  min-height: 0;
 }
 
 tooltip {
@@ -11,34 +11,34 @@ tooltip {
 }
 
 #waybar {
-	border-radius: 0px;
-	background-color: #151515;
-	transition-duration: .5s;
+  border-radius: 0px;
+  background-color: #151515;
+  transition-duration: .5s;
 }
 
 #workspaces button {
-	padding: 0px 10px;
-	margin: 5px 3px;
+  padding: 0px 10px;
+  margin: 5px 3px;
   background-color: #191919;
 	color: #E8E3E3;
 }
 
 #workspaces button:hover {
-	box-shadow: inherit;
+  box-shadow: inherit;
   text-shadow: inherit;
   background: transparent;
   border: transparent;
-	color: #E8E3E3;
+  color: #E8E3E3;
 }
 
 #workspaces button.focused {
-	color: #00A7EF;
-	background-color: #202020;
+  color: #00A7EF;
+  background-color: #202020;
 }
 
 #workspaces button.urgent {
-	background-color: #B66467;
-	color: #E8E3E3;
+  background-color: #B66467;
+  color: #E8E3E3;
 }
 
 #mode {
@@ -48,7 +48,7 @@ tooltip {
 }
 
 #mode, #window {
-	color: #E8E3E3;
+  color: #E8E3E3;
 }
 
 #language, 
@@ -68,10 +68,10 @@ tooltip {
 #custom-wofi, 
 #temperature, 
 #idle_inhibitor {
-	padding: 0 12px;
-	margin: 5px 3px;
-	color: #E8E3E3;
-  	background-color: #191919;
+  padding: 0 12px;
+  margin: 5px 3px;
+  color: #E8E3E3;
+  background-color: #191919;
 }
 
 #idle_inhibitor {
@@ -115,9 +115,9 @@ tooltip {
 }
 
 @keyframes blink {
-    to {
-        background-color: #DE2F2E;
-    }
+  to {
+    background-color: #DE2F2E;
+  }
 }
 
 #battery {
@@ -125,11 +125,11 @@ tooltip {
 }
 
 #battery.critical:not(.charging) {
-    animation-name: blink;
-    animation-duration: 0.7s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  animation-name: blink;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #cpu {
