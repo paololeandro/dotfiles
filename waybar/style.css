@@ -20,7 +20,7 @@ tooltip {
   padding: 0px 10px;
   margin: 5px 3px;
   background-color: #191919;
-	color: #E8E3E3;
+	color: #d0d0d0;
 }
 
 #workspaces button:hover {
@@ -28,17 +28,17 @@ tooltip {
   text-shadow: inherit;
   background: transparent;
   border: transparent;
-  color: #E8E3E3;
+  color: #d0d0d0;
 }
 
 #workspaces button.focused {
-  color: #00A7EF;
+  color: #6a9fb5;
   background-color: #202020;
 }
 
 #workspaces button.urgent {
-  background-color: #B66467;
-  color: #E8E3E3;
+  background-color: #ac4142;
+  color: #d0d0d0;
 }
 
 #mode {
@@ -48,7 +48,7 @@ tooltip {
 }
 
 #mode, #window {
-  color: #E8E3E3;
+  color: #d0d0d0;
 }
 
 #language, 
@@ -79,49 +79,65 @@ tooltip {
 }
 
 #custom-powermenu {
-  color: #DE2F2E;
+  color: #ac4142;
 }
 
 #custom-uptime {
-  color: #FFBF00;
+  color: #aa759f;
 }
 
 #custom-wofi {
-  color: #00A7EF;
+  color: #6a9fb5;
 }
 
 #network {
-  color: #00A7EF;
+  color: #6a9fb5;
 }
 
 #backlight {
-  color: #FFBF00;
+  color: #f4bf75;
 }
 
 #pulseaudio {
-  color: #00A7EF;
+  color: #6a9fb5;
 }
 
 #temperature {
-  color: #FF8A00;
+  color: #ac4142;
 }
 
 #disk {
-  color: #FFDEA9;
+  color: #f4bf75;
 }
 
 #clock {
-  color: #CFD8DD;
+  color: #d0d0d0;
+}
+
+#cpu {
+  color: #75b5aa;
+}
+
+#memory {
+  color: #90a959;
+}
+
+#mpd {
+  color: #00AAF1;
+}
+
+#language {
+  color: #d0d0d0;
 }
 
 @keyframes blink {
   to {
-    background-color: #DE2F2E;
+    background-color: #ac4142;
   }
 }
 
 #battery {
-  color: #77B323;
+  color: #90a959;
 }
 
 #battery.critical:not(.charging) {
@@ -130,20 +146,4 @@ tooltip {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-#cpu {
-  color: #FE88AE;
-}
-
-#memory {
-  color: #657780;
-}
-
-#mpd {
-  color: #00AAF1;
-}
-
-#language {
-  color: #657780;
 }
