@@ -14,8 +14,6 @@
                   "network", 
                   "custom/uptime", 
                   "clock", 
-                  "sway/language", 
-                  "idle_inhibitor", 
 		  "custom/powermenu",
                   "tray"
                 ],
@@ -53,7 +51,7 @@
 },
 
 "backlight": {
-  "format": "<span font='15'>{icon}</span> {percent}%",
+  "format": "<span font='15' rise='-1000'>{icon}</span> {percent}%",
 	"format-icons": ["󰃠"],
   "on-scroll-down": "brightnessctl set 5%-",
   "on-scroll-up": "brightnessctl set +5%"
@@ -82,10 +80,8 @@
 },
 
 "pulseaudio": {
-  "format": "<span font='15' rise='-1000'>{icon} </span>{volume}% 󰧞 {format_source}",
-  "format-source": "<span font='15' rise='-1000'>󰍬 </span>{volume}%",
-  "format-source-muted": "<span font='15' rise='-1000' foreground='#DE2F2E' >󰍭 </span><span foreground='#DE2F2E'>Muted</span>",
-  "format-muted": "<span font='15' rise='-1000' foreground='#DE2F2E'>󰖁 </span><span foreground='#DE2F2E'>Muted</span> 󰧞 {format_source}",
+  "format": "<span font='16' rise='-1000'>{icon}</span> {volume}%",
+  "format-muted": "<span font='15' rise='-1000' foreground='#DE2F2E'>󰖁 </span><span foreground='#DE2F2E'>Muted</span>",
   "format-icons": {
     "headphones": ["󰋋"],
     "default": ["󰕾"]
@@ -98,12 +94,12 @@
 
 "cpu": {
   "interval": 10,
-  "format": "<span font='15' rise='-1000'>󰍛 </span>{usage}%",
+  "format": "<span font='15' rise='-1000'>󰍛</span> {usage}%",
   "max-length": 10
 },
 
  "temperature": {
-    "format": "<span font='15' rise='-1000'>󰔐 </span>{temperatureC}°C",
+    "format": "<span font='15' rise='-1000'>󰔐</span> {temperatureC}°C",
     //"on-click": "foot -e 'watch -n1 sensors'"
     "on-click": "psensor"
 },
