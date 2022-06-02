@@ -81,7 +81,7 @@
 
 "pulseaudio": {
   "format": "<span font='16' rise='-1000'>{icon}</span> {volume}%",
-  "format-muted": "<span font='15' rise='-1000' foreground='#DE2F2E'>󰖁 </span><span foreground='#DE2F2E'>Muted</span>",
+  "format-muted": "<span font='15' rise='-1000' foreground='#DE2F2E'>󰖁</span><span foreground='#DE2F2E'> Muted</span>",
   "format-icons": {
     "headphones": ["󰋋"],
     "default": ["󰕾"]
@@ -107,7 +107,7 @@
 "memory": {
   "interval": 10,
   //"format": "💻 {used:0.1f} GB",
-  "format": "<span font='Material Design Icons 15' rise='-1000'>󰒓</span> {}%",
+  "format": "<span font='Material Design Icons 16' rise='-1000'>󰘚</span> {}%",
   "max-length": 15
 },
 
