@@ -31,9 +31,9 @@ background-color: #151515;
 
 #text:selected {
 color: #00A7EF;
-background-color: rgba(0,0,0,0);
+background-color: #151515;
 }
 
 #entry:selected {
-background-color: rgba(0,0,0,0);
+background-color: #151515;
 }
