@@ -33,7 +33,6 @@ export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 export XDG_CURRENT_DESKTOP=sway
 export MOZ_ENABLE_WAYLAND=1
 
-# alias ls="exa --icons --long --header"
 alias vim="nvim"
 alias cat="bat"
 alias ls="exa --icons --long --header"
