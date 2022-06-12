@@ -4,7 +4,7 @@ set $term alacritty
 
 set $grimshot ~/.config/scripts/grimshot.sh
 
-set $menu bemenu-run -p "Search" -H "40px" --fn "Iosevka Nerd Font 14" --hf="#6a9fb5" --hb="#151515" --nb="#151515" --nf="#d0d0d0" --tb="#151515" --tf="#6a9fb5" --fb="#151515" --ff="#d0d0d0"
+set $menu wofi --style=$HOME/.config/wofi/style.css
 
 # Home row direction keys, like vim
 set $left h
