@@ -1,12 +1,10 @@
 # Variables
 
-set $term foot
-
-set $menu wofi --show drun --prompt Search --width 50% --columns 4 --allow-images --style=$HOME/.config/wofi/launcher.css
+set $term alacritty
 
 set $grimshot ~/.config/scripts/grimshot.sh
 
-#set $menu bemenu-run -p "Search" -H "40px" --fn "Iosevka Nerd Font 16" --hf="#6a9fb5" --hb="#151515" --nb="#151515" --nf="#d0d0d0" --tb="#151515" --tf="#6a9fb5" --fb="#151515" --ff="#d0d0d0"
+set $menu bemenu-run -p "Search" -H "40px" --fn "Iosevka Nerd Font 14" --hf="#6a9fb5" --hb="#151515" --nb="#151515" --nf="#d0d0d0" --tb="#151515" --tf="#6a9fb5" --fb="#151515" --ff="#d0d0d0"
 
 # Home row direction keys, like vim
 set $left h
@@ -40,12 +38,12 @@ output * bg /home/paolo/wallpapers/anime.png fill
 
 output eDP-1 {
   mode 1920x1080@60Hz
-  pos 0 0
+  pos 1920 768
 }
 
 output HDMI-A-1 {
   mode 1920x1080@75Hz
-  pos 1920 0
+  pos 0 768
   transform normal
   scale 1.0
   scale_filter nearest
@@ -55,6 +53,7 @@ output HDMI-A-1 {
 
 output DP-3 {
   mode 1366x768@60Hz
+  pos 0 0
 }
 
 workspace 9 output eDP-1
