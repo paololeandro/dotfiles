@@ -9,10 +9,7 @@ cp -r ~/.config/mako ~/.git/dotfiles/
 cp -r ~/.config/wofi ~/.git/dotfiles/
 cp -r ~/.config/ranger ~/.git/dotfiles/
 cp -r ~/.config/zathura/ ~/.git/dotfiles/
-cp ~/.config/lvim/config.lua ~/.git/dotfiles/lvim
 cp -r ~/.config/scripts ~/.git/dotfiles
-cp ~/.config/mpd/mpd.conf ~/.git/dotfiles/mpd/
-cp ~/.config/mpd/database ~/.git/dotfiles/mpd/
-cp ~/.ncmpcpp/config ~/.git/dotfiles/.ncmpcpp/
+cp ~/.config/qutebrowser/config.py ~/.git/dotfiles/qutebrowser/
 cp ~/.zshrc ~/.git/dotfiles
 echo "Success!"
