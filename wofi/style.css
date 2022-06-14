@@ -1,38 +1,59 @@
-window {
-margin: 5px;
-background-color: #151515;
+* {
+    font-family: "Iosevka Nerd Font";
+    font-size: 16px;
 }
 
-#input {
-margin: 5px;
-background-color: #151515;
-}
-
-#inner-box {
-margin: 5px;
-background-color: #151515;
+#window {
+	background-color: #151515;
+	color: #D0D0D0;
+        border: 0px solid #151515;
+	border-radius: 0px;
 }
 
 #outer-box {
-margin: 5px;
-background-color: #151515;
+	padding: 20px;
+}
+
+#input {
+	background-color: #202020;
+	border: 0px solid #151515;
+	padding: 8px 12px;
 }
 
 #scroll {
-margin: 5px;
-background-color: #151515;
+	margin-top: 20px;
+}
+
+#inner-box {
+}
+
+#img {
+	padding-right: 8px;
 }
 
 #text {
-margin: 5px;
-background-color: #151515;
+	color: #D0D0D0;
 }
 
 #text:selected {
-color: #00A7EF;
-background-color: rgba(0,0,0,0);
+	color: #FFFFFF;
+}
+
+#entry {
+	padding: 6px;
 }
 
 #entry:selected {
-background-color: rgba(0,0,0,0);
+	background-color: #ac4142;
+	color: #151515;
+}
+
+#unselected {
+}
+
+#selected {
+}
+
+#input, #entry:selected {
+	border-radius: 4px;
 }
