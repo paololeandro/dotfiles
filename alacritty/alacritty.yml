@@ -13,18 +13,18 @@ colors:
     blue:    '#6A9FB5'
     magenta: '#AA759F'
     cyan:    '#75B5AA'
-    white:   '#E8E3E3'
+    white:   '#d0d0d0'
 
   # Bright colors
   bright:
-    black:   '#151515'
+    black:   '#353535'
     red:     '#AC4142'
     green:   '#90A959'
     yellow:  '#F4BF75'
     blue:    '#6A9FB5'
     magenta: '#AA759F'
     cyan:    '#75B5AA'
-    white:   '#E8E3E3'
+    white:   '#d0d0d0'
 
 window:
   padding:
