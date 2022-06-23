@@ -29,15 +29,10 @@ compinit
 _comp_options+=(globdots)		# Include hidden files.
 
 export MESA_LOADER_DRIVER_OVERRIDE=iris
-export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
-export XDG_CURRENT_DESKTOP=sway
-export MOZ_ENABLE_WAYLAND=1
 
-alias vim="nvim"
+alias vim="/home/paolo/.local/bin/lvim"
 alias cat="bat"
-alias ls="exa --icons --long --header"
-alias backup-dotfiles="$HOME/.config/scripts/backup-dotfiles"
+alias ls="exa --long --header"
 
-source /opt/asdf-vm/asdf.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
