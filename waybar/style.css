@@ -1,44 +1,37 @@
 * {
   border: none;
   border-radius: 4;
-  font-family: 'Iosevka Nerd Font', 'Material Design Icons';
+  font-family: 'Terminus', 'Material Design Icons';
   font-size: 18px;
   min-height: 0;
 }
 
 tooltip {
-  background: #151515;
+  background: #272727;
 }
 
 #waybar {
   border-radius: 0px;
-  background-color: #151515;
+  background-color: #272727;
   transition-duration: .5s;
 }
 
 #workspaces button {
   padding: 0px 10px;
   margin: 5px 3px;
-  background-color: #191919;
 	color: #d0d0d0;
 }
 
 #workspaces button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  background: transparent;
-  border: transparent;
   color: #d0d0d0;
 }
 
 #workspaces button.focused {
   color: #6a9fb5;
-  background-color: #202020;
 }
 
 #workspaces button.urgent {
-  background-color: #ac4142;
-  color: #d0d0d0;
+  color: #ac4142;
 }
 
 #mode {
@@ -71,63 +64,6 @@ tooltip {
   padding: 0 12px;
   margin: 5px 3px;
   color: #E8E3E3;
-  background-color: #191919;
-}
-
-#idle_inhibitor {
-  color: #77B323;
-}
-
-#custom-powermenu {
-  color: #ac4142;
-}
-
-#custom-uptime {
-  color: #aa759f;
-}
-
-#custom-wofi {
-  color: #6a9fb5;
-}
-
-#network {
-  color: #6a9fb5;
-}
-
-#backlight {
-  color: #f4bf75;
-}
-
-#pulseaudio {
-  color: #6a9fb5;
-}
-
-#temperature {
-  color: #ac4142;
-}
-
-#disk {
-  color: #f4bf75;
-}
-
-#clock {
-  color: #d0d0d0;
-}
-
-#cpu {
-  color: #75b5aa;
-}
-
-#memory {
-  color: #90a959;
-}
-
-#mpd {
-  color: #00AAF1;
-}
-
-#language {
-  color: #d0d0d0;
 }
 
 @keyframes blink {

@@ -14,7 +14,6 @@
                   "network", 
                   "custom/uptime", 
                   "clock", 
-		  "custom/powermenu",
                   "tray"
                 ],
 
@@ -45,13 +44,13 @@
 },
 
 "clock": {
-	"format": "<span font='16' rise='-1000'>󱑂</span> {:%H:%M}",
+	"format": "T: {:%H:%M}",
 	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 	"format-alt": "<span font='16'rise='-1000'>󰸗</span> {:%a %d %B %Y}",
 },
 
 "backlight": {
-  "format": "<span font='15' rise='-1000'>{icon}</span> {percent}%",
+  "format": "L: {percent}%",
 	"format-icons": ["󰃠"],
   "on-scroll-down": "brightnessctl set 5%-",
   "on-scroll-up": "brightnessctl set +5%"
@@ -63,29 +62,23 @@
 		"warning": 30,
 		"critical": 15
 },
-	"format": "<span font='15'>{icon}</span>{capacity}%",
-	"format-charging": "<span font='15'>󰂄 </span>{capacity}%",
-	"format-icons": ["󰂎 ","󰁺 ","󰁻 ","󰁼 ","󰁽 ","󰁾 ","󰁿 ","󰂀 ","󰂁 ","󰂂 ","󰁹 "],
+	"format": "B: {capacity}%",
+	"format-charging": "B: Charging {capacity}%",
 	"tooltip-format": "Battery at {capacity}%",
 },
 
 "network": {
-	"format-wifi": "<span font='15'>{icon}  </span>Connected",
-  "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+	"format-wifi": "W: Connected",
   "format-ethernet": "{ipaddr}/{cidr}  ",
   "tooltip-format": " Connected to {essid}",
   "format-linked": "{ifname} (No IP)  ",
-  "format-disconnected": "<span font='15'>󰤭  </span>Disconnected",
+  "format-disconnected": "W: Disconnected",
 	"on-click": "alacritty -e nmtui"
 },
 
 "pulseaudio": {
-  "format": "<span font='16' rise='-1000'>{icon}</span> {volume}%",
-  "format-muted": "<span font='15' rise='-1000' foreground='#DE2F2E'>󰖁</span><span foreground='#DE2F2E'> Muted</span>",
-  "format-icons": {
-    "headphones": ["󰋋"],
-    "default": ["󰕾"]
-			},
+  "format": "V: {volume}%",
+  "format-muted": "<span foreground='#DE2F2E'>V: Muted</span>",
 	"scroll-step": 5,
  	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
@@ -94,85 +87,31 @@
 
 "cpu": {
   "interval": 10,
-  "format": "<span font='15' rise='-1000'>󰍛</span> {usage}%",
+  "format": "C: {usage}%",
   "max-length": 10
 },
 
  "temperature": {
-    "format": "<span font='15' rise='-1000'>󰔐</span> {temperatureC}°C",
+    "format": "T: {temperatureC}°C",
     //"on-click": "foot -e 'watch -n1 sensors'"
     "on-click": "psensor"
 },
 
 "memory": {
   "interval": 10,
-  //"format": "💻 {used:0.1f} GB",
-  "format": "<span font='Material Design Icons 16' rise='-1000'>󰘚</span> {}%",
+  "format": "M: {used:0.1f} GiB",
+  //"format": "M: {}%",
   "max-length": 15
 },
 
 "disk": {
   "interval": 30,
-  "format": "<span font='15'>󰉋  </span>{percentage_used}%",
+  "format": "D: {percentage_used}%",
   "path": "/"
 },
 
-"idle_inhibitor": {
-  "format": "{icon}",
-  "format-alt": "{icon} idle {status}",
-  "format-alt-click": "click-right",
-  "format-icons": {
-    "activated": "<span font='15'>󰈈</span>",
-    "deactivated": "<span font='15'>󰈉</span>"
-    }
-},
-
-"bluetooth": {
-  	"format": "{icon}",
-   // "format-alt": "bluetooth: {status}",
-  	"format-icons": {
-  		"enabled": "󰂯",
-  		"disabled": "󰂲"
-  	},
-  	"tooltip-format": "{}",
-    "on-click": "blueman-manager",
-    "on-click-right": "$HOME/.config/scripts/toggle-bluetooth"
-},
-
-"mpd": {
-        "format": "{stateIcon} {artist} - {title} [{elapsedTime:%M:%S}/{totalTime:%M:%S}]",
-        //"format": "{stateIcon} {consumeIcon}",
-        "format-disconnected": "<span foreground='#DE2F2E'>󰝛 No player is running</span>",
-        "interval": 2,
-        "state-icons": {
-            "paused": "<span font='17' rise='-1000'>󰐊</span>",
-            "playing": "<span font='17' rise='-1000'>󰏤</span>"
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-},
-
-"sway/language": {
-    //"format": "<span font='16' rise='-1000'>󰌌</span> <span text-transform='uppercase'>{short}</span>",
-    "format": "{flag}",
-    "format-alt": "<span font='16' rise='-1000'>󰌌</span> {long}",
-    "format-alt-click": "click-right",
-    "tooltip-format": "{long}",
-    "on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
-},
-
-"custom/powermenu": {
-        "return-type": "json",
-        "format": "<span font='16'>{icon}</span>",
-        "format-icons": ["󰐥"],
-	"tooltip": false,
-        "interval": 3600,
-        "escape": true,
-        "on-click": "~/.config/scripts/wofi-power.sh"
-},
-
 "custom/uptime": {
-"format": "󰇄 {}",
+"format": "U: {}",
         "interval": 30,
         "exec": "$HOME/.config/scripts/uptime",
 },
