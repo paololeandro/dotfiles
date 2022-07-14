@@ -14,6 +14,9 @@
                   "network", 
                   "custom/uptime", 
                   "clock", 
+                  "sway/language",
+                  "idle_inhibitor",
+                  "custom/powermenu",
                   "tray"
                 ],
 
@@ -44,13 +47,13 @@
 },
 
 "clock": {
-	"format": "T: {:%H:%M}",
+	"format": "<span font='16' rise='-1000'>󱑂</span> {:%H:%M}",
 	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 	"format-alt": "<span font='16'rise='-1000'>󰸗</span> {:%a %d %B %Y}",
 },
 
 "backlight": {
-  "format": "L: {percent}%",
+  "format": "<span font='15' rise='-1000'>{icon}</span> {percent}%",
 	"format-icons": ["󰃠"],
   "on-scroll-down": "brightnessctl set 5%-",
   "on-scroll-up": "brightnessctl set +5%"
@@ -62,23 +65,29 @@
 		"warning": 30,
 		"critical": 15
 },
-	"format": "B: {capacity}%",
-	"format-charging": "B: Charging {capacity}%",
+  "format": "<span font='15'>{icon}</span>{capacity}%",
+	"format-charging": "<span font='15'>󰂄 </span>{capacity}%",
+	"format-icons": ["󰂎 ","󰁺 ","󰁻 ","󰁼 ","󰁽 ","󰁾 ","󰁿 ","󰂀 ","󰂁 ","󰂂 ","󰁹 "],
 	"tooltip-format": "Battery at {capacity}%",
 },
 
 "network": {
-	"format-wifi": "W: Connected",
+  "format-wifi": "<span font='15'>{icon}  </span>Connected",
+  "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
   "format-ethernet": "{ipaddr}/{cidr}  ",
   "tooltip-format": " Connected to {essid}",
   "format-linked": "{ifname} (No IP)  ",
-  "format-disconnected": "W: Disconnected",
+  "format-disconnected": "<span font='15'>󰤭  </span>Disconnected",
 	"on-click": "alacritty -e nmtui"
 },
 
 "pulseaudio": {
-  "format": "V: {volume}%",
-  "format-muted": "<span foreground='#DE2F2E'>V: Muted</span>",
+  "format": "<span font='16' rise='-1000'>{icon}</span> {volume}%",
+  "format-muted": "<span font='15' rise='-1000' foreground='#DE2F2E'>󰖁</span><span foreground='#DE2F2E'> Muted</span>",
+  "format-icons": {
+    "headphones": ["󰋋"],
+    "default": ["󰕾"]
+			},
 	"scroll-step": 5,
  	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
@@ -87,31 +96,60 @@
 
 "cpu": {
   "interval": 10,
-  "format": "C: {usage}%",
+  "format": "<span font='15' rise='-1000'>󰍛</span> {usage}%",
   "max-length": 10
 },
 
  "temperature": {
-    "format": "T: {temperatureC}°C",
+   "format": "<span font='15' rise='-1000'>󰔐</span> {temperatureC}°C",
     //"on-click": "foot -e 'watch -n1 sensors'"
     "on-click": "psensor"
 },
 
 "memory": {
   "interval": 10,
-  "format": "M: {used:0.1f} GiB",
-  //"format": "M: {}%",
+  //"format": "💻 {used:0.1f} GB",
+  "format": "<span font='Material Design Icons 16' rise='-1000'>󰘚</span> {}%",
   "max-length": 15
 },
 
 "disk": {
   "interval": 30,
-  "format": "D: {percentage_used}%",
+  "format": "<span font='15'>󰉋  </span>{percentage_used}%",
   "path": "/"
 },
 
+"idle_inhibitor": {
+  "format": "{icon}",
+  "format-alt": "{icon} idle {status}",
+  "format-alt-click": "click-right",
+  "format-icons": {
+    "activated": "<span font='15'>󰈈</span>",
+    "deactivated": "<span font='15'>󰈉</span>"
+    }
+},
+
+"sway/language": {
+    //"format": "<span font='16' rise='-1000'>󰌌</span> <span text-transform='uppercase'>{short}</span>",
+    "format": "{flag}",
+    "format-alt": "<span font='16' rise='-1000'>󰌌</span> {long}",
+    "format-alt-click": "click-right",
+    "tooltip-format": "{long}",
+    "on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
+},
+
+"custom/powermenu": {
+        "return-type": "json",
+        "format": "<span font='16'>{icon}</span>",
+        "format-icons": ["󰐥"],
+	"tooltip": false,
+        "interval": 3600,
+        "escape": true,
+        "on-click": "~/.config/scripts/wofi-power.sh"
+},
+
 "custom/uptime": {
-"format": "U: {}",
+  "format": "󰇄 {}",
         "interval": 30,
         "exec": "$HOME/.config/scripts/uptime",
 },

@@ -1,8 +1,8 @@
 * {
   border: none;
   border-radius: 4;
-  font-family: 'Terminus', 'Material Design Icons';
-  font-size: 18px;
+  font-family: 'Iosevka Nerd Font', 'Material Design Icons';
+  font-size: 16px;
   min-height: 0;
 }
 
@@ -20,6 +20,7 @@ tooltip {
   padding: 0px 10px;
   margin: 5px 3px;
 	color: #d0d0d0;
+  background-color: #292929;
 }
 
 #workspaces button:hover {
@@ -35,7 +36,7 @@ tooltip {
 }
 
 #mode {
-  background-color: #202020;
+  background-color: #292929;
   margin: 5px 3px;
   padding: 0px 10px;
 }
@@ -64,6 +65,63 @@ tooltip {
   padding: 0 12px;
   margin: 5px 3px;
   color: #E8E3E3;
+  background-color: #292929;
+}
+
+#idle_inhibitor {
+  color: #77B323;
+}
+
+#custom-powermenu {
+  color: #ac4142;
+}
+
+#custom-uptime {
+  color: #aa759f;
+}
+
+#custom-wofi {
+  color: #6a9fb5;
+}
+
+#network {
+  color: #6a9fb5;
+}
+
+#backlight {
+  color: #f4bf75;
+}
+
+#pulseaudio {
+  color: #6a9fb5;
+}
+
+#temperature {
+  color: #ac4142;
+}
+
+#disk {
+  color: #f4bf75;
+}
+
+#clock {
+  color: #d0d0d0;
+}
+
+#cpu {
+  color: #75b5aa;
+}
+
+#memory {
+  color: #90a959;
+}
+
+#mpd {
+  color: #00AAF1;
+}
+
+#language {
+  color: #d0d0d0;
 }
 
 @keyframes blink {
