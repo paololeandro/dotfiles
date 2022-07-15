@@ -53,7 +53,7 @@
 },
 
 "backlight": {
-  "format": "<span font='15' rise='-1000'>{icon}</span> {percent}%",
+  "format": "<span font='15' rise='-1000' foreground='#f4bf75'>{icon}</span> {percent}%",
 	"format-icons": ["󰃠"],
   "on-scroll-down": "brightnessctl set 5%-",
   "on-scroll-up": "brightnessctl set +5%"
@@ -65,24 +65,24 @@
 		"warning": 30,
 		"critical": 15
 },
-  "format": "<span font='15'>{icon}</span>{capacity}%",
-	"format-charging": "<span font='15'>󰂄 </span>{capacity}%",
+  "format": "<span font='15' foreground='#90a959'>{icon}</span>{capacity}%",
+	"format-charging": "<span font='15' foreground='#90a959'>󰂄 </span>{capacity}%",
 	"format-icons": ["󰂎 ","󰁺 ","󰁻 ","󰁼 ","󰁽 ","󰁾 ","󰁿 ","󰂀 ","󰂁 ","󰂂 ","󰁹 "],
 	"tooltip-format": "Battery at {capacity}%",
 },
 
 "network": {
-  "format-wifi": "<span font='15'>{icon}  </span>Connected",
+  "format-wifi": "<span font='15' foreground='#6a9fb5'>{icon}  </span>Connected",
   "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
   "format-ethernet": "{ipaddr}/{cidr}  ",
   "tooltip-format": " Connected to {essid}",
   "format-linked": "{ifname} (No IP)  ",
-  "format-disconnected": "<span font='15'>󰤭  </span>Disconnected",
+  "format-disconnected": "<span font='15' foreground='6a9fb5'>󰤭  </span>Disconnected",
 	"on-click": "alacritty -e nmtui"
 },
 
 "pulseaudio": {
-  "format": "<span font='16' rise='-1000'>{icon}</span> {volume}%",
+  "format": "<span font='16' rise='-1000' foreground='#6a9fb5'>{icon}</span> {volume}%",
   "format-muted": "<span font='15' rise='-1000' foreground='#DE2F2E'>󰖁</span><span foreground='#DE2F2E'> Muted</span>",
   "format-icons": {
     "headphones": ["󰋋"],
@@ -96,12 +96,12 @@
 
 "cpu": {
   "interval": 10,
-  "format": "<span font='15' rise='-1000'>󰍛</span> {usage}%",
+  "format": "<span font='15' rise='-1000' foreground='#75b5aa'>󰍛</span> {usage}%",
   "max-length": 10
 },
 
  "temperature": {
-   "format": "<span font='15' rise='-1000'>󰔐</span> {temperatureC}°C",
+   "format": "<span font='15' rise='-1000' foreground='#ac4142'>󰔐</span> {temperatureC}°C",
     //"on-click": "foot -e 'watch -n1 sensors'"
     "on-click": "psensor"
 },
@@ -109,13 +109,13 @@
 "memory": {
   "interval": 10,
   //"format": "💻 {used:0.1f} GB",
-  "format": "<span font='Material Design Icons 16' rise='-1000'>󰘚</span> {}%",
+  "format": "<span font='Material Design Icons 16' rise='-1000' foreground='#90a959'>󰘚</span> {}%",
   "max-length": 15
 },
 
 "disk": {
   "interval": 30,
-  "format": "<span font='15'>󰉋  </span>{percentage_used}%",
+  "format": "<span font='15' foreground='#f4bf75'>󰉋  </span>{percentage_used}%",
   "path": "/"
 },
 
@@ -124,8 +124,8 @@
   "format-alt": "{icon} idle {status}",
   "format-alt-click": "click-right",
   "format-icons": {
-    "activated": "<span font='15'>󰈈</span>",
-    "deactivated": "<span font='15'>󰈉</span>"
+    "activated": "<span font='15' rise='-1000' foreground='#77b323'>󰈈</span> Activated",
+    "deactivated": "<span font='15' rise='-1000' foreground='#ac4142'>󰈉</span> Deactivated"
     }
 },
 
@@ -149,7 +149,7 @@
 },
 
 "custom/uptime": {
-  "format": "󰇄 {}",
+  "format": "<span foreground='#aa759f'>󰇄</span> {}",
         "interval": 30,
         "exec": "$HOME/.config/scripts/uptime",
 },

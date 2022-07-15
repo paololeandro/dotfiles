@@ -68,56 +68,16 @@ tooltip {
   background-color: #292929;
 }
 
-#idle_inhibitor {
-  color: #77B323;
-}
-
 #custom-powermenu {
   color: #ac4142;
-}
-
-#custom-uptime {
-  color: #aa759f;
 }
 
 #custom-wofi {
   color: #6a9fb5;
 }
 
-#network {
-  color: #6a9fb5;
-}
-
-#backlight {
-  color: #f4bf75;
-}
-
-#pulseaudio {
-  color: #6a9fb5;
-}
-
-#temperature {
-  color: #ac4142;
-}
-
-#disk {
-  color: #f4bf75;
-}
-
 #clock {
   color: #d0d0d0;
-}
-
-#cpu {
-  color: #75b5aa;
-}
-
-#memory {
-  color: #90a959;
-}
-
-#mpd {
-  color: #00AAF1;
 }
 
 #language {
@@ -128,10 +88,6 @@ tooltip {
   to {
     background-color: #ac4142;
   }
-}
-
-#battery {
-  color: #90a959;
 }
 
 #battery.critical:not(.charging) {
