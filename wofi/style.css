@@ -4,9 +4,9 @@
 }
 
 #window {
-	background-color: #151515;
+	background-color: #272727;
 	color: #D0D0D0;
-        border: 0px solid #151515;
+  border: 0px solid #272727;
 	border-radius: 0px;
 }
 
@@ -16,15 +16,12 @@
 
 #input {
 	background-color: #202020;
-	border: 0px solid #151515;
+	border: 0px solid #272727;
 	padding: 8px 12px;
 }
 
 #scroll {
 	margin-top: 20px;
-}
-
-#inner-box {
 }
 
 #img {
@@ -46,12 +43,6 @@
 #entry:selected {
 	background-color: #ac4142;
 	color: #151515;
-}
-
-#unselected {
-}
-
-#selected {
 }
 
 #input, #entry:selected {
