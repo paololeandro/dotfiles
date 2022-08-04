@@ -4,7 +4,12 @@ config.set("fileselect.handler", "external")
 config.set("fileselect.single_file.command", ['foot', '--class', 'ranger,ranger', '-e', 'ranger', '--choosefile', '{}'])
 config.set("fileselect.multiple_files.command", ['foot', '--class', 'ranger,ranger', '-e', 'ranger', '--choosefiles', '{}'])
 
-c.url.start_pages = ["qute://bookmarks/"]
+config.bind('xs', 'config-cycle statusbar.show always never')
+config.bind('xt', 'config-cycle tabs.show always never')
+config.bind('xx', 'config-cycle tabs.show always never;; config-cycle statusbar.show always never')
+
+# c.url.start_pages = ["qute://bookmarks/"]
+c.url.start_pages = ["https://start.duckduckgo.com/"]
 
 c.fonts.default_family = "Iosevka Nerd Font"
 c.fonts.default_size = '12pt'
