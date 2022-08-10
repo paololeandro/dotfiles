@@ -209,7 +209,7 @@ bindsym Ctrl+Shift+Print exec $grimshot --notify copy area
 bindsym Alt+l exec swaylock    
 
 bindsym $mod+x exec $HOME/.config/scripts/wofi-power.sh
-bindsym alt+f exec foot -e ranger
+bindsym alt+f exec thunar
 bindsym alt+b exec qutebrowser
 
 # Reload Waybar
@@ -276,7 +276,7 @@ font pango:Iosevka Nerd Font Regular 14
 default_border pixel 1
 set $bg #d8dee9
 set $bod_f #d8dee9
-set $bod_u #303030
+set $bod_u #808080
 set $text #272727
 client.focused   $bod_f $bg $text $bod_f $bod_f
 client.unfocused $bod_u $bg $text $bod_u $bod_u
