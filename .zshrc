@@ -28,15 +28,17 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-export MESA_LOADER_DRIVER_OVERRIDE=iris
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 export XDG_CURRENT_DESKTOP=sway
 export MOZ_ENABLE_WAYLAND=1
+export LIBVA_DRIVER_NAME=iHD
+export VDPAU_DRIVER=va_gl
 
 alias vim="/home/paolo/.local/bin/lvim"
 alias backup-dotfiles="$HOME/.config/scripts/backup-dotfiles"
 alias cat="bat"
 alias ls="exa --long --header"
+alias la="ls -a"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
