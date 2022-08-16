@@ -11,10 +11,9 @@
                   "pulseaudio", 
                   "backlight", 
                   "battery", 
-                  "network", 
-                  "custom/uptime", 
                   "clock", 
                   "sway/language",
+                  "network", 
                   "idle_inhibitor",
                   "custom/powermenu",
                   "tray"
@@ -72,13 +71,13 @@
 },
 
 "network": {
-  "format-wifi": "<span font='15' foreground='#6a9fb5'>{icon}  </span>Connected",
+  "format-wifi": "<span font='15' foreground='#6a9fb5'>{icon}</span>",
   "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
   "format-ethernet": "{ipaddr}/{cidr}  ",
   "tooltip-format": " Connected to {essid}",
   "format-linked": "{ifname} (No IP)  ",
-  "format-disconnected": "<span font='15' foreground='6a9fb5'>󰤭  </span>Disconnected",
-	"on-click": "alacritty -e nmtui"
+  "format-disconnected": "<span font='15' foreground='#6a9fb5'>󰤭</span>",
+	"on-click": "foot -e nmtui"
 },
 
 "pulseaudio": {
@@ -124,8 +123,8 @@
   "format-alt": "{icon} idle {status}",
   "format-alt-click": "click-right",
   "format-icons": {
-    "activated": "<span font='15' rise='-1000' foreground='#77b323'>󰈈</span> Activated",
-    "deactivated": "<span font='15' rise='-1000' foreground='#ac4142'>󰈉</span> Deactivated"
+    "activated": "<span font='15' rise='-1000' foreground='#77b323'>󰈈</span>",
+    "deactivated": "<span font='15' rise='-1000' foreground='#ac4142'>󰈉</span>"
     }
 },
 
