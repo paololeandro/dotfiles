@@ -28,6 +28,9 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# Small letters will match small and capital letters
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 export XDG_CURRENT_DESKTOP=sway
 export MOZ_ENABLE_WAYLAND=1
