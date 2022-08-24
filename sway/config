@@ -209,8 +209,8 @@ bindsym Ctrl+Shift+Print exec $grimshot --notify copy area
 bindsym Alt+l exec swaylock    
 
 bindsym $mod+x exec $HOME/.config/scripts/wofi-power.sh
-bindsym alt+f exec thunar
-bindsym alt+b exec qutebrowser
+#bindsym alt+f exec thunar
+#bindsym alt+b exec qutebrowser
 
 # Reload Waybar
 bindsym $mod+p exec killall -SIGUSR1 waybar
