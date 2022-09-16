@@ -94,7 +94,7 @@ g.maplocalleader = ' '
 -- local ok, _ = pcall(vim.cmd, 'colorscheme base16-monokai')
 -- local ok, _ = pcall(vim.cmd, 'colorscheme base16-nord')
 -- local ok, _ = pcall(vim.cmd, 'colorscheme base16-oceanicnext')
-local ok, _ = pcall(vim.cmd, 'colorscheme base16-onedark')
+local ok, _ = pcall(vim.cmd, 'colorscheme base16-twilight')
 -- local ok, _ = pcall(vim.cmd, 'colorscheme palenight')
 -- local ok, _ = pcall(vim.cmd, 'colorscheme base16-solarized-dark')
 -- local ok, _ = pcall(vim.cmd, 'colorscheme base16-solarized-light')
@@ -241,5 +241,49 @@ return require('packer').startup(function()
             }
        end
   }
+
+  -- Which key
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      }
+    end
+  }
+
+  -- A better status line --
+  use { 'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  require('lualine').setup()
+
+  -- File management --
+  use 'vifm/vifm.vim'
+  use 'scrooloose/nerdtree'
+  use 'tiagofumo/vim-nerdtree-syntax-highlight'
+  use 'ryanoasis/vim-devicons'
+
+  -- Tim Pope Plugins --
+  use 'tpope/vim-surround'
+
+  -- Syntax Highlighting and Colors --
+  use 'PotatoesMaster/i3-vim-syntax'
+  use 'kovetskiy/sxhkd-vim'
+  use 'vim-python/python-syntax'
+  use 'ap/vim-css-color'
+
+  -- Junegunn Choi Plugins --
+  use 'junegunn/goyo.vim'
+  use 'junegunn/limelight.vim'
+  use 'junegunn/vim-emoji'
+
+  -- Colorschemes --
+  use 'RRethy/nvim-base16'
+  use 'kyazdani42/nvim-palenight.lua'
+
+  -- Other stuff --
+  use 'frazrepo/vim-rainbow'
 
 end)
