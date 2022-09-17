@@ -71,7 +71,7 @@
 },
 
 "network": {
-  "format-wifi": "<span font='15' foreground='#6a9fb5'>{icon}</span>",
+  "format-wifi": "<span font='15' foreground='#6a9fb5'>{icon}</span> {essid}",
   "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
   "format-ethernet": "{ipaddr}/{cidr}  ",
   "tooltip-format": " Connected to {essid}",
@@ -108,7 +108,7 @@
 "memory": {
   "interval": 10,
   //"format": "💻 {used:0.1f} GB",
-  "format": "<span font='Material Design Icons 16' rise='-1000' foreground='#90a959'>󰘚</span> {}%",
+  "format": "<span font='Material Design Icons 16' rise='-1000' foreground='#90a959'>󰘚</span> <span rise='1000'>{used:0.1f} GB</span>",
   "max-length": 15
 },
 
