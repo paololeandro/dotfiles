@@ -7,6 +7,7 @@ local A   = vim.api
 -- vim.api.nvim_command('filetype plugin indent on')
 
 o.termguicolors = true
+require("bufferline").setup{}
 -- o.background = 'dark'
 
 -- Do not save when switching buffers
@@ -33,8 +34,8 @@ o.cindent = true
 o.autoindent = true
 o.wrap = true
 o.textwidth = 300
-o.tabstop = 4
-o.shiftwidth = 4
+o.tabstop = 2 
+o.shiftwidth = 2 
 o.softtabstop = -1 -- If negative, shiftwidth value is used
 o.list = true
 o.listchars = 'trail:·,nbsp:◇,tab:→ ,extends:▸,precedes:◂'
@@ -129,6 +130,9 @@ map('n', '<leader>ff', '<CMD>Telescope find_files<CR>')
 map('n', '<leader>fb', '<CMD>Telescope file_browser<CR>')
 map('n', '<leader>fw', '<CMD>Telescope live_grep<CR>')
 map('n', '<leader>ht', '<CMD>Telescope colorscheme<CR>')
+
+-- Keybinding for nerdtree 
+map('n', '<leader>e', '<CMD>NERDTreeFocus<CR>')
 
 -------------------------------------------------
 -- DASHBOARD
@@ -258,6 +262,9 @@ return require('packer').startup(function()
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   require('lualine').setup()
+
+  -- Buffer line --
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
   -- File management --
   use 'vifm/vifm.vim'
