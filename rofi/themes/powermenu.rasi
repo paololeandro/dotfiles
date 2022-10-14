@@ -20,7 +20,7 @@ window {
     text-color:                     @foreground;
     border:                         0px 0px 0px 0px;
     border-color:                   #1A1A1A;    
-    border-radius:                  10px;
+    border-radius:                  0px;
     height:                         17%;
     width:                          20%;
     location:                       center;
