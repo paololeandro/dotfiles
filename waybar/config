@@ -12,6 +12,7 @@
                   "backlight", 
                   "battery", 
                   "clock", 
+                  "custom/uptime", 
                   "sway/language",
                   "network", 
                   "idle_inhibitor",
@@ -23,16 +24,16 @@
 "all-outputs": true,
 "format": "{name}",
 "format-icons": {
-	"1": "󰬺",
-	"2": "󰬻",
-	"3": "󰬼",
-	"4": "󰬽",
-	"5": "󰬾",
-	"6": "󰬿",
-	"7": "󰭀",
-	"8": "󰭁",
-	"9": "󰭂",
-	"10": "󰬹",
+	"1": "1",
+	"2": "2",
+	"3": "3",
+	"4": "4",
+	"5": "5",
+	"6": "6",
+	"7": "7",
+	"8": "8",
+	"9": "9",
+	"10": "0",
 	},
 },
 
@@ -46,14 +47,13 @@
 },
 
 "clock": {
-	"format": "<span font='16' rise='-1000'>󱑂</span> {:%H:%M}",
+	"format": "TIME {:%H:%M}",
 	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	"format-alt": "<span font='16'rise='-1000'>󰸗</span> {:%a %d %B %Y}",
+	"format-alt": "DATE {:%a %d %B %Y}",
 },
 
 "backlight": {
-  "format": "<span font='15' rise='-1000' foreground='#f4bf75'>{icon}</span> {percent}%",
-	"format-icons": ["󰃠"],
+  "format": "SCREEN {percent}%",
   "on-scroll-down": "brightnessctl set 5%-",
   "on-scroll-up": "brightnessctl set +5%"
 },
@@ -64,57 +64,50 @@
 		"warning": 30,
 		"critical": 15
 },
-  "format": "<span font='15' foreground='#90a959'>{icon}</span>{capacity}%",
-	"format-charging": "<span font='15' foreground='#90a959'>󰂄 </span>{capacity}%",
-	"format-icons": ["󰂎 ","󰁺 ","󰁻 ","󰁼 ","󰁽 ","󰁾 ","󰁿 ","󰂀 ","󰂁 ","󰂂 ","󰁹 "],
+  "format": "BAT {capacity}%",
+	"format-charging": "BAT {capacity}%",
 	"tooltip-format": "Battery at {capacity}%",
 },
 
 "network": {
-  "format-wifi": "<span font='15' foreground='#6a9fb5'>{icon}</span> {essid}",
-  "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+  "format-wifi": "WIFI CONNECTED {signalStrength}%",
   "format-ethernet": "{ipaddr}/{cidr}  ",
   "tooltip-format": " Connected to {essid}",
   "format-linked": "{ifname} (No IP)  ",
-  "format-disconnected": "<span font='15' foreground='#6a9fb5'>󰤭</span>",
+  "format-disconnected": "WIFI DISCONNECTED",
 	"on-click": "foot -e nmtui"
 },
 
 "pulseaudio": {
-  "format": "<span font='16' rise='-1000' foreground='#6a9fb5'>{icon}</span> {volume}%",
-  "format-muted": "<span font='15' rise='-1000' foreground='#DE2F2E'>󰖁</span><span foreground='#DE2F2E'> Muted</span>",
-  "format-icons": {
-    "headphones": ["󰋋"],
-    "default": ["󰕾"]
-			},
-	"scroll-step": 5,
- 	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "on-click-middle": "pavucontrol"
+  "format": "VOL {volume}%",
+  "format-muted": "VOL MUTED",
+  "scroll-step": 5,
+  "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+  "on-click-middle": "pavucontrol"
 },
 
 "cpu": {
   "interval": 10,
-  "format": "<span font='15' rise='-1000' foreground='#75b5aa'>󰍛</span> {usage}%",
+  "format": "CPU {usage}%",
   "max-length": 10
 },
 
  "temperature": {
-   "format": "<span font='15' rise='-1000' foreground='#ac4142'>󰔐</span> {temperatureC}°C",
+   "format": "TEMP {temperatureC}°C",
     //"on-click": "foot -e 'watch -n1 sensors'"
     "on-click": "psensor"
 },
 
 "memory": {
   "interval": 10,
-  //"format": "💻 {used:0.1f} GB",
-  "format": "<span font='Material Design Icons 16' rise='-1000' foreground='#90a959'>󰘚</span> <span rise='1000'>{used:0.1f} GB</span>",
+  "format": "RAM {used:0.1f} GB",
   "max-length": 15
 },
 
 "disk": {
   "interval": 30,
-  "format": "<span font='15' foreground='#f4bf75'>󰉋  </span>{percentage_used}%",
+  "format": "DISK {percentage_used}%",
   "path": "/"
 },
 
@@ -123,41 +116,40 @@
   "format-alt": "{icon} idle {status}",
   "format-alt-click": "click-right",
   "format-icons": {
-    "activated": "<span font='15' rise='-1000' foreground='#77b323'>󰈈</span>",
-    "deactivated": "<span font='15' rise='-1000' foreground='#ac4142'>󰈉</span>"
+    "activated": "IDLE OFF",
+    "deactivated": "IDLE ON"
     }
 },
 
 "sway/language": {
-    //"format": "<span font='16' rise='-1000'>󰌌</span> <span text-transform='uppercase'>{short}</span>",
-    "format": "{flag}",
-    "format-alt": "<span font='16' rise='-1000'>󰌌</span> {long}",
+    "format": "<span text-transform='uppercase'>{short}</span>",
+    "format-alt": "{long}",
     "format-alt-click": "click-right",
     "tooltip-format": "{long}",
     "on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
 },
 
 "custom/powermenu": {
-        "return-type": "json",
-        "format": "<span font='16'>{icon}</span>",
-        "format-icons": ["󰐥"],
-	"tooltip": false,
-        "interval": 3600,
-        "escape": true,
-        "on-click": "~/.config/scripts/wofi-power.sh"
+  "return-type": "json",
+  "format": "<span font='16'>{icon}</span>",
+  "format-icons": ["󰐥"],
+  "tooltip": false,
+  "interval": 3600,
+  "escape": true,
+  "on-click": "~/.config/scripts/wofi-power.sh"
 },
 
 "custom/uptime": {
-  "format": "<span foreground='#aa759f'>󰇄</span> {}",
-        "interval": 30,
-        "exec": "$HOME/.config/scripts/uptime",
+  "format": "UPTIME {}",
+  "interval": 30,
+  "exec": "$HOME/.config/scripts/uptime",
 },
 
 "custom/wofi": {
-		"format": "󰣇",
-		"on-click": "wofi --show drun --width 800 --allow-images",
-        "on-click-right": "killall wofi",
-		"tooltip": false
-	},
+  "format": "MENU",
+  "on-click": "wofi --show drun --width 800 --allow-images",
+  "on-click-right": "killall wofi",
+  "tooltip": false
+},
 
 }
