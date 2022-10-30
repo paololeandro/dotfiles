@@ -32,10 +32,6 @@ _comp_options+=(globdots)		# Include hidden files.
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
-export XDG_CURRENT_DESKTOP=sway
-export MOZ_ENABLE_WAYLAND=1
-export QT_QPA_PLATFORM=wayland
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export LIBVA_DRIVER_NAME=iHD
 export VDPAU_DRIVER=va_gl
 
