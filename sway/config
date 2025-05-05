@@ -2,9 +2,11 @@
 
 set $term foot
 
-set $grimshot ~/.config/scripts/grimshot.sh
+set $grimshot ~/scripts/grimshot.sh
 
 set $menu wofi --style=$HOME/.config/wofi/style.css
+
+set $files foot -e ranger
 
 # Home row direction keys, like vim
 set $left h
@@ -14,45 +16,26 @@ set $right l
 
 # Inputs
 
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+# You can get the names of your inputs by running: swaymsg -t get_inputs
 
-input "1:1:AT_Translated_Set_2_keyboard" {
-  xkb_layout "br, us(intl)"
-  xkb_options grp:alt_shift_toggle
-}
-
-input "9610:73:BY_Tech_Gaming_Keyboard" {
+input type:keyboard {
   xkb_layout "us(intl), br"
   xkb_options grp:alt_shift_toggle
-}
-
-input "1267:12596:ASUE140A:00_04F3:3134_Touchpad" {
-  tap enabled
 }
 
 # Outputs
 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output eDP-1 {
-  background /home/paolo/wallpapers/darkest.png fill
-  mode 1920x1080@60Hz
-  pos 0 768
-}
-
-output HDMI-A-1 {
-  background /home/paolo/wallpapers/darkest.png fill
-  mode 1920x1080@75Hz
-  pos 1920 768
+output DP-3 {
+  bg ~/wallpapers/moon.png fill 
+  mode 2560x1440@179.960Hz
   transform normal
   scale 1.0
   scale_filter nearest
   adaptive_sync off
   dpms on
 }
-
-workspace 9 output eDP-1
-workspace 10 output DP-3
 
 # Keybinds
 
@@ -67,6 +50,8 @@ bindsym $mod+q kill
 
 # Start your launcher
 bindsym $mod+d exec $menu
+
+bindsym $mod+m exec $files
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -203,16 +188,12 @@ bindsym Ctrl+Shift+Print exec $grimshot --notify copy area
 
 bindsym Alt+l exec swaylock    
 
-bindsym $mod+x exec $HOME/.config/scripts/wofi-power.sh
+bindsym $mod+x exec $HOME/scripts/wofi-power.sh
 #bindsym alt+f exec thunar
 #bindsym alt+b exec qutebrowser
 
 # Reload Waybar
 bindsym $mod+p exec killall -SIGUSR1 waybar
-
-# Disable laptop's display when closed
-bindswitch --reload --locked lid:on output eDP-1 disable
-bindswitch --reload --locked lid:off output eDP-1 enable
 
 # Wayland default floats
 for_window [window_role = "pop-up"] floating enable
@@ -240,6 +221,7 @@ for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
 for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 
+for_window [app_id="(Alacritty)"] floating enable 
 for_window [app_id="(pavucontrol)"] floating enable
 for_window [app_id="(gnome-disks)"] floating enable
 

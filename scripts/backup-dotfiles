@@ -1,15 +1,35 @@
 #!/bin/bash
-echo "Applyng dotfiles backup"
-cp -r ~/.config/alacritty ~/.git/dotfiles
-cp -r ~/.config/foot ~/.git/dotfiles
-cp -r ~/.config/sway ~/.git/dotfiles
-cp -r ~/.config/swaylock ~/.git/dotfiles
-cp -r ~/.config/waybar ~/.git/dotfiles
-cp -r ~/.config/mako ~/.git/dotfiles/
-cp -r ~/.config/wofi ~/.git/dotfiles/
-cp -r ~/.config/ranger ~/.git/dotfiles/
-cp -r ~/.config/zathura/ ~/.git/dotfiles/
-cp -r ~/.config/scripts ~/.git/dotfiles
-cp ~/.config/qutebrowser/config.py ~/.git/dotfiles/qutebrowser/
-cp ~/.zshrc ~/.git/dotfiles
+echo "Backing up your dotfiles"
+cp -r ~/.config/nvim/ ~/dotfiles/
+echo "Copied Neovim"
+cp -r ~/.config/foot ~/dotfiles
+echo "Copied Foot"
+cp -r ~/.config/alacritty ~/dotfiles
+echo "Copied Alacritty"
+cp -r ~/.config/sway ~/dotfiles
+echo "Copied Sway"
+cp -r ~/.config/swaylock ~/dotfiles
+echo "Copied Swaylock"
+cp -r ~/.config/waybar ~/dotfiles
+echo "Copied Waybar"
+cp -r ~/.config/mako ~/dotfiles/
+echo "Copied Mako"
+cp -r ~/.config/wofi ~/dotfiles/
+echo "Copied Wofi"
+cp -r ~/.config/ranger ~/dotfiles/
+echo "Copied Ranger"
+cp -r ~/.config/zathura/ ~/dotfiles/
+echo "Copied Zathura"
+cp -r ~/.config/MangoHud/ ~/dotfiles/
+echo "Copied MangoHud"
+cp -r ~/.config/zsh ~/dotfiles
+echo "Copied ZSH"
+cp -r ~/.config/qutebrowser/ ~/dotfiles/
+echo "Copied Qutebrowser"
+cp -r ~/scripts ~/dotfiles
+echo "Copied Scripts"
+cp -r ~/wallpapers/ ~/dotfiles/
+echo "Copied Wallpapers"
+cp ~/.zprofile ~/dotfiles
+echo "Copied .zprofile"
 echo "Success!"

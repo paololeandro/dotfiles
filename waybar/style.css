@@ -1,3 +1,11 @@
+@define-color red #AC4142;
+@define-color green #90A959;
+@define-color yellow #F4BF75;
+@define-color blue #6A9FB5;
+@define-color magenta #AA759F;
+@define-color cyan #75B5AA;
+@define-color white #D0D0D0;
+
 * {
   border: none;
   border-radius: 4;
@@ -51,6 +59,7 @@ tooltip {
 #bluetooth, 
 #pulseaudio, 
 #cpu, 
+#custom-gpu,
 #network, 
 #memory, 
 #backlight, 
@@ -64,36 +73,34 @@ tooltip {
 #idle_inhibitor {
   padding: 0 12px;
   margin: 5px 3px;
-  color: #E8E3E3;
+  color: @white;
   background-color: #292929;
 }
 
-#custom-powermenu {
-  color: #ac4142;
+#custom-powermenu, #temperature {
+  color: @red;
 }
 
-#custom-wofi {
-  color: #6a9fb5;
+#custom-wofi, #cpu, #custom-gpu, #bluetooth {
+  color: @blue;
 }
 
-#clock {
-  color: #d0d0d0;
+#memory, #idle_inhibitor {
+  color: @green;
 }
 
-#language {
-  color: #d0d0d0;
+#disk {
+  color: @yellow;
 }
 
-@keyframes blink {
-  to {
-    background-color: #ac4142;
-  }
+#pulseaudio {
+  color: @magenta;
 }
 
-#battery.critical:not(.charging) {
-  animation-name: blink;
-  animation-duration: 0.7s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+#network {
+  color: @cyan;
 }
+
+
+
+

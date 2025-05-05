@@ -18,7 +18,7 @@ echo "##########################################################################
 sudo pacman -S --noconfirm --needed base-devel git
 
 # choose video driver
-echo "1) xf86-video-intel     2) xf86-video-amd-gpu     3) nvidia     4) Skip"
+echo "1) xf86-video-intel     2) vulkan-radeon     3) nvidia     4) Skip"
 read -r -p "Choose your video card driver(default 1)(will not re-install): " vid
 
 case $vid in
@@ -27,7 +27,7 @@ case $vid in
     ;;
 
 [2])
-    DRI='xf86-video-amd-gpu'
+    DRI='vulkan-radeon'
     ;;
 
 [3])
@@ -66,23 +66,32 @@ case $brwsr in
 esac
 
 # install wayland and some x-wayland stuffs if not installed
-sudo pacman -S --noconfirm --needed $DRI xorg-xwayland sway waybar swayidle swaylock bemenu-wayland mako libnotify 
+sudo pacman -S --noconfirm --needed $DRI xorg-xwayland sway waybar swayidle swaylock swaybg mako wofi libnotify 
 
 # install audio stuffs if not installed
-sudo pacman -S --noconfirm mpv bluez bluez-utils blueman network-manager-applet pavucontrol pipewire pipewire-alsa pipewire-pulse pipewire-jack pipewire-media-session alsa-firmware sof-firmware alsa-ucm-conf pamixer playerctl brightnessctl mpd mpc ncmpcpp
+sudo pacman -S --noconfirm mpv pavucontrol
 
 # xdg stuffs
-sudo pacman -S --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr xdg-user-dirs
+sudo pacman -S --noconfirm xdg-desktop-portal-wlr xdg-user-dirs
 xdg-user-dirs-update;
 
 # others apps and utilities
-sudo pacman -S --noconfirm foot $BRW neofetch nautilus baobab exa bat unzip file-roller gnome-disk-utility gnome-themes-extra ntfs-3g ranger zathura zathura-pdf-mupdf transmission-gtk
+sudo pacman -S --noconfirm neovim foot $BRW neofetch exa bat zathura zathura-pdf-mupdf imagemagick
+
+# Printscreen
+sudo pacman -S grim slurp
+
+# Bluetooth
+sudo pacman -S bluez bluez-utils
+
+# Gaming stuffs
+sudo pacman -S mangohud mesa-utils
 
 # development stuffs
-sudo pacman -S npm yarn rust
+# sudo pacman -S npm yarn rust
 
 # auto mount android 4+ devices
-sudo pacman -S mtpfs gvfs-mtp gvfs-gphoto2
+# sudo pacman -S mtpfs gvfs-mtp gvfs-gphoto2
 
 # zsh stuffs
 sudo pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -120,7 +129,7 @@ if ! command -v $HELPER &> /dev/null
 fi
 
 # install stuffs with AUR helper
-$HELPER -S asdf-vm papirus-icon-theme-git papirus-folders-git volantes-cursors protonvpn-cli
+$HELPER -S ranger-git
 
 echo "Changing gtk theme, icons and cursors..."
 sleep 1
@@ -131,79 +140,118 @@ gsettings set org.gnome.desktop.interface cursor-theme volantes_light_cursors
 echo "DONE..."
 sleep 1
 
-# custom config files
-if [ -f ~/.config/alacritty/alacritty.yml ]; then
-    echo "Alacritty configs detected, backing up..."
-    cp ~/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml.old;
-    cp ./alacritty/alacritty.yml ~/.config/alacritty/;
-    cp ~/.config/alacritty/paradise.yml ~/.config/alacritty/paradise.yml.old;
-    cp ./alacritty/paradise.yml ~/.config/alacritty/;
+# My Config
+## Terminal
+if [ -f ~/.config/foot/foot.ini ]; then
+    echo "Foot configs detected, backing up..."
+    cp ~/.config/foot/foot.ini ~/.config/foot/foot.ini.old;
+    cp ./foot/foot.ini ~/.config/foot/;
+    echo "DONE"
 else
-    echo "Installing alacritty configs..."
-    cp -r ./alacritty/ ~/.config/;
+    echo "Installing Foot configs..."
+    cp -r ./foot/ ~/.config/;
+    echo "DONE"
 fi
-if [ -d ~/wallpapers ]; then
-    echo "Adding wallpapers to ~/wallpapers..."
-    cp ./wallpapers/* ~/wallpapers/;
+## Text Editor
+if [ -f ~/.config/nvim/init.lua ]; then
+    echo "Neovim configs detected, backing up..."
+    cp ~/.config/nvim/init.lua ~/.config/nvim/init.lua.old;
+    cp ./nvim/init.lua ~/.config/nvim/;
+    echo "DONE"
 else
-    echo "Installing wallpapers..."
-    mkdir ~/wallpapers && cp -r ./wallpapers/* ~/wallpapers/;
+    echo "Installing Neovim configs..."
+    cp -r ./nvim/ ~/.config/;
+    echo "DONE"
 fi
-if [ -f ~/.config/mako/config ]; then
-    echo "Mako configs detected, backing up..."
-    cp ~/.config/mako/config ~/.config/mako/config.old;
-    cp ./mako/config ~/.config/mako/;
-else
-    echo "Installing mako configs..."
-    cp -r ./mako/ ~/.config/;
-fi
+
+## Tiling Window Manager
 if [ -f ~/.config/sway/config ]; then
     echo "Sway configs detected, backing up..."
     cp ~/.config/sway/config ~/.config/sway/config.old;
     cp ./sway/config ~/.config/sway/;
+    echo "DONE"
 else
     echo "Installing sway configs..."
     cp -r ./sway/ ~/.config/;
+    echo "DONE"
 fi
-if [ -f ~/.config/swaylock/config ]; then
-    echo "Swaylock configs detected, backing up..."
-    cp ~/.config/swaylock/config ~/.config/swaylock/config.old;
-    cp ./swaylock/config ~/.config/swaylock/;
-else
-    echo "Installing swaylock configs..."
-    cp -r ./swaylock/ ~/.config/;
-fi
+## Waybar
 if [ -f ~/.config/waybar/config ]; then
     echo "Waybar configs detected, backing up..."
     cp ~/.config/waybar/config ~/.config/waybar/config.old;
     cp ~/.config/waybar/style.css ~/.config/waybar/style.css.old;
     cp ./waybar/config ~/.config/waybar/;
     cp ./waybar/style.css ~/.config/waybar/;
+    echo "DONE"
 else
     echo "Waybar configs not found, installing..."
     cp -r ./waybar/ ~/.config/;
+    echo "DONE"
 fi
+## Screenlock
+if [ -f ~/.config/swaylock/config ]; then
+    echo "Swaylock configs detected, backing up..."
+    cp ~/.config/swaylock/config ~/.config/swaylock/config.old;
+    cp ./swaylock/config ~/.config/swaylock/;
+    echo "DONE"
+else
+    echo "Installing swaylock configs..."
+    cp -r ./swaylock/ ~/.config/;
+    echo "DONE"
+fi
+## Notification
+if [ -f ~/.config/mako/config ]; then
+    echo "Mako configs detected, backing up..."
+    cp ~/.config/mako/config ~/.config/mako/config.old;
+    cp ./mako/config ~/.config/mako/;
+    echo "DONE"
+else
+    echo "Installing mako configs..."
+    cp -r ./mako/ ~/.config/;
+    echo "DONE"
+fi
+## Wallpapers
+if [ -d ~/wallpapers ]; then
+    echo "Adding wallpapers to ~/wallpapers..."
+    cp ./wallpapers/* ~/wallpapers/;
+    echo "DONE"
+else
+    echo "Installing wallpapers..."
+    mkdir ~/wallpapers && cp -r ./wallpapers/* ~/wallpapers/;
+    echo "DONE"
+fi
+## PDF
 if [ -f ~/.config/zathura/zathurarc ]; then
     echo "Zathura configs detected, backing up..."
     cp ~/.config/zathura/zathurarc ~/.config/zathura/zathurarc.old;
-    cp ~/.config/zathura/paradise.yml ~/.config/zathura/paradise.yml.old;
     cp ./zathura/zathurarc ~/.config/zathura/;
-    cp ./zathura/paradise.yml ~/.config/zathura/;
     echo "DONE"
 else
     echo "Zathura configs not found, installing..."
     cp -r ./zathura/ ~/.config/;
     echo "DONE"
 fi
-if [ -d ~/.config/scripts ]; then
-    echo "Adding scripts do ~/.config/scripts"   
-    cp ./scripts/* ~/.config/scripts/;
+## MangoHud
+if [ -f ~/.config/MangoHud/MangoHud.conf ]; then
+    echo "MangoHud configs detected, backing up..."
+    cp ~/.config/MangoHud/MangoHud.conf ~/.config/MangoHud.conf.old;
+    cp ./MangoHud/MangoHud.conf ~/.config/MangoHud/;
+    echo "DONE"
 else
-    echo "Installing scripts..."
-    mkdir ~/.config/scripts && cp -r ./scripts/* ~/.config/scripts/;
+    echo "MangoHud configs not found, installing..."
+    cp -r ./MangoHud/ ~/.config/;
+    echo "DONE"
 fi
 
-echo "Will now atempt to install Lunar Vim and it's depedencies with no prompts"
-sleep 1
-bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) -y
+## Scripts
+if [ -d ~/scripts ]; then
+    echo "Adding scripts do ~/scripts"   
+    cp ./scripts/* ~/scripts/;
+    echo "DONE"
+else
+    echo "Installing scripts..."
+    cp -r ./scripts/* ~/;
+    echo "DONE"
+fi
+
 echo "SUCCESS..."

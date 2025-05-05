@@ -5,9 +5,11 @@
 "modules-left": ["custom/wofi", "sway/workspaces", "sway/mode"],
 "modules-right": [
                   "cpu", 
+                  "temperature", 
+                  "custom/gpu", 
+                  "temperature#gpu", 
                   "memory", 
                   "disk", 
-                  "temperature", 
                   "pulseaudio", 
                   "backlight", 
                   "battery", 
@@ -15,6 +17,7 @@
                   "custom/uptime", 
                   "sway/language",
                   "network", 
+		  "bluetooth",
                   "idle_inhibitor",
                   "custom/powermenu",
                   "tray"
@@ -47,67 +50,80 @@
 },
 
 "clock": {
-	"format": "TIME {:%H:%M}",
+	"format": "<span font='16' rise='-2000'>󱑂</span> {:%H:%M}",
 	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 	"format-alt": "DATE {:%a %d %B %Y}",
 },
 
-"backlight": {
-  "format": "SCREEN {percent}%",
-  "on-scroll-down": "brightnessctl set 5%-",
-  "on-scroll-up": "brightnessctl set +5%"
-},
-
-"battery": {
-	"states": {
-		"good": 95,
-		"warning": 30,
-		"critical": 15
-},
-  "format": "BAT {capacity}%",
-	"format-charging": "BAT {capacity}%",
-	"tooltip-format": "Battery at {capacity}%",
-},
-
 "network": {
   "format-wifi": "WIFI CONNECTED {signalStrength}%",
-  "format-ethernet": "{ipaddr}/{cidr}  ",
-  "tooltip-format": " Connected to {essid}",
+  "format-ethernet": "<span font='16' rise='5000'>󰈀</span>",
+  "tooltip-format": "{ipaddr}",
   "format-linked": "{ifname} (No IP)  ",
   "format-disconnected": "WIFI DISCONNECTED",
-	"on-click": "foot -e nmtui"
+	"on-click": "alacritty -e nmtui"
 },
 
 "pulseaudio": {
-  "format": "VOL {volume}%",
-  "format-muted": "VOL MUTED",
+  "format": "<span font='16' rise='-2000'>󰕾</span> {volume}%",
+  "format-muted": "<span font='16' rise='-2000'>󰝟</span>",
   "scroll-step": 5,
   "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
   "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
   "on-click-middle": "pavucontrol"
 },
 
-"cpu": {
-  "interval": 10,
-  "format": "CPU {usage}%",
-  "max-length": 10
+"bluetooth": {
+	"format-on": "<span font='16' rise='-2000'>󰂯</span>",
+	"format-off": "<span font='16' rise='-2000' foreground='#AC4142'>󰂲</span>",
+	"format-disabled": "", // an empty format will hide the module
+	"format-connected": "<span font='16' rise='-2000'>󰂱 </span>",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "~/scripts/wofi-bluetooth"
 },
 
- "temperature": {
-   "format": "TEMP {temperatureC}°C",
-    //"on-click": "foot -e 'watch -n1 sensors'"
-    "on-click": "psensor"
+"cpu": {
+  "interval": 10,
+  "format": "<span font='16' rise='-2000'>󰍛</span> {usage}%",
+  "max-length": 10,
+  "on-click": "alacritty -e bpytop"
+},
+
+"custom/gpu": {
+  "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
+  "format": "<span font='16' rise='-2500'>󰛱</span> {}%",
+  "return-type": "",
+  "interval": 1
+},
+
+"temperature": {
+  "thermal-zone": 2,
+  "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input"],
+  "critical-threshold": 80,
+  "format-critical": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C",
+  "format": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C"
+},
+
+"temperature#gpu": {
+  "thermal-zone": 2,
+  "hwmon-path": ["/sys/class/hwmon/hwmon1/temp1_input"],
+  "critical-threshold": 80,
+  "format-critical": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C",
+  "format": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C"
 },
 
 "memory": {
   "interval": 10,
-  "format": "RAM {used:0.1f} GB",
-  "max-length": 15
+  "format": "<span font='16' rise='-4000'></span> {percentage}% 󰁕 {used:0.1f} GB",
+  "max-length": 20
 },
 
 "disk": {
   "interval": 30,
-  "format": "DISK {percentage_used}%",
+  "format": "<span font='16' rise='-2000'>󰉋</span> {percentage_used}% 󰁕 {specific_used:0.2f} GB",
+  "unit": "GB",
   "path": "/"
 },
 
@@ -116,13 +132,13 @@
   "format-alt": "{icon} idle {status}",
   "format-alt-click": "click-right",
   "format-icons": {
-    "activated": "IDLE OFF",
-    "deactivated": "IDLE ON"
+    "activated": "<span font='16'>󰛐</span>",
+    "deactivated": "<span font='16'>󰛑</span>"
     }
 },
 
 "sway/language": {
-    "format": "<span text-transform='uppercase'>{short}</span>",
+    "format": "<span font='14'>{flag}</span>",
     "format-alt": "{long}",
     "format-alt-click": "click-right",
     "tooltip-format": "{long}",
@@ -131,12 +147,12 @@
 
 "custom/powermenu": {
   "return-type": "json",
-  "format": "<span font='16'>{icon}</span>",
+  "format": "<span font='17'>{icon}</span>",
   "format-icons": ["󰐥"],
   "tooltip": false,
   "interval": 3600,
   "escape": true,
-  "on-click": "~/.config/scripts/wofi-power.sh"
+  "on-click": "~/scripts/wofi-power.sh"
 },
 
 "custom/uptime": {
