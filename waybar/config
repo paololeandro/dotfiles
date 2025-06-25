@@ -10,7 +10,8 @@
                   "temperature#gpu", 
                   "memory", 
                   "disk", 
-                  "pulseaudio", 
+                  "pulseaudio#output", 
+                  "pulseaudio#input", 
                   "backlight", 
                   "battery", 
                   "clock", 
@@ -64,12 +65,22 @@
 	"on-click": "alacritty -e nmtui"
 },
 
-"pulseaudio": {
+"pulseaudio#output": {
   "format": "<span font='16' rise='-2000'>󰕾</span> {volume}%",
-  "format-muted": "<span font='16' rise='-2000'>󰝟</span>",
+  "format-muted": "<span font='16' rise='-2000'>󰖁</span>",
   "scroll-step": 5,
   "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-  "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+  "on-click-middle": "pavucontrol"
+},
+
+"pulseaudio#input": {
+  "format": "{format_source}",
+  "format-source": "<span font='16' rise='-2000'>󰍬</span> {volume}%",
+  "format-source-muted": "<span font='16' rise='-2000'>󰍭</span>",
+  "scroll-step": 5,
+  "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+  "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+  "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
   "on-click-middle": "pavucontrol"
 },
 

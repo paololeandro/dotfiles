@@ -22,7 +22,7 @@ cp -r ~/.config/zathura/ ~/dotfiles/
 echo "Copied Zathura"
 cp -r ~/.config/MangoHud/ ~/dotfiles/
 echo "Copied MangoHud"
-cp -r ~/.config/zsh ~/dotfiles
+cp -r ~/.zshrc ~/dotfiles
 echo "Copied ZSH"
 cp -r ~/.config/qutebrowser/ ~/dotfiles/
 echo "Copied Qutebrowser"
@@ -30,6 +30,4 @@ cp -r ~/scripts ~/dotfiles
 echo "Copied Scripts"
 cp -r ~/wallpapers/ ~/dotfiles/
 echo "Copied Wallpapers"
-cp ~/.zprofile ~/dotfiles
-echo "Copied .zprofile"
 echo "Success!"

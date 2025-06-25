@@ -17,6 +17,27 @@ echo "##########################################################################
 # install base-devel if not installed
 sudo pacman -S --noconfirm --needed base-devel git
 
+echo "Creating AUR helper directory"
+mkdir -p ~/.helper
+
+echo "We need an AUR helper. 1) yay   2) paru"
+read -r -p "What is the AUR helper of your choice? (Default is yay): " num
+
+if [ $num -eq 2 ]
+    then
+        HELPER="paru"
+fi
+
+if ! command -v $HELPER &> /dev/null
+    then
+        echo "It seems that you don't have $HELPER installed, I'll install that for you before continuing..."
+            git clone https://aur.archlinux.org/$HELPER.git ~/.helper/$HELPER
+            ( cd ~/.helper/$HELPER/ && makepkg -si )
+fi
+
+# install stuffs with AUR helper
+$HELPER -S ranger-git
+
 # choose video driver
 echo "1) xf86-video-intel     2) vulkan-radeon     3) nvidia     4) Skip"
 read -r -p "Choose your video card driver(default 1)(will not re-install): " vid
@@ -27,7 +48,7 @@ case $vid in
     ;;
 
 [2])
-    DRI='vulkan-radeon'
+    DRI='vulkan-radeon lib32-vulkan-radeon'
     ;;
 
 [3])
@@ -73,10 +94,15 @@ sudo pacman -S --noconfirm mpv pavucontrol
 
 # xdg stuffs
 sudo pacman -S --noconfirm xdg-desktop-portal-wlr xdg-user-dirs
+
+# Making diretories
+echo "Creating diretories"
+cp ./user-dirs.defaults /etc/xdg/;
 xdg-user-dirs-update;
+echo "DONE..."
 
 # others apps and utilities
-sudo pacman -S --noconfirm neovim foot $BRW neofetch exa bat zathura zathura-pdf-mupdf imagemagick
+sudo pacman -S --noconfirm neovim foot alacritty $BRW neofetch exa bat zathura zathura-pdf-mupdf imagemagick
 
 # Printscreen
 sudo pacman -S grim slurp
@@ -86,12 +112,6 @@ sudo pacman -S bluez bluez-utils
 
 # Gaming stuffs
 sudo pacman -S mangohud mesa-utils
-
-# development stuffs
-# sudo pacman -S npm yarn rust
-
-# auto mount android 4+ devices
-# sudo pacman -S mtpfs gvfs-mtp gvfs-gphoto2
 
 # zsh stuffs
 sudo pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -109,27 +129,6 @@ cp -r ./fonts/* ~/.local/share/fonts/;
 fc-cache -f
 clear
 echo "Fonts installed..."
-
-echo "Creating AUR helper directory"
-mkdir -p ~/.helper
-
-echo "We need an AUR helper. 1) yay   2) paru"
-read -r -p "What is the AUR helper of your choice? (Default is yay): " num
-
-if [ $num -eq 2 ]
-    then
-        HELPER="paru"
-fi
-
-if ! command -v $HELPER &> /dev/null
-    then
-        echo "It seems that you don't have $HELPER installed, I'll install that for you before continuing..."
-            git clone https://aur.archlinux.org/$HELPER.git ~/.helper/$HELPER
-            ( cd ~/.helper/$HELPER/ && makepkg -si )
-fi
-
-# install stuffs with AUR helper
-$HELPER -S ranger-git
 
 echo "Changing gtk theme, icons and cursors..."
 sleep 1
@@ -152,6 +151,31 @@ else
     cp -r ./foot/ ~/.config/;
     echo "DONE"
 fi
+
+## Text Editor
+if [ -f ~/.config/nvim/init.lua ]; then
+    echo "Neovim configs detected, backing up..."
+    cp ~/.config/nvim/init.lua ~/.config/nvim/init.lua.old;
+    cp ./nvim/init.lua ~/.config/nvim/;
+    echo "DONE"
+else
+    echo "Installing Neovim configs..."
+    cp -r ./nvim/ ~/.config/;
+    echo "DONE"
+fi
+
+## Terminal
+if [ -f ~/.config/alacritty/alacritty.toml ]; then
+    echo "Alacritty configs detected, backing up..."
+    cp ~/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml.old;
+    cp ./alacritty/alacritty.toml ~/.config/alacritty/;
+    echo "DONE"
+else
+    echo "Installing Alacritty configs..."
+    cp -r ./alacritty/ ~/.config/;
+    echo "DONE"
+fi
+
 ## Text Editor
 if [ -f ~/.config/nvim/init.lua ]; then
     echo "Neovim configs detected, backing up..."
