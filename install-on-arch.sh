@@ -97,7 +97,7 @@ sudo pacman -S --noconfirm xdg-desktop-portal-wlr xdg-user-dirs
 
 # Making diretories
 echo "Creating diretories"
-cp ./user-dirs.defaults /etc/xdg/;
+sudo cp ./user-dirs.defaults /etc/xdg/;
 xdg-user-dirs-update;
 echo "DONE..."
 
@@ -114,13 +114,13 @@ sudo pacman -S bluez bluez-utils
 sudo pacman -S mangohud mesa-utils
 
 # zsh stuffs
-sudo pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting
+# sudo pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting
 
-echo "Changing shell to ZSH"
-cp ./.zshrc ~/.zshrc;
-chsh -s /bin/zsh;
-sleep 1
-echo "DONE..."
+# echo "Changing shell to ZSH"
+# cp ./.zshrc ~/.zshrc;
+# chsh -s /bin/zsh;
+# sleep 1
+# echo "DONE..."
 
 # install fonts
 echo "Installing fonts..."
@@ -132,14 +132,16 @@ echo "Fonts installed..."
 
 echo "Changing gtk theme, icons and cursors..."
 sleep 1
+sudo pacman -S gnome-themes-extra nwg-look
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
-gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
-papirus-folders -C yaru --theme Papirus-Dark
-gsettings set org.gnome.desktop.interface cursor-theme volantes_light_cursors
+# gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+# papirus-folders -C yaru --theme Papirus-Dark
+# gsettings set org.gnome.desktop.interface cursor-theme volantes_light_cursors
 echo "DONE..."
 sleep 1
 
 # My Config
+
 ## Terminal
 if [ -f ~/.config/foot/foot.ini ]; then
     echo "Foot configs detected, backing up..."
