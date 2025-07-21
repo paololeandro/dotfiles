@@ -104,6 +104,10 @@ echo "DONE..."
 # others apps and utilities
 sudo pacman -S --noconfirm neovim foot alacritty $BRW neofetch exa bat zathura zathura-pdf-mupdf imagemagick
 
+# TOP Utilities
+
+sudo pacman -S nvtop btop amdgpu_top
+
 # Printscreen
 sudo pacman -S grim slurp
 
