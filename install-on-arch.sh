@@ -114,13 +114,13 @@ sudo pacman -S bluez bluez-utils
 sudo pacman -S mangohud mesa-utils
 
 # zsh stuffs
-# sudo pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting
+sudo pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting
 
-# echo "Changing shell to ZSH"
-# cp ./.zshrc ~/.zshrc;
-# chsh -s /bin/zsh;
-# sleep 1
-# echo "DONE..."
+echo "Changing shell to ZSH"
+cp ./.zshrc ~/.zshrc;
+chsh -s /bin/zsh;
+sleep 1
+echo "DONE..."
 
 # install fonts
 echo "Installing fonts..."
