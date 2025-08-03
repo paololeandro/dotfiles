@@ -102,7 +102,7 @@ xdg-user-dirs-update;
 echo "DONE..."
 
 # others apps and utilities
-sudo pacman -S --noconfirm neovim foot alacritty $BRW neofetch exa bat zathura zathura-pdf-mupdf imagemagick
+sudo pacman -S --noconfirm neovim foot alacritty $BRW fastfetch exa bat zathura zathura-pdf-mupdf imagemagick
 
 # TOP Utilities
 
@@ -148,98 +148,103 @@ sleep 1
 
 ## Terminal
 if [ -f ~/.config/foot/foot.ini ]; then
-    echo "Foot configs detected, backing up..."
+    echo "Foot files detected, backing up..."
     cp ~/.config/foot/foot.ini ~/.config/foot/foot.ini.old;
     cp ./foot/foot.ini ~/.config/foot/;
     echo "DONE"
 else
-    echo "Installing Foot configs..."
+    echo "Copying Foot files..."
     cp -r ./foot/ ~/.config/;
-    echo "DONE"
-fi
-
-## Text Editor
-if [ -f ~/.config/nvim/init.lua ]; then
-    echo "Neovim configs detected, backing up..."
-    cp ~/.config/nvim/init.lua ~/.config/nvim/init.lua.old;
-    cp ./nvim/init.lua ~/.config/nvim/;
-    echo "DONE"
-else
-    echo "Installing Neovim configs..."
-    cp -r ./nvim/ ~/.config/;
     echo "DONE"
 fi
 
 ## Terminal
 if [ -f ~/.config/alacritty/alacritty.toml ]; then
-    echo "Alacritty configs detected, backing up..."
+    echo "Alacritty files detected, backing up..."
     cp ~/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml.old;
     cp ./alacritty/alacritty.toml ~/.config/alacritty/;
     echo "DONE"
 else
-    echo "Installing Alacritty configs..."
+    echo "Copying Alacritty files..."
     cp -r ./alacritty/ ~/.config/;
     echo "DONE"
 fi
 
 ## Text Editor
 if [ -f ~/.config/nvim/init.lua ]; then
-    echo "Neovim configs detected, backing up..."
+    echo "Neovim files detected, backing up..."
     cp ~/.config/nvim/init.lua ~/.config/nvim/init.lua.old;
     cp ./nvim/init.lua ~/.config/nvim/;
     echo "DONE"
 else
-    echo "Installing Neovim configs..."
+    echo "Copying Neovim files..."
     cp -r ./nvim/ ~/.config/;
     echo "DONE"
 fi
 
 ## Tiling Window Manager
 if [ -f ~/.config/sway/config ]; then
-    echo "Sway configs detected, backing up..."
+    echo "Sway files detected, backing up..."
     cp ~/.config/sway/config ~/.config/sway/config.old;
     cp ./sway/config ~/.config/sway/;
     echo "DONE"
 else
-    echo "Installing sway configs..."
+    echo "Copying Sway files..."
     cp -r ./sway/ ~/.config/;
     echo "DONE"
 fi
+
 ## Waybar
 if [ -f ~/.config/waybar/config ]; then
-    echo "Waybar configs detected, backing up..."
+    echo "Waybar files detected, backing up..."
     cp ~/.config/waybar/config ~/.config/waybar/config.old;
     cp ~/.config/waybar/style.css ~/.config/waybar/style.css.old;
     cp ./waybar/config ~/.config/waybar/;
     cp ./waybar/style.css ~/.config/waybar/;
     echo "DONE"
 else
-    echo "Waybar configs not found, installing..."
+    echo "Waybar files not found, copying..."
     cp -r ./waybar/ ~/.config/;
     echo "DONE"
 fi
+
+## Wofi
+if [ -f ~/.config/wofi/config ]; then
+    echo "Wofi files detected, backing up..."
+    cp ~/.config/wofi/config ~/.config/wofi/config.old;
+    cp ~/.config/wofi/style.css ~/.config/wofi/style.css.old;
+    cp ./wofi/* ~/.config/wofi/;
+    echo "DONE"
+else
+    echo "Wofi files not found, copying..."
+    cp -r ./wofi/ ~/.config/;
+    echo "DONE"
+fi
+
 ## Screenlock
 if [ -f ~/.config/swaylock/config ]; then
-    echo "Swaylock configs detected, backing up..."
+    echo "Swaylock files detected, backing up..."
     cp ~/.config/swaylock/config ~/.config/swaylock/config.old;
     cp ./swaylock/config ~/.config/swaylock/;
     echo "DONE"
 else
-    echo "Installing swaylock configs..."
+    echo "Copying Swaylock files..."
     cp -r ./swaylock/ ~/.config/;
     echo "DONE"
 fi
+
 ## Notification
 if [ -f ~/.config/mako/config ]; then
-    echo "Mako configs detected, backing up..."
+    echo "Mako files detected, backing up..."
     cp ~/.config/mako/config ~/.config/mako/config.old;
     cp ./mako/config ~/.config/mako/;
     echo "DONE"
 else
-    echo "Installing mako configs..."
+    echo "Copying Mako files..."
     cp -r ./mako/ ~/.config/;
     echo "DONE"
 fi
+
 ## Wallpapers
 if [ -d ~/wallpapers ]; then
     echo "Adding wallpapers to ~/wallpapers..."
@@ -250,25 +255,40 @@ else
     mkdir ~/wallpapers && cp -r ./wallpapers/* ~/wallpapers/;
     echo "DONE"
 fi
+
+## Ranger
+if [ -f ~/.config/ranger/rc.conf ]; then
+    echo "Ranger files detected, backing up..."
+    cp ~/.config/ranger/rc.conf ~/.config/ranger/rc.conf.old;
+    cp ./ranger/rc.conf ~/.config/ranger/;
+    echo "DONE"
+else
+    echo "Ranger files not found, installing..."
+    cp -r ./ranger/ ~/.config/;
+    echo "DONE"
+fi
+
+
 ## PDF
 if [ -f ~/.config/zathura/zathurarc ]; then
-    echo "Zathura configs detected, backing up..."
+    echo "Zathura files detected, backing up..."
     cp ~/.config/zathura/zathurarc ~/.config/zathura/zathurarc.old;
     cp ./zathura/zathurarc ~/.config/zathura/;
     echo "DONE"
 else
-    echo "Zathura configs not found, installing..."
+    echo "Zathura files not found, installing..."
     cp -r ./zathura/ ~/.config/;
     echo "DONE"
 fi
+
 ## MangoHud
 if [ -f ~/.config/MangoHud/MangoHud.conf ]; then
-    echo "MangoHud configs detected, backing up..."
+    echo "MangoHud files detected, backing up..."
     cp ~/.config/MangoHud/MangoHud.conf ~/.config/MangoHud.conf.old;
     cp ./MangoHud/MangoHud.conf ~/.config/MangoHud/;
     echo "DONE"
 else
-    echo "MangoHud configs not found, installing..."
+    echo "MangoHud files not found, installing..."
     cp -r ./MangoHud/ ~/.config/;
     echo "DONE"
 fi
@@ -280,7 +300,7 @@ if [ -d ~/scripts ]; then
     echo "DONE"
 else
     echo "Installing scripts..."
-    cp -r ./scripts/* ~/;
+    cp -r ./scripts/ ~/scripts/;
     echo "DONE"
 fi
 
