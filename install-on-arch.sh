@@ -96,8 +96,8 @@ sudo pacman -S --noconfirm mpv pavucontrol
 sudo pacman -S --noconfirm xdg-desktop-portal-wlr xdg-user-dirs
 
 # Making diretories
-echo "Creating diretories"
-sudo cp ./user-dirs.defaults /etc/xdg/;
+# echo "Creating diretories"
+# sudo cp ./user-dirs.defaults /etc/xdg/;
 xdg-user-dirs-update;
 echo "DONE..."
 
