@@ -102,7 +102,7 @@ xdg-user-dirs-update;
 echo "DONE..."
 
 # others apps and utilities
-sudo pacman -S --noconfirm neovim foot alacritty $BRW fastfetch exa bat zathura zathura-pdf-mupdf imagemagick
+sudo pacman -S --noconfirm neovim foot alacritty $BRW fastfetch exa bat openrgb zathura zathura-pdf-mupdf imagemagick
 
 # TOP Utilities
 
