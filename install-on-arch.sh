@@ -15,7 +15,7 @@ echo "Will do stuff, get ready"
 echo "###########################################################################"
 
 # install base-devel if not installed
-sudo pacman -S --noconfirm --needed base-devel git
+sudo pacman -S --noconfirm --needed base-devel
 
 echo "Creating AUR helper directory"
 mkdir -p ~/.helper
@@ -102,20 +102,20 @@ xdg-user-dirs-update;
 echo "DONE..."
 
 # others apps and utilities
-sudo pacman -S --noconfirm neovim foot alacritty $BRW fastfetch exa bat openrgb zathura zathura-pdf-mupdf imagemagick
+sudo pacman -S --noconfirm neovim foot alacritty $BRW fastfetch exa bat openrgb zathura zathura-pdf-mupdf imagemagick openssh
 
 # TOP Utilities
 
 sudo pacman -S nvtop btop amdgpu_top
 
 # Printscreen
-sudo pacman -S grim slurp
+sudo pacman -S grim slurp satty wl-clipboard
 
 # Bluetooth
 sudo pacman -S bluez bluez-utils
 
 # Gaming stuffs
-sudo pacman -S mangohud mesa-utils
+sudo pacman -S mangohud mesa-utils steam discord
 
 # zsh stuffs
 sudo pacman -S --noconfirm zsh zsh-autosuggestions zsh-syntax-highlighting
