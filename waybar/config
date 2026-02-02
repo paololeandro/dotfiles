@@ -111,7 +111,7 @@
 
 "temperature": {
   "thermal-zone": 2,
-  "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input"],
+  "hwmon-path": ["/sys/class/hwmon/hwmon3/temp1_input"],
   "critical-threshold": 80,
   "format-critical": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C",
   "format": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C"
