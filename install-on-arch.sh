@@ -36,7 +36,7 @@ if ! command -v $HELPER &> /dev/null
 fi
 
 # install stuffs with AUR helper
-$HELPER -S ranger-git
+$HELPER -S ranger-git epson-inkjet-printer-escpr
 
 # choose video driver
 echo "1) xf86-video-intel     2) vulkan-radeon     3) nvidia     4) Skip"
@@ -113,6 +113,10 @@ sudo pacman -S grim slurp satty wl-clipboard
 
 # Bluetooth
 sudo pacman -S bluez bluez-utils
+
+# Printing
+sudo pacman -S cups
+sudo systemctl enable --now cups
 
 # Gaming stuffs
 sudo pacman -S mangohud mesa-utils steam discord
