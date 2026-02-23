@@ -20,7 +20,7 @@ tooltip {
 
 #waybar {
   border-radius: 0px;
-  background-color: #272727;
+  background-color: alpha(black, 0.01);
   transition-duration: .5s;
 }
 
