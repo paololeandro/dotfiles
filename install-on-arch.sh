@@ -36,33 +36,7 @@ if ! command -v $HELPER &> /dev/null
 fi
 
 # install stuffs with AUR helper
-$HELPER -S ranger-git epson-inkjet-printer-escpr
-
-# choose video driver
-echo "1) xf86-video-intel     2) vulkan-radeon     3) nvidia     4) Skip"
-read -r -p "Choose your video card driver(default 1)(will not re-install): " vid
-
-case $vid in
-[1])
-    DRI='xf86-video-intel'
-    ;;
-
-[2])
-    DRI='vulkan-radeon lib32-vulkan-radeon'
-    ;;
-
-[3])
-    DRI='nvidia nvidia-settings nvidia-utils'
-    ;;
-
-[4])
-    DRI=""
-    ;;
-    
-[*])
-    DRI='xf86-video-intel'
-    ;;
-esac
+$HELPER -S mesa-git lib32-mesa-git ranger-git epson-inkjet-printer-escpr
 
 # choose browser
 echo "1) firefox    2) chromium   3) Skip"
@@ -87,7 +61,7 @@ case $brwsr in
 esac
 
 # install wayland and some x-wayland stuffs if not installed
-sudo pacman -S --noconfirm --needed $DRI xorg-xwayland sway waybar swayidle swaylock swaybg mako wofi libnotify 
+sudo pacman -S --noconfirm --needed xorg-xwayland sway waybar swayidle swaylock swaybg mako wofi libnotify lxsession 
 
 # install audio stuffs if not installed
 sudo pacman -S --noconfirm mpv pavucontrol
@@ -102,7 +76,11 @@ xdg-user-dirs-update;
 echo "DONE..."
 
 # others apps and utilities
-sudo pacman -S --noconfirm neovim foot alacritty $BRW fastfetch exa bat openrgb zathura zathura-pdf-mupdf imagemagick openssh
+sudo pacman -S --noconfirm $BRW neovim foot fastfetch exa bat openrgb zathura zathura-pdf-mupdf imagemagick openssh
+
+# GPU Utility
+
+sudo pacman -S corectrl
 
 # TOP Utilities
 
@@ -159,18 +137,6 @@ if [ -f ~/.config/foot/foot.ini ]; then
 else
     echo "Copying Foot files..."
     cp -r ./foot/ ~/.config/;
-    echo "DONE"
-fi
-
-## Terminal
-if [ -f ~/.config/alacritty/alacritty.toml ]; then
-    echo "Alacritty files detected, backing up..."
-    cp ~/.config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml.old;
-    cp ./alacritty/alacritty.toml ~/.config/alacritty/;
-    echo "DONE"
-else
-    echo "Copying Alacritty files..."
-    cp -r ./alacritty/ ~/.config/;
     echo "DONE"
 fi
 
