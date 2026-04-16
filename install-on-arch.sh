@@ -76,7 +76,7 @@ xdg-user-dirs-update;
 echo "DONE..."
 
 # others apps and utilities
-sudo pacman -S --noconfirm $BRW neovim foot fastfetch exa bat openrgb zathura zathura-pdf-mupdf imagemagick openssh
+sudo pacman -S --noconfirm $BRW neovim foot tmux fastfetch exa bat openrgb zathura zathura-pdf-mupdf imagemagick openssh
 
 # GPU Utility
 
