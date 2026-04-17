@@ -83,6 +83,64 @@ alias cat="bat"
 alias ls="exa --long --header"
 alias la="ls -a"
 
+vbox() {
+  local action=$1
+  local target=$2
+  local vm_name=""
+
+  # 1. Map short nicknames to actual VirtualBox VM names (Handles the space in vms here)
+  case "$target" in
+    "deb"|"debian") 
+      vm_name="Debian" 
+      ;;
+    "win"|"windows") 
+      vm_name="Windows 11" 
+      ;; 
+    *) 
+      vm_name="$target" # Fallback: use the input directly 
+      ;;
+  esac
+
+  # 2. Check if the user provided a VM name (unless they are just listing)
+  if [[ -z "$vm_name" && "$action" != "list" ]]; then
+    echo "Error: Please specify a VM (e.g., vbox start win)"
+    return 1
+  fi
+
+  # 3. Actions (Notice the quotes around "$vm_name" - these are vital!)
+  case "$action" in
+    "start")
+      echo "Launching $vm_name in headless mode..."
+      VBoxManage startvm "$vm_name" --type headless
+      ;;
+    "stop")
+      echo "Powering off $vm_name..."
+      VBoxManage controlvm "$vm_name" acpipowerbutton # Graceful Shutdown
+      ;;
+    "pause")
+      VBoxManage controlvm "$vm_name" pause
+      ;;
+    "resume")
+      VBoxManage controlvm "$vm_name" resume
+      ;;
+    "status")
+      VBoxManage showvminfo "$vm_name" | grep -E "State:|Name:"
+      ;;
+    "list")
+      echo "--- All Configured VMs ---"
+      VBoxManage list vms
+      echo -e "\n--- Currently Running ---"
+      VBoxManage list runningvms
+      ;;
+    *)
+      echo "Usage: vbox {start|stop|pause|resume|status|list} {deb|win}"
+      echo "Example: vbox start deb"
+      ;;
+  esac
+}
+
+compctl -k "(start stop pause resume status list)" vbox # Tab Completion
+
 export SDL_VIDEODRIVER=wayland
 export _JAVA_AWT_WM_NONREPARENTING=1
 export QT_QPA_PLATFORM=wayland
