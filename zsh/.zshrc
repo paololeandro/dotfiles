@@ -82,6 +82,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 alias cat="bat"
 alias ls="exa --long --header"
 alias la="ls -a"
+alias vim="nvim"
 
 vbox() {
   local action=$1
