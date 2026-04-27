@@ -464,21 +464,39 @@ vim.cmd([[
 
 -- Function to change statusline based on window focus
 local function setup_dynamic_statusline()
+
+  -- Define custom colors (Hex codes for GUI, color names/numbers for Cterm)
+  vim.api.nvim_set_hl(0, "StatusGit", { fg = "#F5C2E7", bg = "#272727", bold = true })
+  vim.api.nvim_set_hl(0, "StatusMode", { fg = "#D0D0D0", bg = "#272727", bold = true })
+  vim.api.nvim_set_hl(0, "StatusFile", { fg = "#fab387", bg = "#272727", italic = true })
+  vim.api.nvim_set_hl(0, "StatusLineBg", { fg = "#cdd6f4", bg = "#272727" })
+
   vim.api.nvim_create_autocmd({"WinEnter", "BufEnter"}, {
     callback = function()
     vim.opt_local.statusline = table.concat {
-      "  ",
-      "%#StatusLineBold#",
+      "%#StatusMode#",            -- Start Mode Color
+      " ",
       "%{v:lua.mode_icon()}",
-      "%#StatusLine#",
-      " \u{e0b1} %f %h%m%r",     -- nf-pl-left_hard_divider
+      " ",
+      
+      "%#StatusLineBg#",          -- Transition to Background Color
+      " \u{e0b1} ",               -- Divider
+      "%#StatusFile#",            -- File Name Color
+      "%f %h%m%r",
+      
+      "%#StatusGit#",             -- Git Color
       "%{v:lua.git_branch()}",
-      "\u{e0b1} ",               -- nf-pl-left_hard_divider
+      
+      "%#StatusLineBg#",          -- Back to Background Color
+      "\u{e0b1} ",
       "%{v:lua.file_type()}",
-      "\u{e0b1} ",               -- nf-pl-left_hard_divider
+      "\u{e0b1} ",
       "%{v:lua.file_size()}",
-      "%=",                      -- Right-align everything after this
-      " \u{f017} %l:%c  %P ",    -- nf-fa-clock_o for line/col
+      
+      "%=",                       -- Spacer
+      
+      "%#StatusMode#",            -- Right side (reuse Mode color)
+      " \u{f017} %l:%c  %P ",
     }
     end
   })
