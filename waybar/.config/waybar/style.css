@@ -10,7 +10,7 @@
   border: none;
   border-radius: 4;
   font-family: 'Iosevka Nerd Font', 'Material Design Icons';
-  font-size: 16px;
+  font-size: 17px;
   min-height: 0;
 }
 
@@ -100,7 +100,3 @@ tooltip {
 #network {
   color: @cyan;
 }
-
-
-
-
