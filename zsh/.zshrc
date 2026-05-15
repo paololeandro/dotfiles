@@ -80,9 +80,16 @@ bindkey -s '^o' 'rangercd\n'
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 alias cat="bat"
-alias ls="exa --long --header"
+alias ls="eza --long --header"
 alias la="ls -a"
-alias vim="nvim"
+alias v="nvim"
+
+# Gentoo
+alias update-system="sudo emerge --sync && sudo emerge -auDN @world"
+alias clean-system="sudo emerge --ask --depclean"
+alias edit-make="sudoedit /etc/portage/make.conf"
+
+alias packettracer="QT_QPA_PLATFORM=xcb ~/PacketTracer/opt/pt/packettracer.AppImage"
 
 vbox() {
   local action=$1
@@ -142,11 +149,6 @@ vbox() {
 
 compctl -k "(start stop pause resume status list)" vbox # Tab Completion
 
-export SDL_VIDEODRIVER=wayland
-export _JAVA_AWT_WM_NONREPARENTING=1
-export QT_QPA_PLATFORM=wayland
-export XDG_CURRENT_DESKTOP=sway
-export XDG_SESSION_DESKTOP=sway
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Define o Neovim como editor padrão para o sistema e sudoedit
+export EDITOR="nvim"
+export VISUAL="nvim"
