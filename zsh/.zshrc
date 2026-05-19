@@ -6,7 +6,7 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
 # sudo not required for some system commands
-for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
+for command in mount umount sv updatedb su shutdown poweroff reboot ; do
 	alias $command="sudo $command"
 done; unset command
 
@@ -84,8 +84,11 @@ alias ls="eza --long --header"
 alias la="ls -a"
 alias v="nvim"
 
+alias fetch="fastfetch"
+
 # Gentoo
 alias update-system="sudo emerge --sync && sudo emerge -auDN @world"
+alias update-world="sudo emerge -uDNqa --keep-going @world"
 alias clean-system="sudo emerge --ask --depclean"
 alias edit-make="sudoedit /etc/portage/make.conf"
 
