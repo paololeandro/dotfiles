@@ -1,5 +1,0 @@
-#!/bin/bash
-
-pactl set-sink-mute @DEFAULT_SINK@ toggle
-
-notify-send -t 925 "Toggle Mute Pressed" -i "$HOME/.git/dotfiles/icons/mute.png"

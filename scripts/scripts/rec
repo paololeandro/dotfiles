@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Define o diretório de destino (ajuste para "video" ou "Videos" como preferir)
+TARGET_DIR="$HOME/videos"
+
+# Cria a pasta caso ela não exista
+mkdir -p "$TARGET_DIR"
+
+# Verifica se o usuário passou um nome de arquivo
+if [ -z "$1" ]; then
+    echo "Erro: Você precisa especificar o nome do arquivo final."
+    echo "Uso: rec nome_do_video"
+    exit 1
+fi
+
+# Pega o nome passado e garante que termine com .mp4
+OUTPUT_FILE="$1"
+if [[ ! "$OUTPUT_FILE" == *.mp4 ]]; then
+    OUTPUT_FILE="${OUTPUT_FILE}.mp4"
+fi
+
+# Junta o diretório de destino com o nome do arquivo
+FINAL_PATH="$TARGET_DIR/$OUTPUT_FILE"
+
+echo "Gravando e salvando em: $FINAL_PATH"
+
+# Executa o gravador apontando para o caminho completo
+wf-recorder --audio --geometry "$(slurp)" --codec libx264rgb -f "$FINAL_PATH"
