@@ -9,7 +9,7 @@
 * {
   border: none;
   border-radius: 4;
-  font-family: 'Iosevka Nerd Font', 'Material Design Icons';
+  font-family: 'JetBrainsMono Nerd Font', 'Material Design Icons';
   font-size: 17px;
   min-height: 0;
 }
@@ -27,35 +27,41 @@ tooltip {
 #workspaces button {
   padding: 0px 10px;
   margin: 5px 3px;
-	color: #d0d0d0;
+	color: @white;
   background-color: #292929;
 }
 
 #workspaces button:hover {
-  color: #d0d0d0;
+  color: @white;
 }
 
 #workspaces button.focused {
-  color: #6a9fb5;
+  background-color: @blue;
+  color: #292929;
+}
+
+#workspaces button.focused:hover {
+  color: @white;
 }
 
 #workspaces button.urgent {
-  color: #ac4142;
+  background-color: @red;
+  color: #292929;
 }
 
 #mode {
-  background-color: #292929;
+  background-color: @yellow;
+  color: #292929;
   margin: 5px 3px;
   padding: 0px 10px;
 }
 
-#mode, #window {
-  color: #d0d0d0;
+#window {
+  color: @white;
 }
 
 #language, 
 #tray, 
-#mpd, 
 #bluetooth, 
 #pulseaudio, 
 #cpu, 
@@ -73,30 +79,33 @@ tooltip {
 #idle_inhibitor {
   padding: 0 12px;
   margin: 5px 3px;
-  color: @white;
-  background-color: #292929;
+  color: #292929;
+}
+
+#clock {
+  background-color: @white;
 }
 
 #custom-powermenu, #temperature {
-  color: @red;
+  background-color: @red;
 }
 
 #custom-wofi, #cpu, #custom-gpu, #bluetooth {
-  color: @blue;
+  background-color: @blue;
 }
 
 #memory, #idle_inhibitor {
-  color: @green;
+  background-color: @green;
 }
 
 #disk {
-  color: @yellow;
+  background-color: @yellow;
 }
 
 #pulseaudio {
-  color: @magenta;
+  background-color: @magenta;
 }
 
 #network {
-  color: @cyan;
+  background-color: @cyan;
 }

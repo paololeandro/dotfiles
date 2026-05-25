@@ -10,16 +10,12 @@
                   "temperature#gpu", 
                   "memory", 
                   "disk", 
+                  "disk#sandisk", 
+                  "disk#patriot", 
                   "pulseaudio#output", 
                   "pulseaudio#input", 
-                  "backlight", 
-                  "battery", 
-                  "clock", 
-                  "custom/uptime", 
-                  "sway/language",
                   "network", 
-		  "bluetooth",
-                  "idle_inhibitor",
+                  "clock", 
                   "custom/powermenu",
                   "tray"
                 ],
@@ -51,23 +47,25 @@
 },
 
 "clock": {
-	"format": "<span font='16' rise='-2000'>󱑂</span> {:%H:%M}",
+	"format": "{:%H:%M}",
 	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	"format-alt": "DATE {:%a %d %B %Y}",
+	"format-alt": "{:%a %d %B %Y}",
 },
 
 "network": {
-  "format-wifi": "WIFI CONNECTED {signalStrength}%",
-  "format-ethernet": "<span font='16' rise='5000'>󰈀</span>",
-  "tooltip-format": "{ipaddr}",
+  "format-wifi": "WIFI",
+  "format-ethernet": "WIRED",
+  "tooltip-format": "{ipaddr}
+  
+    {essid}",
   "format-linked": "{ifname} (No IP)  ",
   "format-disconnected": "WIFI DISCONNECTED",
-	"on-click": "alacritty -e nmtui"
+	"on-click": "foot -T nmtui -e nmtui"
 },
 
 "pulseaudio#output": {
-  "format": "<span font='16' rise='-2000'>󰕾</span> {volume}%",
-  "format-muted": "<span font='16' rise='-2000'>󰖁</span>",
+  "format": "OUT {volume}%",
+  "format-muted": "OUT MUTED",
   "scroll-step": 5,
   "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
   "on-click-middle": "pavucontrol"
@@ -75,8 +73,8 @@
 
 "pulseaudio#input": {
   "format": "{format_source}",
-  "format-source": "<span font='16' rise='-2000'>󰍬</span> {volume}%",
-  "format-source-muted": "<span font='16' rise='-2000'>󰍭</span>",
+  "format-source": "IN {volume}%",
+  "format-source-muted": "IN MUTED",
   "scroll-step": 5,
   "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
   "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
@@ -92,50 +90,66 @@
 	"tooltip-format": "{controller_alias}\t{controller_address}",
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "on-click": "~/scripts/wofi-bluetooth"
+  "on-click": "~/scripts/wofi-bluetooth"
 },
 
 "cpu": {
   "interval": 10,
-  "format": "<span font='16' rise='-2000'>󰍛</span> {usage}%",
+  "format": "CPU {usage}%",
   "max-length": 10,
-  "on-click": "alacritty -e bpytop"
+  "on-click": "foot -T btop -e btop"
 },
 
 "custom/gpu": {
-  "exec": "cat /sys/class/hwmon/hwmon1/device/gpu_busy_percent",
-  "format": "<span font='16' rise='-2500'>󰛱</span> {}%",
+  "exec": "cat /sys/class/hwmon/hwmon*/device/gpu_busy_percent",
+  "format": "GPU {}%",
   "return-type": "",
-  "interval": 1
+  "interval": 1,
+  "on-click": "foot -T amdgpu_top -e amdgpu_top"
 },
 
 "temperature": {
   "thermal-zone": 2,
-  "hwmon-path": ["/sys/class/hwmon/hwmon3/temp1_input"],
+  "hwmon-path": ["/sys/class/hwmon/hwmon1/temp3_input"],
   "critical-threshold": 80,
-  "format-critical": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C",
-  "format": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C"
+  "format-critical": "CPU {temperatureC}°C",
+  "format": "CPU {temperatureC}°C"
 },
 
 "temperature#gpu": {
   "thermal-zone": 2,
-  "hwmon-path": ["/sys/class/hwmon/hwmon1/temp1_input"],
+  "hwmon-path": ["/sys/class/hwmon/hwmon6/temp1_input"],
   "critical-threshold": 80,
-  "format-critical": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C",
-  "format": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C"
+  "format-critical": "GPU {temperatureC}°C",
+  "format": "GPU {temperatureC}°C"
 },
 
 "memory": {
   "interval": 10,
-  "format": "<span font='16' rise='-4000'></span> {percentage}% 󰁕 {used:0.1f} GB",
+  "format": "RAM {percentage}%",
   "max-length": 20
 },
 
 "disk": {
   "interval": 30,
-  "format": "<span font='16' rise='-2000'>󰉋</span> {percentage_used}% 󰁕 {specific_used:0.2f} GB",
+  "format": "WESTERN {percentage_used}%",
   "unit": "GB",
   "path": "/"
+},
+
+
+"disk#sandisk": {
+  "interval": 30,
+  "format": "SANDISK {percentage_used}%",
+  "unit": "GB",
+  "path": "/home/paolo/sandisk"
+},
+
+"disk#patriot": {
+  "interval": 30,
+  "format": "PATRIOT {percentage_used}%",
+  "unit": "GB",
+  "path": "/home/paolo/patriot"
 },
 
 "idle_inhibitor": {
