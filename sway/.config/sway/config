@@ -1,5 +1,6 @@
 # Variables
 
+
 set $term foot
 
 set $menu wofi --style=$HOME/.config/wofi/style.css
@@ -165,20 +166,6 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-# Media Keys
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
-
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl set +5%
-
-bindsym XF86AudioPlay  exec "mpc toggle"
-bindsym XF86AudioStop  exec "mpc stop"
-bindsym XF86AudioNext  exec "mpc next"
-bindsym XF86AudioPrev  exec "mpc prev"
-bindsym XF86AudioPause exec "mpc pause"
-
 # screenshots
 # inspiration: https://www.reddit.com/r/swaywm/comments/ghnlea/comment/fqnzxkx/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 set $satty satty -f - --initial-tool=arrow --copy-command=wl-copy --actions-on-escape="save-to-clipboard,exit" --brush-smooth-history-size=5 --disable-notifications
@@ -196,7 +183,8 @@ bindsym Print mode $printscreen_mode
 
 bindsym Alt+l exec swaylock    
 
-bindsym $mod+x exec $HOME/scripts/wofi-power.sh
+bindsym $mod+x exec $HOME/scripts/wofi-power
+bindsym $mod+z exec $HOME/scripts/wofi-searchfiles
 #bindsym alt+f exec thunar
 #bindsym alt+b exec qutebrowser
 
@@ -236,6 +224,30 @@ for_window [title = "Firefox - Sharing Indicator"] floating enabled
 
 for_window [title = "^Open File$"] floating enable
 
+for_window [title="satty"] {
+    floating enable
+    resize set 1200 px 900 px
+    move position center
+}
+
+for_window [title="nmtui"] {
+    floating enable
+    resize set 1200 px 900 px
+    move position center
+}
+
+for_window [title="btop"] {
+    floating enable
+    resize set 1600 px 900 px
+    move position center
+}
+
+for_window [title="amdgpu_top"] {
+    floating enable
+    resize set 2400 px 1200 px
+    move position center
+}
+
 # Idle
 # exec swayidle -w \
 # timeout 900 'swaylock -f' \
@@ -247,11 +259,16 @@ for_window [title = "^Open File$"] floating enable
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 # Autostart
-exec mako
 
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# Atualiza o D-Bus com as variáveis do Sway
+exec dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec dbus-update-activation-environment --all
+
+# Inicia os serviços de mídia (PipeWire)
+exec gentoo-pipewire-launcher restart
+
+# Others
+exec mako
 
 # Gaps
 gaps outer 4
