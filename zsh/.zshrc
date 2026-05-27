@@ -87,7 +87,7 @@ alias v="nvim"
 alias fetch="fastfetch"
 
 # Gentoo
-alias update-system="sudo emerge --sync && sudo emerge -auDN @world"
+alias update-system="sudo emaint sync -a && sudo emerge -uDNqa --keep-going @world"
 alias update-world="sudo emerge -uDNqa --keep-going @world"
 alias clean-system="sudo emerge --ask --depclean"
 alias edit-make="sudoedit /etc/portage/make.conf"
