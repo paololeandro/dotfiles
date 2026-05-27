@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+#
+# Script name: dmconf
+# Description: Choose from a list of configuration files to edit (Adapted for Wofi).
+# Dependencies: wofi
+
+# Defining the text editor to use.
+# Se você usa Wayland, talvez prefira um terminal nativo como foot ou kitty, 
+# mas mantive o alacritty como estava no seu original.
+DMEDITOR="foot -e nvim"
+
+# An array of options to choose.
+declare -a options=(
+"foot - $HOME/.config/foot/foot.ini"
+"sway - $HOME/.config/sway/config"
+"waybar config - $HOME/.config/waybar/config"
+"waybar style - $HOME/.config/waybar/style.css"
+"files - $HOME/scripts/wofi-searchfiles"
+"zsh - $HOME/.zshrc"
+"quit"
+)
+
+# Piping the above array into wofi.
+# -d : modo dmenu (lê da entrada padrão)
+# -i : busca case-insensitive (ignora maiúsculas/minúsculas)
+# -p : define o texto do Prompt
+# -L : define a quantidade de linhas visíveis (substituindo o "20" do rofi)
+choice=$(printf '%s\n' "${options[@]}" | wofi -d -i -p "Edit config:" -L 10)
+
+# What to do when/if we choose 'quit'.
+if [[ "$choice" == "quit" ]]; then
+    echo "Program terminated." && exit 0
+
+# What to do when/if we choose a file to edit.
+elif [ "$choice" ]; then
+    # O awk continua pegando o último argumento (o caminho do arquivo)
+    cfg=$(printf '%s\n' "${choice}" | awk '{print $NF}')
+    $DMEDITOR "$cfg"
+
+# What to do if we just escape without choosing anything.
+else
+    echo "Program terminated." && exit 0
+fi
