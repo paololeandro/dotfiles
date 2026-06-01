@@ -1,6 +1,5 @@
 # Variables
 
-
 set $term foot
 
 set $menu wofi --style=$HOME/.config/wofi/style.css
@@ -171,7 +170,7 @@ bindsym $mod+minus scratchpad show
 set $satty satty -f - --initial-tool=arrow --copy-command=wl-copy --actions-on-escape="save-to-clipboard,exit" --brush-smooth-history-size=5 --disable-notifications
 set $printscreen_mode 'printscreen (r:region, f:full, w:window)'
 mode $printscreen_mode {
-    bindsym r exec swaymsg 'mode "default"' && grim -t ppm -g "$(slurp -d)" - | $satty
+    bindsym r exec swaymsg 'mode "default"' && grim -t ppm -g "$(slurp -d -b 00000000 -c f4bf75)" - | $satty
     bindsym f exec swaymsg 'mode "default"' && grim -t ppm - | $satty
     bindsym w exec swaymsg 'mode "default"' && swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -t ppm -g - - | $satty
 
@@ -190,6 +189,9 @@ bindsym $mod+z exec $HOME/scripts/wofi-searchfiles
 
 # Reload Waybar
 bindsym $mod+p exec killall -SIGUSR1 waybar
+
+# Hides Cursor
+seat * hide_cursor 10000
 
 # Wayland default floats
 for_window [window_role = "pop-up"] floating enable
