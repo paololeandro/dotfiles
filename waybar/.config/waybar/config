@@ -2,7 +2,7 @@
 "fixed-center": false,
 "height": 40,
 "position":"top",
-"modules-left": ["custom/wofi", "sway/workspaces", "sway/mode"],
+"modules-left": ["custom/wofi", "sway/workspaces", "sway/window", "sway/mode"],
 "modules-right": [
                   "cpu", 
                   "temperature", 
@@ -50,6 +50,27 @@
 	"format": "{:%H:%M}",
 	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 	"format-alt": "{:%a %d %B %Y}",
+},
+
+"sway/window": {
+    "format": "{}",       // Shows the window title (e.g., "Google Chrome - Settings")
+    "max-length": 50,     // Truncates the text if it gets too long
+    "separate-outputs": true,
+    "rewrite": {
+        // Matches any window title containing "Firefox" and replaces it with just "Firefox"
+        "(.*)Firefox(.*)": "Firefox",
+        
+        // Alternative rule if you want to capture other browsers too (e.g., Chromium, Brave)
+        "(.*)Chromium(.*)": "Chromium",
+        "(.*)Brave(.*)": "Brave"
+    }
+},
+
+"wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 24,
+    "tooltip-format": "{title}",
+    "on-click": "activate"
 },
 
 "network": {
@@ -177,13 +198,7 @@
   "tooltip": false,
   "interval": 3600,
   "escape": true,
-  "on-click": "~/scripts/wofi-power.sh"
-},
-
-"custom/uptime": {
-  "format": "UPTIME {}",
-  "interval": 30,
-  "exec": "$HOME/.config/scripts/uptime",
+  "on-click": "~/scripts/wofi-power"
 },
 
 "custom/wofi": {
