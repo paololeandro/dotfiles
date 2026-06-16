@@ -26,8 +26,9 @@ input type:keyboard {
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 output DP-3 {
-  bg ~/wallpapers/adwaita.png fill 
+  bg #000000 solid_color 
   mode 2560x1440@179.960Hz
+  render_bit_depth 10
   transform normal
   scale 1.0
   scale_filter nearest
@@ -278,7 +279,7 @@ gaps inner 4
 
 # Titlebars
 font pango:Iosevka Nerd Font Regular 14
-default_border pixel 1
+default_border pixel 0
 set $bg #d8dee9
 set $bod_f #d8dee9
 set $bod_u #808080
