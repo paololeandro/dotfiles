@@ -1,3 +1,4 @@
+@define-color black #000000;
 @define-color red #AC4142;
 @define-color green #90A959;
 @define-color yellow #F4BF75;
@@ -15,7 +16,8 @@
 }
 
 tooltip {
-  background: #272727;
+  background: @black;
+  color: @white;
 }
 
 #waybar {
@@ -25,39 +27,44 @@ tooltip {
 }
 
 #workspaces button {
-  padding: 0px 10px;
+  padding: 0px 0px;
   margin: 5px 3px;
-	color: @white;
-  background-color: #292929;
+	color: @black;
+  background-color: @white;
 }
 
 #workspaces button:hover {
-  color: @white;
+  background-color: @yellow;
 }
 
 #workspaces button.focused {
   background-color: @blue;
-  color: #292929;
+  color: @black;
 }
 
 #workspaces button.focused:hover {
-  color: @white;
+  background-color: @yellow;
 }
 
 #workspaces button.urgent {
   background-color: @red;
-  color: #292929;
+  color: @black;
 }
 
 #mode {
   background-color: @yellow;
-  color: #292929;
+  color: @black;
   margin: 5px 3px;
   padding: 0px 10px;
 }
 
-#window {
-  color: @white;
+/* FIX: Tells Waybar to hide the box background, padding, and borders when the bar is empty */
+#waybar.empty #window {
+    background: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 #language, 
@@ -74,12 +81,13 @@ tooltip {
 #custom-uptime, 
 #clock, 
 #custom-powermenu, 
+#window,
 #custom-wofi, 
 #temperature, 
 #idle_inhibitor {
   padding: 0 12px;
   margin: 5px 3px;
-  color: #292929;
+  color: @black;
 }
 
 #clock {
@@ -98,7 +106,7 @@ tooltip {
   background-color: @green;
 }
 
-#disk {
+#disk, #window {
   background-color: @yellow;
 }
 
