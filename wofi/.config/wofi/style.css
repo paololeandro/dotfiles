@@ -4,9 +4,9 @@
 }
 
 #window {
-	background-color: #272727;
+	background-color: #000000;
 	color: #D0D0D0;
-  border: 0px solid #272727;
+  border: 0px solid #000000;
 	border-radius: 0px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 #input {
-	background-color: #202020;
+	background-color: #000000;
 	border: 0px solid #272727;
 	padding: 8px 12px;
 }
