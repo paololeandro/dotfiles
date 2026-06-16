@@ -6,7 +6,7 @@ vim.opt.wrap = false                               -- Don't wrap lines
 vim.opt.scrolloff = 10                             -- Keep 10 lines above/below cursor 
 vim.opt.sidescrolloff = 8                          -- Keep 8 columns left/right of cursor
 
-vim.api.nvim_set_hl(0, "Normal", { bg="#242424" })
+vim.api.nvim_set_hl(0, "Normal", { bg="#000000" })
 vim.api.nvim_set_hl(0, 'LineNr', { fg = "#f4bf75"})
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = "#666666"})
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = "#f4bf75"})
@@ -466,10 +466,10 @@ vim.cmd([[
 local function setup_dynamic_statusline()
 
   -- Define custom colors (Hex codes for GUI, color names/numbers for Cterm)
-  vim.api.nvim_set_hl(0, "StatusGit", { fg = "#F5C2E7", bg = "#272727", bold = true })
-  vim.api.nvim_set_hl(0, "StatusMode", { fg = "#D0D0D0", bg = "#272727", bold = true })
-  vim.api.nvim_set_hl(0, "StatusFile", { fg = "#fab387", bg = "#272727", italic = true })
-  vim.api.nvim_set_hl(0, "StatusLineBg", { fg = "#cdd6f4", bg = "#272727" })
+  vim.api.nvim_set_hl(0, "StatusGit", { fg = "#F5C2E7", bg = "#000000", bold = true })
+  vim.api.nvim_set_hl(0, "StatusMode", { fg = "#D0D0D0", bg = "#000000", bold = true })
+  vim.api.nvim_set_hl(0, "StatusFile", { fg = "#fab387", bg = "#000000", italic = true })
+  vim.api.nvim_set_hl(0, "StatusLineBg", { fg = "#cdd6f4", bg = "#000000" })
 
   vim.api.nvim_create_autocmd({"WinEnter", "BufEnter"}, {
     callback = function()
