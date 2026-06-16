@@ -11,6 +11,10 @@ vim.api.nvim_set_hl(0, 'LineNr', { fg = "#f4bf75"})
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = "#666666"})
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = "#f4bf75"})
 
+-- Force tmux to rename the terminal emulator title
+vim.opt.title = true
+vim.opt.titlestring = "foot - neovim"
+
 -- Indentation
 vim.opt.tabstop = 2                                -- Tab width
 vim.opt.shiftwidth = 2                             -- Indent width
