@@ -251,6 +251,12 @@ for_window [title="amdgpu_top"] {
     move position center
 }
 
+for_window [title="bluetuith"] {
+    floating enable
+    resize set 1200 px 800 px
+    move position center
+}
+
 # Idle
 # exec swayidle -w \
 # timeout 900 'swaylock -f' \
