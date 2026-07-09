@@ -124,7 +124,7 @@
 
 "custom/gpu": {
   "exec": "cat /sys/class/hwmon/hwmon*/device/gpu_busy_percent",
-  "format": "<span font='22' rise='-4000'>󰢮</span>  {}%",
+  "format": "<span font='22' rise='-4000' letter_spacing='-9000'>󰢮</span>  {}%",
   "return-type": "",
   "interval": 1,
   "on-click": "foot -T amdgpu_top -e amdgpu_top"
