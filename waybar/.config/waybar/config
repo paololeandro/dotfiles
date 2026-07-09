@@ -75,13 +75,13 @@
 },
 
 "network": {
-  "format-wifi": "WIFI",
+  "format-wifi": "<span font='16' rise='-1500' letter_spacing='-8000'>󰖩 </span>",
   "format-ethernet": "<span font='16' rise='-1500'>󰈀</span>",
   "tooltip-format": "{ipaddr}
   
     {essid}",
   "format-linked": "{ifname} (No IP)  ",
-  "format-disconnected": "WIFI DISCONNECTED",
+  "format-disconnected": "<span font='16' rise='-1500' letter_spacing='-8000'>󰖪 </span>",
 	"on-click": "foot -T nmtui -e nmtui"
 },
 
@@ -105,8 +105,8 @@
 },
 
 "bluetooth": {
-	"format-on": "<span font='16' rise='-2000'>󰂯</span>",
-	"format-off": "<span font='16' rise='-2000' foreground='#AC4142'>󰂲</span>",
+	"format-on": "<span font='16' rise='-1500'>󰂯</span>",
+	"format-off": "<span font='16' rise='-1500'>󰂲</span>",
 	"format-disabled": "", // an empty format will hide the module
 	"format-connected": "<span font='16' rise='-2000'>󰂱</span>",
 	"tooltip-format": "{controller_alias}\t{controller_address}",
@@ -117,7 +117,7 @@
 
 "cpu": {
   "interval": 10,
-  "format": "<span font='19' rise='-2000'>󰻠</span> {usage}%",
+  "format": "<span font='19' rise='-1500'>󰻠</span> {usage}%",
   "max-length": 10,
   "on-click": "foot -T btop -e btop"
 },
@@ -134,21 +134,19 @@
   "thermal-zone": 2,
   "hwmon-path": ["/sys/class/hwmon/hwmon1/temp3_input"],
   "critical-threshold": 80,
-  "format-critical": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C",
-  "format": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C"
+  "format": "<span font='16' rise='-1500'>󰔐</span> {temperatureC}°C"
 },
 
 "temperature#gpu": {
   "thermal-zone": 2,
   "hwmon-path": ["/sys/class/hwmon/hwmon6/temp1_input"],
   "critical-threshold": 80,
-  "format-critical": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C",
-  "format": "<span font='16' rise='-2000'>󰔐</span> {temperatureC}°C"
+  "format": "<span font='16' rise='-1500'>󰔐</span> {temperatureC}°C"
 },
 
 "memory": {
   "interval": 10,
-  "format": "<span font='18' rise='-1700'>󰍛</span> {used:0.1f}GB",
+  "format": "<span font='18' rise='-1500'>󰍛</span> {used:0.1f}GB",
   "max-length": 20
 },
 
@@ -203,7 +201,7 @@
 },
 
 "custom/wofi": {
-  "format": "MENU",
+  "format": "<span font='19' rise='-1500'>󰣨</span>",
   "on-click": "wofi --show drun --width 800 --allow-images",
   "on-click-right": "killall wofi",
   "tooltip": false
