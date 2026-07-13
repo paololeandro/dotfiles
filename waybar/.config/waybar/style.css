@@ -117,3 +117,7 @@ tooltip {
 #network {
   background-color: @cyan;
 }
+
+#tray {
+  background-color: #333333;
+}
