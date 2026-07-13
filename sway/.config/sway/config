@@ -28,7 +28,6 @@ input type:keyboard {
 output DP-3 {
   bg #000000 solid_color 
   mode 2560x1440@179.960Hz
-  render_bit_depth 10
   transform normal
   scale 1.0
   scale_filter nearest
@@ -278,6 +277,7 @@ exec gentoo-pipewire-launcher restart
 
 # Others
 exec mako
+exec openrgb --startminimized
 
 # Gaps
 gaps outer 4
