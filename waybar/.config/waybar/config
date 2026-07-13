@@ -17,8 +17,8 @@
                   "bluetooth", 
                   "network", 
                   "clock", 
-                  "custom/powermenu",
-                  "tray"
+                  "tray",
+                  "custom/powermenu"
                 ],
 
 "sway/workspaces": {
@@ -90,6 +90,7 @@
   "format-muted": "<span font='16' rise='-1500'>󰖁</span>",
   "scroll-step": 5,
   "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+  "on-click-right": "~/scripts/wofi-audio",
   "on-click-middle": "pavucontrol"
 },
 
@@ -127,27 +128,31 @@
   "format": "<span font='22' rise='-4000' letter_spacing='-9000'>󰢮</span>  {}%",
   "return-type": "",
   "interval": 1,
-  "on-click": "foot -T amdgpu_top -e amdgpu_top"
+  "on-click": "foot -T amdgpu_top -e amdgpu_top",
+  "tooltip": false
 },
 
 "temperature": {
   "thermal-zone": 2,
   "hwmon-path": ["/sys/class/hwmon/hwmon1/temp3_input"],
   "critical-threshold": 80,
-  "format": "<span font='16' rise='-1500'>󰔐</span> {temperatureC}°C"
+  "format": "<span font='16' rise='-1500'>󰔐</span> {temperatureC}°C",
+  "tooltip": false
 },
 
 "temperature#gpu": {
   "thermal-zone": 2,
   "hwmon-path": ["/sys/class/hwmon/hwmon6/temp1_input"],
   "critical-threshold": 80,
-  "format": "<span font='16' rise='-1500'>󰔐</span> {temperatureC}°C"
+  "format": "<span font='16' rise='-1500'>󰔐</span> {temperatureC}°C",
+  "tooltip": false
 },
 
 "memory": {
   "interval": 10,
   "format": "<span font='18' rise='-1500'>󰍛</span> {used:0.1f}GB",
-  "max-length": 20
+  "max-length": 20,
+  "tooltip": false
 },
 
 "disk": {
