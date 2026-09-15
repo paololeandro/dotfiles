@@ -1,4 +1,4 @@
-image=$HOME/wallpapers/adwaita.png
+color=000000
 font=Iosevka Nerd Font
 indicator-radius=100
 indicator-thickness=20
