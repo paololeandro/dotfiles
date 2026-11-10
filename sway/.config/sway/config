@@ -167,7 +167,7 @@ bindsym $mod+minus scratchpad show
 
 # screenshots
 # inspiration: https://www.reddit.com/r/swaywm/comments/ghnlea/comment/fqnzxkx/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-set $satty satty -f - --initial-tool=arrow --copy-command=wl-copy --actions-on-escape="save-to-clipboard,exit" --brush-smooth-history-size=5 --disable-notifications
+set $satty satty -f - --initial-tool=arrow --copy-command="wl-copy --type image/png" --actions-on-escape="save-to-clipboard,exit" --brush-smooth-history-size=5 --disable-notifications
 set $printscreen_mode 'printscreen (r:region, f:full, w:window)'
 mode $printscreen_mode {
     bindsym r exec swaymsg 'mode "default"' && grim -t ppm -g "$(slurp -d -b 00000000 -c f4bf75)" - | $satty
@@ -184,7 +184,7 @@ bindsym Alt+l exec swaylock
 
 bindsym $mod+x exec $HOME/scripts/wofi-power
 bindsym $mod+z exec $HOME/scripts/wofi-searchfiles
-#bindsym alt+f exec thunar
+bindsym alt+f exec $HOME/scripts/steam
 #bindsym alt+b exec qutebrowser
 
 # Reload Waybar
@@ -285,7 +285,7 @@ gaps inner 4
 
 # Titlebars
 font pango:Iosevka Nerd Font Regular 14
-default_border pixel 0
+default_border pixel 1
 set $bg #d8dee9
 set $bod_f #d8dee9
 set $bod_u #808080
