@@ -242,6 +242,8 @@ for_window [title="btop"] resize set 1600 px 900 px
 for_window [title="amdgpu_top"] resize set 2400 px 1200 px
 for_window [title="bluetuith"] resize set 1200 px 800 px
 
+for_window [app_id="foot-float"] floating enable, move position center
+
 # Idle
 # exec swayidle -w \
 # timeout 900 'swaylock -f' \
