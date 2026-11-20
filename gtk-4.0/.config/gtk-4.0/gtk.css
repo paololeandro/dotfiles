@@ -1,0 +1,37 @@
+/* 1. Aplicativos libadwaita (Baobab, Nautilus, etc.) */
+@define-color window_bg_color #000000;
+@define-color view_bg_color #000000;
+@define-color headerbar_bg_color #000000;
+@define-color sidebar_bg_color #000000;
+@define-color card_bg_color #0a0a0a;
+@define-color dialog_bg_color #0a0a0a;
+@define-color popover_bg_color #0a0a0a;
+
+/* 2. Fundo, barras e listas GTK4 puro (Transmission-GTK, etc.) */
+window, .background, dialog,
+headerbar, .titlebar, .toolbar, actionbar, searchbar,
+list, listview, columnview, .view, scrolledwindow, viewport {
+    background-color: #000000;
+    background-image: none;
+    color: #ffffff;
+}
+
+/* 3. Menus flutuantes */
+popover, popover.background {
+    background-color: #0a0a0a;
+    border: 1px solid #1f1f1f;
+    color: #ffffff;
+}
+
+/* 4. Botões, campos de texto e item selecionado */
+button, entry, searchentry, spinbutton {
+    background-color: #0f0f0f;
+    background-image: none;
+    border-color: #262626;
+    color: #ffffff;
+}
+
+row:selected, .view:selected {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
