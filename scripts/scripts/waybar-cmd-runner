@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+
+STATE_FILE="/tmp/waybar_cmd_index"
+LOCK_FILE="/tmp/waybar_cmd_lock"
+
+# Função dedicada para medir janelas flutuantes em tempo real
+show_sizes() {
+    watch -n 1 'swaymsg -t get_tree | jq ".. | select(.type? == \"floating_con\") | {app_id: .app_id, name: .name, width: .rect.width, height: .rect.height}"'
+}
+
+NAMES=(
+    "tmpfs"
+    "btop"
+    "amdgpu_top"
+    "emerge.log"
+    "sizes"
+)
+
+CMDS=(
+    "watch -n 1 df -h /var/tmp/portage"
+    "btop"
+    "amdgpu_top"
+    "tail -f /var/log/emerge.log"
+    "show_sizes"
+)
+
+SIZES=(
+    "1130x179"
+    "1600x900"
+    "2400x1200"
+    "1200x500"
+    "900x450"
+)
+
+TOTAL=${#NAMES[@]}
+
+INDEX=$(cat "$STATE_FILE" 2>/dev/null)
+if ! [[ "$INDEX" =~ ^[0-9]+$ ]] || [ "$INDEX" -ge "$TOTAL" ]; then
+    INDEX=0
+fi
+
+check_cooldown() {
+    NOW=$(date +%s%3N)
+    LAST=$(cat "$LOCK_FILE" 2>/dev/null || echo 0)
+    if [ $((NOW - LAST)) -lt 150 ]; then
+        exit 0
+    fi
+    echo "$NOW" > "$LOCK_FILE"
+}
+
+save_index() {
+    echo "$1" > "${STATE_FILE}.tmp" && mv "${STATE_FILE}.tmp" "$STATE_FILE"
+}
+
+case "$1" in
+    "next")
+        check_cooldown
+        INDEX=$(( (INDEX + 1) % TOTAL ))
+        save_index "$INDEX"
+        pkill -RTMIN+8 waybar
+        ;;
+    "prev")
+        check_cooldown
+        INDEX=$(( (INDEX - 1 + TOTAL) % TOTAL ))
+        save_index "$INDEX"
+        pkill -RTMIN+8 waybar
+        ;;
+    "run")
+        # Exporta a função show_sizes para o subshell do foot enxergar
+        export -f show_sizes
+        foot --app-id="foot-float" --window-size-pixels="${SIZES[$INDEX]}" -e bash -c "${CMDS[$INDEX]}; exec bash" &
+        ;;
+    *)
+        echo "{\"text\": \"${NAMES[$INDEX]}\", \"tooltip\": \"${NAMES[$INDEX]} (${SIZES[$INDEX]})\"}"
+        ;;
+esac
