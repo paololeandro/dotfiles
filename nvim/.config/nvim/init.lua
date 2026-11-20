@@ -7,6 +7,7 @@ vim.opt.scrolloff = 10                             -- Keep 10 lines above/below 
 vim.opt.sidescrolloff = 8                          -- Keep 8 columns left/right of cursor
 
 vim.api.nvim_set_hl(0, "Normal", { bg="#000000" })
+vim.api.nvim_set_hl(0, "CursorLine", { bg = "#101010" })
 vim.api.nvim_set_hl(0, 'LineNr', { fg = "#f4bf75"})
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = "#666666"})
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = "#f4bf75"})
