@@ -4,6 +4,7 @@
 "position":"top",
 "modules-left": ["custom/wofi", "sway/workspaces", "sway/window", "sway/mode"],
 "modules-right": [
+                  "custom/cmdrunner",
                   "cpu", 
                   "cpu#frequency", 
                   "temperature", 
@@ -182,6 +183,16 @@
   "format": "<span font='17' rise='-1500'>󰋊</span> {percentage_used}%",
   "unit": "GB",
   "path": "/home/paolo/patriot"
+},
+
+"custom/cmdrunner": {
+    "format": "<span font='17' rise='-1500'>󰆍</span> {}",
+    "exec": "~/scripts/waybar-cmd-runner",
+    "return-type": "json",
+    "signal": 8,
+    "on-click": "~/scripts/waybar-cmd-runner run",
+    "on-scroll-up": "~/scripts/waybar-cmd-runner next",
+    "on-scroll-down": "~/scripts/waybar-cmd-runner prev"
 },
 
 "idle_inhibitor": {

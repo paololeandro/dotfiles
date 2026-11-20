@@ -90,6 +90,7 @@ tooltip {
 #custom-uptime, 
 #clock, 
 #custom-powermenu, 
+#custom-cmdrunner,
 #window,
 #custom-wofi, 
 #temperature, 
@@ -115,7 +116,7 @@ tooltip {
   background-color: @green;
 }
 
-#disk, #window {
+#custom-cmdrunner, #disk, #window {
   background-color: @yellow;
 }
 
