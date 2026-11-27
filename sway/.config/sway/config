@@ -193,7 +193,7 @@ bindsym $mod+Escape exec swaylock
 
 bindsym $mod+x exec $HOME/scripts/wofi-power
 bindsym $mod+z exec $HOME/scripts/wofi-searchfiles
-bindsym alt+f exec /usr/local/bin/ocr
+bindsym alt+f exec $HOME/bin/ocr
 #bindsym alt+b exec qutebrowser
 
 # Reload Waybar
@@ -268,7 +268,7 @@ exec mako
 exec openrgb --startminimized
 
 exec_always {
-    gsettings set org.gnome.desktop.interface gtk-theme 'adwaita-dark-amoled'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-AMOLED'
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 }
 
