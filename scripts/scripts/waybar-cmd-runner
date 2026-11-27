@@ -13,6 +13,7 @@ NAMES=(
     "btop"
     "amdgpu_top"
     "emerge.log"
+    "world"
     "sizes"
 )
 
@@ -21,6 +22,7 @@ CMDS=(
     "btop"
     "amdgpu_top"
     "tail -f /var/log/emerge.log"
+    "sort /var/lib/portage/world | less"
     "show_sizes"
 )
 
@@ -29,6 +31,7 @@ SIZES=(
     "1600x900"
     "2400x1200"
     "1200x500"
+    "1200x600"
     "900x450"
 )
 
